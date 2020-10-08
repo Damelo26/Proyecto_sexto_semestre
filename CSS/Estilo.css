@@ -7,7 +7,7 @@ body{
 	margin: 0;
 }
 .header{
-	background: #111;
+	background: #a20808;
 	color:#fff;
 	padding: 30px;
 	text-align: center;
@@ -18,18 +18,18 @@ body{
 
 .menu{
 	padding: 10px;
-	background: #111;
+	background: #a20808;
 }
 
 .menu a{
 	text-decoration: none;
 	color: #fff;
-	background:#111;
+	background:#a20808;
 	padding: 10px;
 }
 
 .menu a:hover{
-	background: #000;
+	background: #8A0505;
 }
 
 .cuerpo{
@@ -39,7 +39,7 @@ body{
 }
 
 .footer{
-	background: #000;
+	background: #a20808;
 	color: #aaa;
 	text-align:center;
 	font-size: 10px;

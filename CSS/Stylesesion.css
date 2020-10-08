@@ -46,10 +46,10 @@ text-transform: uppercase;
 	padding: 5px;
 	font-size: 16pt;
 	display: block;
-	margin: 25px auto;
+	margin: 2px auto;
 	border-radius: 5px;
 	border: 1px solid #34495E ;
-	text-align: center;
+	text-align: left;
 }
 
 #container form input[type="submit"]{
@@ -59,6 +59,8 @@ text-transform: uppercase;
 	letter-spacing: 1px;
 	border: 0;
 	cursor: pointer;
+	margin: 15px auto;
+	text-align: center;
 }
 
 .alert{
@@ -70,7 +72,7 @@ text-transform: uppercase;
 	width: 450px;
 	margin: auto;
 }
-.form_register{
+.form_register h1{
 	color: #000;
 }
 
@@ -86,7 +88,7 @@ form{
 	background: #FFF;
 	margin: auto;
 	padding: 20px 50px;
-	border: 1px solid;
+	border: 1px solid #d1d1d1;
 }
 
 label{
@@ -100,7 +102,7 @@ input,select{
 	display: block;
 	width: 100%;
 	font-size: 14pt;
-	padding: 5px;
+	padding: 10px;
 	border: 1px solid #85929e;
 	border-radius: 5px;
 }
@@ -117,8 +119,8 @@ margin: 15px auto;
 }
 
 .Register_alert{
-	width: 100%
-	background: #27AE60;
+	width: 100%;
+	background: #66e07d66;
 	border-radius: 6px;
 	margin: 20px auto;
 }
