@@ -12,19 +12,23 @@
 				$user = mysqli_real_escape_string($conexion,$_POST['usuario']);
 				$pass = md5(mysqli_real_escape_string($conexion,$_POST['clave']));
 
-				$query = mysqli_query($conexion,"SELECT * FROM usuario WHERE Usuario = '$user' AND Contraseña = '$pass'");
+				$query = mysqli_query($conexion,"SELECT * FROM usuario WHERE Usuario = '$user' AND Contrasena = '$pass'");
 				$result = mysqli_num_rows($query);
 
 				if($result > 0 ){
 					$data = mysqli_fetch_array($query);
 					$_SESSION['active'] = true;
-					$_SESSION['idUser'] = $data['idusuario'];
-					$_SESSION['Nombre'] = $data['Nombre'];
+					$_SESSION['cedula'] = $data['Cedula'];
+					$_SESSION['Primer_Nombre'] = $data['Primer_Nombre'];
+					$_SESSION['Segundo_Nombre'] = $data['Segundo_Nombre'];
+					$_SESSION['Primer_Apellido'] = $data['Primer_Apellido'];
+					$_SESSION['Segundo_Apellido'] = $data['Segundo_Apellido'];
+					$_SESSION['Correo'] = $data['Email'];
 					$_SESSION['Telefono'] = $data['Telefono'];
-					$_SESSION['Correo'] = $data['Correo'];
+					$_SESSION['Direccion'] = $data['Direccion'];
 					$_SESSION['Usuario'] = $data['Usuario'];
-					$_SESSION['Contraseña'] = $data['Contraseña'];
-					$_SESSION['Codigo_rol'] = $data['Codigo_rol'];
+					$_SESSION['Contrasena'] = $data['Contrasena'];
+					$_SESSION['ID_Rol'] = $data['ID_Rol'];
 					header('location: Principal.php');
 				}else{
 					$alert = 'El usuario o la contraseña son incorrectos';
