@@ -9,11 +9,18 @@ if(!isset($Contenido)){
 <head> 
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="CSS/Estilo.css">
-	<title>Pets Home y los perrinis</title>
+	<title>Pets' Home </title>
 </head>
 <body>
 	<div class="header">
-		Titulo de la tienda
+	<header>
+	PETS' HOME
+	<figure>
+	<li ><img src="img/logoprincipal.png" alt=""></li>
+	</figure>
+	</header>
+
+		
 
 	</div>
 	<!--<nav class="navegacion">

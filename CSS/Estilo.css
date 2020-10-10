@@ -15,7 +15,14 @@ body{
 	font-weight: bold;
 	text-transform: uppercase;
 }
-
+.header figure {
+	width: 23px;
+	height: 23px;
+	padding:0;
+	margin-left: 20px;
+	margin-top: -55;
+	float: left;
+}
 .menu{
 	padding: 10px;
 	background: #a20808;
@@ -33,9 +40,9 @@ body{
 }
 
 .cuerpo{
-	background: #eaeaea;
-	padding: 30px;
-	min-height: 400px;
+	background: #a20808;
+	padding: 0px;
+	min-height: 495px;
 }
 
 .footer{
