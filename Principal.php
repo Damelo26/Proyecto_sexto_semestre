@@ -6,7 +6,7 @@ if(!isset($Contenido)){
 }
 ?>
 <html>
-<head>
+<head> 
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="CSS/Estilo.css">
 	<title>Pets Home y los perrinis</title>
