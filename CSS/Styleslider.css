@@ -1,7 +1,7 @@
 .slider{
     
     width: auto;
-    margin: 0;
+    margin: 0rem;
     overflow: hidden;
     padding:none;
     top:0;
@@ -9,16 +9,16 @@
 }
 .slider ul {
     display: flex;
-    padding: 0;
-    margin: 0;
+    padding: 0rem;
+    margin: 0rem;
     width: 400%;
     animation: cambio 20s infinite;
     animation-direction: alternate;
 }
 
 .slider li {
-    padding: 0;
-    margin: 0;
+    padding: 0rem;
+    margin: 0rem;
     width: 100%;
     list-style: none;
 }
