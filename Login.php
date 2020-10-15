@@ -2,7 +2,11 @@
 	$alert='';
 	session_start();	
 	if(!empty($_SESSION['active'])){
-		header('location: Principal.php');
+		if($_SESSION['ID_Rol'] == 1){
+			header('location: Modulos/Admin.php');
+		}else if($_SESSION['ID_Rol'] != 1){
+			header('location: Principal.php');
+		}	
 	}else{
 		if(!empty($_POST)){
 			if(empty($_POST['usuario']) || empty($_POST['clave'])){
@@ -29,7 +33,11 @@
 					$_SESSION['Usuario'] = $data['Usuario'];
 					$_SESSION['Contrasena'] = $data['Contrasena'];
 					$_SESSION['ID_Rol'] = $data['ID_Rol'];
-					header('location: Principal.php');
+					if($_SESSION['ID_Rol'] == 1){
+						header('location: Modulos/Admin.php');
+					}else if($_SESSION['ID_Rol'] != 1){
+						header('location: Principal.php');
+					}	
 				}else{
 					$alert = 'El usuario o la contraseña son incorrectos';
 					session_destroy();
