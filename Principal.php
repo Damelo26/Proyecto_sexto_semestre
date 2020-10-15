@@ -55,9 +55,32 @@ if(!isset($Contenido)){
 				}
 			?>
 		</div>
-		
+	
 	<div class="footer">
 		Copyright Nombre de la empresa &copy; <?=date("Y")?>
-	</div>	
+		<div class="footercontador">
+		
+		<a href="http://www.websmultimedia.com/contador-de-visitas-gratis" title="">
+		<img style="border: 0px solid; display: inline; margin-left:130px;
+		margin-top:-1;" alt="" src="http://www.websmultimedia.com/contador-de-visitas.php?id=285415"></a><br> Número de visitas<a href='http://www.websmultimedia.com/contador-de-visitas-gratis'></a><br><a href='http://www.websmultimedia.com/diseno-web/sevilla'></a>
+		</div>
+	</div>		
+	
+	<div class="hooter">
+		<li> 
+			<a href="https://www.facebook.com/"><img src="img/facebook.png"> </a>
+		</li>
+		<li> 
+			<a href="https://www.twitter.com/"><img src="img/twitter.png"> </a>
+		</li>
+		<li> 
+			<a href="https://www.instagram.com/"><img src="img/instagram.png"><img style=" margin-right:16px;
+			margin-top:-50;"> </a>
+		</li>	
+		
+	</div>
+			
+		
+
 </body>
 </html>

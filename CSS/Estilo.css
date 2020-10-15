@@ -82,5 +82,29 @@ font-family: 'Oswald', sans-serif; encabezados h2
 	color: #aaa;
 	text-align:center;
 	font-size: 10px;
-	padding: 50px;
+	padding: 30px;
+	height:40;
+}
+
+.footercontador{
+	background: #a20808;
+	text-align:right;
+	font-size: 11px;
+}
+
+.hooter{
+	background: #a20808;
+	text-align: center;
+	padding: 1px;
+	height:40;
+}
+
+.hooter li{
+	background: #a20808;
+	overflow: hidden;
+	display: inline-block;
+	padding:-40;
+	padding-left: 1rem;
+	list-style: none;
+	text-align: center;
 }
