@@ -17,6 +17,8 @@
 			$direccion = $_POST['direccion'];
 			$usuario = $_POST['usuario'];
 			$contraseña = md5($_POST['contraseña']);
+			$Primera_Letra = strtoupper($primernombre[0]);
+			$foto = '../img/Imagenes_Perfil/Perfil_'."$Primera_Letra".'.png';
 			$rol = $_POST['rol'];
 
 			$query = mysqli_query($conexion, "SELECT * FROM usuario WHERE usuario = '$usuario' OR email = '$correo'");
@@ -26,8 +28,8 @@
 				$Register_alert='<p class = "msg_error">El correo o el usuario ya existe.</p>';
 			}else{
 				$query_insert = mysqli_query($conexion, "INSERT INTO usuario(Cedula, Primer_Nombre, Segundo_Nombre,
-				Primer_Apellido, Segundo_Apellido, Email, Telefono, Direccion, Usuario, Contrasena, ID_Rol) VALUES('$cedula','$primernombre'
-				,'$segundonombre','$primerapellido','$segundoapellido','$correo','$telefono','$direccion','$usuario','$contraseña','$rol')");
+				Primer_Apellido, Segundo_Apellido, Email, Telefono, Direccion, Usuario, Contrasena, Imagen, ID_Rol) VALUES('$cedula','$primernombre'
+				,'$segundonombre','$primerapellido','$segundoapellido','$correo','$telefono','$direccion','$usuario','$contraseña','$foto','$rol')");
 				
 				if($query_insert){
 					$Register_alert='<p class = "msg_save">Usuario creado correctamente.</p>';

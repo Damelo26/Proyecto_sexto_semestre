@@ -62,7 +62,7 @@ if(!empty($_POST)){
                     <div class="Barra_Deslizadora_Interna">
                         <div class="perfil">
                             <div class="imagen">
-                                <img src = "../img/Imagenes_Perfil/Perfil_D.png" alt = "profile_pic">
+                                <img src = "<?php echo $_SESSION['Imagen']; ?>" alt = "profile_pic">
                             </div>
                             <div class="Info_Perfil">
                                 <p>Bienvenido</p>
@@ -99,7 +99,7 @@ if(!empty($_POST)){
                 </div>
                 <div class="Contenido">
                     <div class="Item_Contenido">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus dolore libero repellat est ipsam quibusdam voluptates hic, non, optio sit aut possimus commodi ipsum ratione voluptatibus aliquam officiis aperiam?
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus dolore libero repellat est ipsam quibusdam voluptates hic, non, optio sit aut possimus commodi ipsum ratione voluptatibus aliquam officiis aperiam?               
                     </div>
                     <div class="Item_Contenido">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus dolore libero repellat est ipsam quibusdam voluptates hic, non, optio sit aut possimus commodi ipsum ratione voluptatibus aliquam officiis aperiam?

@@ -32,6 +32,7 @@
 					$_SESSION['Direccion'] = $data['Direccion'];
 					$_SESSION['Usuario'] = $data['Usuario'];
 					$_SESSION['Contrasena'] = $data['Contrasena'];
+					$_SESSION['Imagen'] = $data['Imagen'];
 					$_SESSION['ID_Rol'] = $data['ID_Rol'];
 					if($_SESSION['ID_Rol'] == 1){
 						header('location: Modulos/Admin.php');
