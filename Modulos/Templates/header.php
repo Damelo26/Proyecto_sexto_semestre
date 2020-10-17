@@ -11,24 +11,22 @@
 </head>
 <body>
 <div class="Alinear_Header">
-	<div class="header">
-	<header>
-	PETS' HOME
-	<figure>
-	<li ><img src="img/logoprincipal.png" alt=""></li>
-	</figure>
-	<div class="perfil">
-                <div class="imagen">
+	<header class="header">
+		<figure>
+			<img src="img/logoprincipal.png" alt="">
+		</figure>
+		<p class="tamanoTitulo">PETS' HOME</p>
+		<div class="perfil">
+			<div class="imagen">
 				<img src="img/Imagenes_Perfil/Perfil_I.png" alt="">
-                </div>
-                 <div class="Info_Perfil">
-                <p>Bienvenido</p>
-                 <p class = "Perfil_Nombre"><?php echo "Invitado";?></p>
-                 </div>
-	</div>
-	</div>
+				</div>
+				<div class="Info_Perfil">
+				<p>Bienvenido</p>
+				<p class = "Perfil_Nombre"><?php echo "Invitado";?></p>
+			</div>
+		</div>
+	</header>	
 </div>
-	</header>
 	
 	
 	<div class= "menu">

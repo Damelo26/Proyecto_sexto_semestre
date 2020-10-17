@@ -8,12 +8,12 @@
 					<li><a href="#">Gatos</a></li>
 					<li><a href="#">Perros</a></li>
 					<li><a href="#">Tigres</a></li>
-				</ul>
-				 
+				</ul> 
 			</li>
 			<li><a href="#">Contacto</a></li>		
 		</ul>
 	</nav>-->
+	
 	<div class="contenedor">
 	
 		<div class="cuerpo">
@@ -23,5 +23,6 @@
 				
 			?>
 		</div>
+		
 <?php include_once 'Modulos/Templates/footer.php';?>
 	
