@@ -78,33 +78,67 @@ font-family: 'Oswald', sans-serif; encabezados h2
 	background: #8A0505;
 }
 .footer{
+	/*
 	background: #a20808;
 	color: #aaa;
 	text-align:center;
 	font-size: 10px;
 	padding: 30px;
 	height:40;
+	*/
 }
 
 .footercontador{
-	background: #a20808;
+	
+	margin: 0rem;
+	/*
 	text-align:right;
 	font-size: 11px;
+	*/
+}
+.Numero_Visitas{
+	
+	margin: 0rem 1rem;
 }
 
+/*
 .hooter{
 	background: #a20808;
 	text-align: center;
 	padding: 1px;
 	height:40;
 }
+*/
 
 .hooter li{
-	background: #a20808;
-	overflow: hidden;
+	/*background: #a20808;*/
+	/*overflow: hidden;*/
 	display: inline-block;
-	padding:-40;
-	padding-left: 1rem;
+	padding: 1rem;
+	/*padding-left: 1rem;*/
 	list-style: none;
 	text-align: center;
+}
+
+.Alinear_footer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #a20808;
+	height: 6.2rem;
+	
+	/*
+	background: #a20808;
+	text-align: center;
+	padding: 1px;
+	height:40;
+	*/
+}
+.Contador_Footer{
+	padding: 1rem;
+	/*
+	border: 0px solid; display: inline; margin-left:130px;
+	margin-top:-1;
+	*/
+
 }
