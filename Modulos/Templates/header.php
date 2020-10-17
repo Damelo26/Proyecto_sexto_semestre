@@ -20,7 +20,7 @@
 	<div class= "menu">
 			<a href="Principal.php">Principal</a>
 			<a href="Adopta.php">Adopta</a>
-			<a href="?p=contactenos">Contactenos</a>
+			<a href="Contactenos.php">Contactenos</a>
 			<a href="Registro_Usuario.php">Registrar usuario</a>
 			<a href="Login.php">Iniciar sesión</a>
 			<a href="Modulos/Exit.php">Salir</a>
