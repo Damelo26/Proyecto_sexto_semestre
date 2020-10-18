@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff; /*Color del fondo en reguntas frecuentes*/
+    color: #000; /*Color de la fuente en preguntas frecuentes*/
+}
+
+h1{
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+
+.Acordeon{
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.Item_Acordeon{
+    background-color: #fff;    /*Color del fondo de los acordeones de las preguntas frecuentes*/
+    color: #111; /*Color de la letra en el acordeon de preguntas frecuentes*/
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5);
+}
+
+.Header_Item_Acordeon{
+    padding: 0.5rem 3rem 0.5rem 1rem;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.Header_Item_Acordeon::after{
+    content: "\002B";   /*Codigo CSS del simbolo +*/
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    transition: transform 0.2s ease-in-out; /*El tiempo que tarde en transformarse el simbolo + a - y - a +*/
+}
+
+.Header_Item_Acordeon.active::after{
+    content: "\2212";  /*Codigo CSS del simbolo -*/
+    transform: rotate(360deg);   /*Hace girar el simbolo antes de transformarse*/
+}
+
+.Body_Item_Acordeon{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.Contenido_Body_Item_Acordeon{
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 2px solid;
+    border-image: linear-gradient(to right, transparent, #000, transparent) 1;  /*Color de la linea de color negro que aparece cuando dan click en la pregunta*/
+}
+

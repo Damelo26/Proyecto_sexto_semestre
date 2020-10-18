@@ -2,7 +2,7 @@
 
     session_start();
     if(!isset($_SESSION['ID_Rol'])){
-	   $imagen="img/Imagenes_Perfil/Perfil_I.png";
+	   $imagen="img/Imagenes_Perfil/Perfil_Invitado.png";
 	   $usuario="Invitado";
     }else{
         if($_SESSION['ID_Rol'] >0){
@@ -23,7 +23,9 @@
 	<title>Pets' Home </title>
 	<link rel="stylesheet" href="CSS/normalize.css"> <!--Esta libreria es importante ya que nos hara que en todo lado el cod se vea igual /Lo normaliza/-->
     <script src = "https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="JavaScript/FAQ.js" defer></script>
+	<link rel="stylesheet" href="CSS/EstiloFAQ.css">
 </head>
 <body>
 <div class="Alinear_Header">
@@ -53,6 +55,7 @@
 			<a href="Principal.php">Principal</a>
 			<a href="Adopta.php">Adopta</a>
 			<a href="Contactenos.php">Contactenos</a>
+			<a href="Preguntas.php">Preguntas frecuentes</a>
 			<a href="Registro_Usuario.php">Registrar usuario</a>
 			<a href="Login.php">Iniciar sesión</a>
 			<a href="Modulos/Exit.php">Salir</a>
