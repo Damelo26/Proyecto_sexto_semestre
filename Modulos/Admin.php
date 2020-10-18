@@ -62,7 +62,7 @@ if(!empty($_POST)){
                     <div class="Barra_Deslizadora_Interna">
                         <div class="perfil">
                             <div class="imagen">
-                                <img src = "<?php echo $_SESSION['Imagen']; ?>" alt = "profile_pic">
+                                <img src = "<?php echo '../',$_SESSION['Imagen']; ?>" alt = "profile_pic">
                             </div>
                             <div class="Info_Perfil">
                                 <p>Bienvenido</p>

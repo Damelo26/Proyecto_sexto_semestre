@@ -1,3 +1,19 @@
+<?php
+
+    session_start();
+    if(!isset($_SESSION['ID_Rol'])){
+	   $imagen="img/Imagenes_Perfil/Perfil_I.png";
+	   $usuario="Invitado";
+    }else{
+        if($_SESSION['ID_Rol'] >0){
+			$usuario=$_SESSION['Primer_Nombre']." ".$_SESSION['Primer_Apellido'];
+			$imagen=$_SESSION['Imagen'];
+        }
+    }
+
+?>
+
+
 <html>
 <head> 
 	<meta charset="UTF-8">
@@ -16,14 +32,18 @@
 			<img src="img/logoprincipal.png" alt="">
 		</figure>
 		<p class="tamanoTitulo">PETS' HOME</p>
+		
 		<div class="perfil">
-			<div class="imagen">
-				<img src="img/Imagenes_Perfil/Perfil_I.png" alt="">
+				
+				<div class="imagen">
+			<img src="<?php echo $imagen; ?>" >
 				</div>
 				<div class="Info_Perfil">
 				<p>Bienvenido</p>
-				<p class = "Perfil_Nombre"><?php echo "Invitado";?></p>
+				<p class = "Perfil_Nombre"><?php echo $usuario;?></p>
+				
 			</div>
+			
 		</div>
 	</header>	
 </div>
@@ -39,3 +59,4 @@
 		</div>
 
 	</div>
+		
