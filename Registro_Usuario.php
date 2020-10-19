@@ -43,7 +43,7 @@
 ?>
 
 <?php include_once 'Modulos/Templates/header.php';  ?>
-	<section id="container">
+<section id="containerregistro">
 		<div class="form_register">
 			<h1>Registro usuario</h1>
 			<hr>
@@ -97,4 +97,5 @@
 			</form>
 		</div>
 	</section>
+					
 	<?php include_once 'Modulos/Templates/footer.php';?>

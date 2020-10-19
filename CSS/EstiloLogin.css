@@ -1,0 +1,188 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#contenedorlogin{
+	background-image: url(../img/loginfono.png);
+    background-repeat:no-repeat ;
+    background-size: cover;
+	width: 1350px;
+    height: 500px;
+    display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#contenedorlogin form{
+	background: rgb(235, 229, 229);
+	width: 350px;
+    padding: 10px;
+    margin: 0 auto;
+    
+}
+
+#contenedorlogin form img{
+	margin: 15px auto;
+	text-align: center;
+	display: block;
+}
+
+#contenedorlogin form input{
+	width: 90%;
+	padding: 5px;
+	font-size: 16pt;
+	display: block;
+	margin: 2px auto;
+	border-radius: 5px;
+	border: 1px solid #34495E ;
+	text-align: left;
+}
+
+#contenedorlogin form input[type="submit"]{
+	background: blue;
+	padding: 10px;
+	color:#FFF;
+	letter-spacing: 1px;
+	border: 0;
+	cursor: pointer;
+	margin: 15px auto;
+	text-align: center;
+}
+
+h3{
+font-family: 'Arial';
+font-size: 14pt;
+letter-spacing: 1px;
+width: 100%;
+background: #5499C7;
+padding: 15px;
+color: #FFF;
+text-align: center;
+text-transform: uppercase;
+}
+
+
+
+#containerregistro{
+    background-image: url(../img/fondoregistrou.png);
+    background-repeat:no-repeat ;
+    background-size: cover;
+    width: 1350px;
+    height: 1100px;
+    display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    
+}
+
+#containerregistro form{
+    
+	background: rgb(243, 239, 236);
+	width: 350px;
+    padding: 10px;
+    
+}
+
+#containerregistro form img{
+	margin: 15px auto;
+	text-align: center;
+	display: block;
+}
+
+#containerregistro form input{
+	width: 100%;
+	padding: 10px;
+	font-size: 16pt;
+	display: block;
+	margin: 2px auto;
+	border-radius: 5px;
+	border: 1px solid #34495E ;
+    text-align: left;
+    display: block;
+}
+
+#containerregistro form input[type="submit"]{
+	background: rgb(33, 85, 32);
+	padding: 10px;
+	color:#FFF;
+	letter-spacing: 1px;
+	border: 0;
+	cursor: pointer;
+	margin: 15px auto;
+	text-align: center;
+}
+
+.alert{
+	font-family: 'Arial';
+	font-size: 16px;
+	text-align: center;
+}
+
+.form_register{
+	width: 450px;
+	margin: auto;
+}
+
+.form_register h1{
+	color: #000;
+}
+
+hr{
+	border: 0;
+	background: #000;
+	height: 1px;
+	margin: 16px 0;
+    display: block;
+   
+}
+
+label{
+	display: block;
+	font-size: 14pt;
+	font-family: 'Arial';
+    margin: 15px auto 5px auto;
+    
+}
+
+.Btn_save{
+font-size: 12pt;
+background: #27AE60;
+padding: 10px;
+color: #FFF;
+letter-spacing: 1px;
+border: 0;
+cursor: pointer;
+margin: 15px auto;
+}
+
+.Register_alert{
+	width: 100%;
+	background: #27AE60;
+	border-radius: 6px;
+	margin: 20px auto;
+}
+
+.msg_error{
+	color: #e65656;
+}
+
+.msg_save{
+	color: #126e00;
+}
+
+.Register_aler p{
+padding: 10px;
+}
+
+
+

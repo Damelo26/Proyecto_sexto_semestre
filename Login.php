@@ -47,14 +47,8 @@
 	}
 }
  ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="CSS/Stylesesion.css">
-</head>
-<body>
-	<section id="container">	
+<?php include_once 'Modulos/Templates/header.php';  ?>
+	<section id="contenedorlogin">	
 		<form action="" method="post">
 			<h3>Iniciar sesion</h3>
 			<img src="img/Inicio_Sesion65.png" alt="Login">
@@ -64,5 +58,4 @@
 			<input type="submit" value="Ingresar">
 		</form> 
 	</section>
-</body>
-</html>
+	<?php include_once 'Modulos/Templates/footer.php';?>
