@@ -76,3 +76,10 @@ label{
 	width: 1350px;
 	height: 480px;
 }
+#mostrar{
+    background-image: url(../img/Quienes.gif);
+    background-repeat:no-repeat ;
+    background-size: cover;
+	width: 1350px;
+	height: 600px;
+}

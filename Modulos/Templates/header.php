@@ -58,6 +58,7 @@
 			<a href="Preguntas.php">Preguntas frecuentes</a>
 			<a href="Registro_Usuario.php">Registrar usuario</a>
 			<a href="Login.php">Iniciar sesión</a>
+			<a href="Quienes.php">Quienes somos</a>
 			<a href="Modulos/Exit.php">Salir</a>
 		</div>
 
