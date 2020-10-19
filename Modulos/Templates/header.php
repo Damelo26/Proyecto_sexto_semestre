@@ -21,7 +21,7 @@ if(!isset($_SESSION)){
 	<meta charset="UTF-8">
 	
 	<link rel="stylesheet" type="text/css" href="CSS/EstiloLogin.css">
-	
+	<link rel="stylesheet" type="text/css" href="CSS/EstiloContacto.css">
 	<link rel="stylesheet" href="CSS/Estilo.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Oswald:wght@200;300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<title>Pets' Home </title>

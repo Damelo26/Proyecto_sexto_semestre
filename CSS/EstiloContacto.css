@@ -1,12 +1,19 @@
-#container{
+#containercontacto{
     background-image: url(../img/Contacto.png);
     background-repeat:no-repeat ;
     background-size: cover;
 	width: 1350px;
-	height: 480px;
+    height: 480px;
+    display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-#container form{
+#containercontacto form{
 	background: rgba(230, 235, 229, 0.418);
     width: 500px;
     padding: 10px;
@@ -15,14 +22,14 @@
 h1{
     color: white;
     margin-top: -20px;
-    font-size: 20pt;
+    font-size: 10pt;
 }
 
-#container form input{
+#containercontacto form input{
     height: 30px;
 }
 
-#container form input, textarea{
+#containercontacto form input, textarea{
     font-size: 10pt;
     padding:5px;
     color: #131111;
@@ -35,20 +42,20 @@ h1{
 	border: 1px solid #34495E ;
 }
 
-#container form textarea{
+#containercontacto form textarea{
     min-height: 80px;
     max-height: 100px;
     max-width: 100%;
 }
 
-#container form input[type=submit]{
+#containercontacto form input[type=submit]{
     color: #d5e6da;
     background: #974f4f;
     width:100px;
     text-align: center;
 }
 
-#container form input[type=submit]:hover{
+#containercontacto form input[type=submit]:hover{
     cursor: pointer;
 }
 
