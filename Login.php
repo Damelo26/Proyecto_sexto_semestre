@@ -3,7 +3,7 @@
 	session_start();	
 	if(!empty($_SESSION['active'])){
 		if($_SESSION['ID_Rol'] == 1){
-			header('location: Modulos/Admin.php');
+			header('location: Principal_Admin.php');
 		}else if($_SESSION['ID_Rol'] != 1){
 			header('location: Principal.php');
 		}	
@@ -35,7 +35,7 @@
 					$_SESSION['Imagen'] = $data['Imagen'];
 					$_SESSION['ID_Rol'] = $data['ID_Rol'];
 					if($_SESSION['ID_Rol'] == 1){
-						header('location: Modulos/Admin.php');
+						header('location: Principal_Admin.php');
 					}else if($_SESSION['ID_Rol'] != 1){
 						header('location: Principal.php');
 					}	

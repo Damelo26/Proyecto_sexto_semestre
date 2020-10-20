@@ -218,7 +218,7 @@
     width: 80px;
 }
 
-.Envoltura.active .Barra_Deslizadora ul li a span.titulo, .Envoltura.active .Barra_Deslizadora .Perfil_Nombre{
+.Envoltura.active .Barra_Deslizadora ul li a span.titulo, .Envoltura.active .Barra_Deslizadora .Perfil_Nombre, .Envoltura.active .Barra_Deslizadora .Info_Perfil{
     display: none;
 }
 

@@ -18,9 +18,11 @@ if(!empty($_POST)){
 <head>
     <meta charset="UTF-8">
 	<title>Pets Home</title>
-    <link rel="stylesheet" href="../CSS/EstiloAdmin.css">
+    <link rel="stylesheet" href="CSS/EstiloAdmin.css">
+    <link rel="stylesheet" type="text/css" href="CSS/EstiloLogin.css">
     <script src = "https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="JavaScript/Admin.js" defer></script>
     <script>
         $(document).ready(function(){
             $(".menu_derecho li .fas").click(function(){
@@ -50,7 +52,7 @@ if(!empty($_POST)){
                     <ul>
                         <li><i class="fas fa-user-tie"></i>
                             <div class="menu_perfil">
-                                <div class="item_menu_perfil"><a href="Exit.php">Salir</a></div>
+                                <div class="item_menu_perfil"><a href="Modulos/Exit.php">Salir</a></div>
                             </div>
                         </li>
                     </ul>
@@ -62,7 +64,7 @@ if(!empty($_POST)){
                     <div class="Barra_Deslizadora_Interna">
                         <div class="perfil">
                             <div class="imagen">
-                                <img src = "<?php echo '../',$_SESSION['Imagen']; ?>" alt = "profile_pic">
+                                <img src = "<?php echo $_SESSION['Imagen']; ?>" alt = "profile_pic">
                             </div>
                             <div class="Info_Perfil">
                                 <p>Bienvenido</p>
@@ -71,25 +73,25 @@ if(!empty($_POST)){
                         </div>
                         <ul>
                             <li>
-                                <a href="#" class="active">
+                                <a href="Estadistica_Admin.php" class="active">
                                     <span class="icon"><i class="fas fa-chart-bar"></i></span>
                                     <span class="titulo">Estadisticas</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="Registrar_Admin.php">
                                     <span class="icon"><i class="fas fa-paw"></i></span>
                                     <span class="titulo">Registrar</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="Administrar_Mascotas_Admin.php">
                                     <span class="icon"><i class="fas fa-feather-alt"></i></span>
                                     <span class="titulo">Administrar</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="Adoptado_Admin.php">
                                     <span class="icon"><i class="fas fa-bone"></i></span>
                                     <span class="titulo">Adoptado</span>
                                 </a>
@@ -97,21 +99,5 @@ if(!empty($_POST)){
                         </ul>
                     </div>
                 </div>
-                <div class="Contenido">
-                    <div class="Item_Contenido">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus dolore libero repellat est ipsam quibusdam voluptates hic, non, optio sit aut possimus commodi ipsum ratione voluptatibus aliquam officiis aperiam?               
-                    </div>
-                    <div class="Item_Contenido">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus dolore libero repellat est ipsam quibusdam voluptates hic, non, optio sit aut possimus commodi ipsum ratione voluptatibus aliquam officiis aperiam?
-                    </div>
-                    <div class="Item_Contenido">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus dolore libero repellat est ipsam quibusdam voluptates hic, non, optio sit aut possimus commodi ipsum ratione voluptatibus aliquam officiis aperiam?
-                    </div>
-                    <div class="Item_Contenido">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore delectus dolore libero repellat est ipsam quibusdam voluptates hic, non, optio sit aut possimus commodi ipsum ratione voluptatibus aliquam officiis aperiam?
-                    </div>
-                </div>
-            </div>
-    </div>
-</body>
-</html>
+    
+                
