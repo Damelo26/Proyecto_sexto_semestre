@@ -184,51 +184,5 @@ margin: 15px auto;
 padding: 10px;
 }
 
-/*Estilos para la tabla de modificar mascotas del administrador*/
-
-#Contenedor_Administrar_Mascotas h1{
-	font-size: 30 px;
-	display: inline-block;
-}
-
-.Btn_Nuevo_Administrar_Mascota{
-	display: inline-block;
-	background: #5ce088;
-	color: #FFF;
-	padding: 5px;
-	border-radius: 4px;
-	margin: 20px;
-}
-
-table{
-	border-collapse: collapse;
-	font-size: 12pt;
-	font-family: 'arial';
-	width: 100%;
-}
-
-table th{
-	text-align: left;
-	padding: 10px;
-	background: #36a5d8;
-	color: #FFF;
-}
-
-table tr:mth-child(odd){
-	background: #FFF;
-}
-
-table td{
-	padding: 8px;
-}
-
-.Link_Modificar_Mascota{
-	color: #0cce6d;
-}
-
-.Link_Borrar_Mascota{
-	color: #ee6a4a;
-}
-
 
 
