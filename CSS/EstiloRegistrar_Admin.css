@@ -1,0 +1,110 @@
+#Conteiner_Registro_Mascota{
+    padding: 90px 15px 15px;
+}
+
+.Formulario_Registro_Mascota{
+    width: 450px;
+    margin: auto;
+}
+
+.Formulario_Registro_Mascota h1{
+    color: #000;
+}
+
+form{
+    background: #FFF;
+    margin: auto;
+    padding: 20px 50px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+label{
+    display: block;
+    font-size: 14pt;
+    font-family: 'arial';
+    margin: 15px auto 5px auto;
+}
+
+input,select{
+    display: block;
+    width: 100%;
+    font-size: 14pt;
+    padding: 5px;
+    border: 1px solid #85929e;
+    border-radius: 5px;
+}
+
+/*Estilos para mostrar la foto de la mascota en el registro
+
+.prevPhoto {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+    height: 150px;
+    border: 1px solid #CCC;
+    position: relative;
+    cursor: pointer;
+    background: url(../images/uploads/user.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin: auto;
+}
+
+.prevPhoto label{
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.prevPhoto img{
+	width: 100%;
+	height: 100%;
+}
+
+.upimg, .notBlock{
+	display: none !important;
+}
+
+.errorArchivo{
+	font-size: 16px;
+	font-family: arial;
+	color: #cc0000;
+	text-align: center;
+	font-weight: bold; 
+	margin-top: 10px;
+}
+
+.delPhoto{
+	color: #FFF;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	background: red;
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	z-index: 10;
+}
+
+#tbl_list_productos img{
+	width: 50px;
+}
+
+.imgProductoDelete{
+	width: 175px;
+}
+
+*/
