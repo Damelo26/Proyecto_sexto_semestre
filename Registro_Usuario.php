@@ -45,7 +45,7 @@
 <?php include_once 'Modulos/Templates/header.php';  ?>
 <section id="containerregistro">
 		<div class="form_register">
-			<h1>Registro usuario</h1>
+			<h1><i class="fas fa-user-plus"></i>Registro usuario</h1>
 			<hr>
 			<div class = "Register_alert"><?php echo isset($Register_alert) ? $Register_alert : ''; ?></div>
 			<form action="" method="post">
@@ -93,7 +93,7 @@
 					?>
 					
 				</select>
-				<input type="submit" value="Crear usuario" class="Btn_save">
+				<button class="Btn_save" type="submit"><i class="far fa-save"></i> Registrar usuario</button>
 			</form>
 		</div>
 	</section>

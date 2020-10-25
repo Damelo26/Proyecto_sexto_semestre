@@ -7,22 +7,21 @@
             header('location: ../Principal.php');
         }
     }
-if(!empty($_POST)){
-    
-    header('location: Modulos/Exit.php');
-}
 ?>
 
 <!DOCTYPE html>
 <html lang = "en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <meta charset="UTF-8">
-	<title>Pets Home</title>
+    <title>Pets Home</title>
     <link rel="stylesheet" href="CSS/EstiloAdmin.css">
-    <link rel="stylesheet" type="text/css" href="CSS/EstiloLogin.css">
+    <link rel="stylesheet" href="CSS/EstiloLogin.css">
+    <link rel="stylesheet" href="CSS/EstiloRegistrar_Admin.css">
     <script src = "https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="JavaScript/Admin.js" defer></script>
+    <script src="JavaScript/Foto_Mascota.js" defer></script>
     <script>
         $(document).ready(function(){
             $(".menu_derecho li .fas").click(function(){

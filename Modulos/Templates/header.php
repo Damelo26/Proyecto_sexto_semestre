@@ -56,14 +56,15 @@ if(!isset($_SESSION)){
 	
 	
 	<div class= "menu">
-			<a href="Principal.php">Principal</a>
-			<a href="Adopta.php">Adopta</a>
-			<a href="Contactenos.php">Contactenos</a>
-			<a href="Preguntas.php">Preguntas frecuentes</a>
-			<a href="Registro_Usuario.php">Registrar usuario</a>
-			<a href="Login.php">Iniciar sesión</a>
-			<a href="Quienes.php">Quienes somos</a>
-			<a href="Modulos/Exit.php">Salir</a>
+			<a href="Principal.php"><i class="fas fa-home"></i> Principal</a>
+			<a href="Adopta.php"><i class="fas fa-dog"></i> Adopta</a>
+			<a href=""><i class="fas fa-heart"></i> Adoptados</a>
+			<a href="Contactenos.php"><i class="fas fa-paper-plane"></i> Contactenos</a>
+			<a href="Preguntas.php"><i class="fas fa-envelope-open-text"></i> Preguntas</a>
+			<a href="Registro_Usuario.php"><i class="fas fa-user-plus"></i> Registrar usuario</a>
+			<a href="Login.php"><i class="fas fa-user"></i> Iniciar sesión</a>
+			<a href="Quienes.php"><i class="far fa-address-book"></i> Quienes somos</a>
+			<a href="Modulos/Exit.php"><i class="fas fa-times-circle"></i> Salir</a>
 		</div>
 
 	</div>

@@ -155,14 +155,16 @@ label{
 }
 
 .Btn_save{
-font-size: 12pt;
-background: #27AE60;
+font-size: 14pt;
+background: #07a046;
 padding: 10px;
 color: #FFF;
 letter-spacing: 1px;
 border: 0;
 cursor: pointer;
-margin: 15px auto;
+margin: 20px auto 15px auto;
+display: block;
+border-radius: 6px;
 }
 
 .Register_alert{
