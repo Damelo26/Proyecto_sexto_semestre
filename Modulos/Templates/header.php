@@ -23,11 +23,7 @@ if(!isset($_SESSION)){
 	<link rel="stylesheet" type="text/css" href="CSS/EstiloLogin.css">
 	<link rel="stylesheet" type="text/css" href="CSS/EstiloContacto.css">
 	<link rel="stylesheet" href="CSS/Estilo.css">
-<<<<<<< Updated upstream
 	<link rel="stylesheet" href="CSS/Styleslider.css">
-=======
-	<link rel="stylesheet" href="CSS/Estilos_adopta.css" media="screen" title="no title">
->>>>>>> Stashed changes
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Oswald:wght@200;300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<title>Pets' Home </title>
 	<link rel="stylesheet" href="CSS/normalize.css"> <!--Esta libreria es importante ya que nos hara que en todo lado el cod se vea igual /Lo normaliza/-->

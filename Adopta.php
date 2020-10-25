@@ -1,11 +1,14 @@
 <?php include_once 'Modulos/Templates/header.php';  ?>
 <?php /*Consulta a la base de datos*/    
-try{
-    require_once "Configuraciones/Funciones.php";
-    $sql = "SELECT Nombre_Mascota, ID_Categoria FROM mascotas";
-    $resultado = $conexion->query($sql);
+    try{
+        require_once "Configuraciones/Funciones.php";
+        $sql = "SELECT Nombre_Mascota, ID_Categoria FROM mascotas";
+        $resultado = $conexion->query($sql);
+     }catch(\Exeption $e){
+        echo $e->getMessage(); 
 
-
+    }
+?>
    
     <?php/*
         $conexion->close();
@@ -76,10 +79,6 @@ try{
 
         </ul>
     </section>
-    <section>
-        <div>
-            <p>Hola</p>
-        </div>
-    </section>
+   
    
 <?php include_once 'Modulos/Templates/footer.php';  ?>
