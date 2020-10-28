@@ -1,10 +1,15 @@
-/*INVITADOS**/
-ul.lista_mascotas {
+
+/*
+ul.lista_adoptados {
     margin: 3rem;
-}
-ul.lista_mascotas li{
-    /*padding: 10px;*/
     display: inline-block;
+
+    
+
+}
+ul.lista_adoptados li{
+    /*padding: 10px;*/
+  /*  display: inline-block;
     list-style: none;
     padding: 10px;
     margin: 0;
@@ -13,7 +18,7 @@ ul.lista_mascotas li{
     
     }
 
-.Frase_Oculta{
+.Frase_OcultaA{
     display: none;
     position: absolute;
     bottom: 0;
@@ -26,43 +31,43 @@ ul.lista_mascotas li{
 }
 
 
-ul.lista_mascotas li:hover .Frase_Oculta {
+ul.lista_adoptados li:hover .Frase_OcultaA {
     display: block;
     }
 
 
 
 @media only screen and (min-width:480px){
-        ul.lista_mascotas li {
+        ul.lista_adoptados li {
             width: 49%;
             /*Arreglar la letra al hacerse chiquito*/
-        }
+       /* }
     } 
 @media only screen and (min-width:768px){
-        ul.lista_mascotas li {
-            width: 30%;
+        ul.lista_adoptados li {
+            width: 10%;
         }
     } 
 
-div.mascota{
+div.adoptados{
     position: relative;
     overflow: hidden;
 }
 
-div.mascota img{
+div.adoptados img{
     max-width: 100%;
     /*-webkit-filter: grayscale(0); */
-    -webkit-transition: all .3s ease-in-out;
-}
+   /* -webkit-transition: all .3s ease-in-out;
+/*}
 
-div.mascota:hover img{  
+div.adoptados:hover img{  
     filter: gray;
     -webkit-filter: grayscale(1);
     -webkit-transform: scale(1.3);
     transform: rotate(3deg);
 }
 
-div.mascota p {
+div.adoptados p {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -80,24 +85,21 @@ div.mascota p {
     -webkit-transition: all .3s ease-in-out; 
 }
 
-div.mascota:hover .Nombre_Mascota{
+div.adoptados:hover .Nombre_Adop{
     bottom: -80px;
     opacity: 0;
 }
 
-div.mascota:hover .Frase_Oculta{
+div.adoptados:hover .Frase_OcultaA{
     display: block;
 }
-.cinta {
+.cint {
     position: relative;
     text-align: center;
     display: inline-block; *display: inline; zoom: 1;
     /*margin: 20px auto 10px;*/
-    }
-    .uno:before,
-    .dos:before, .dos:after,
-    .tres:before, .tres:after,
-    .cuatro:before, .cuatro:after {
+   /* }
+    .q:before {
     content: "";
     display: block;
     width: 35%;
@@ -111,16 +113,16 @@ div.mascota:hover .Frase_Oculta{
     box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
     }
     /* Esto es sólo algo de estilo adicional para la imagen */
-    .cinta img {
+    /*.cint img {
     display: inline-block; *display: inline; zoom: 1;
     /*border: 1px solid #ddd;*/
     /*margin: 0 20px;*/
-    padding: 8px;
+   /* padding: 8px;
     padding-bottom: 4px;
     /*background: #fff;*/
-    text-align:center;
+   /* text-align:center;
     /*vertical-align:top;*/
-    -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+    /*-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
     -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
     box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
     
@@ -128,9 +130,3 @@ div.mascota:hover .Frase_Oculta{
 
 
 
-
-
-
-
-   
-   

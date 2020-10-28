@@ -263,3 +263,28 @@
     font-size: 16px;
     font-weight: 300;
 }
+#Contenedor_Adoptados_Mascotas form {
+    color: #d5e6da;
+    border:0;
+    padding: 6px;
+	justify-content: center;
+}
+
+.Btn_Apr{
+    color: #ffffff;
+    padding: 5px;
+   
+    width:80px;
+    text-align: center;
+    background-color: rgb(107, 240, 107);
+    font-size: 10px;
+}
+.Btn_Rech{
+    color: #ffffff;
+    padding: 5px;
+   
+    width:80px;
+    text-align: center;
+    background-color: rgb(250, 16, 16); 
+    font-size: 10px;
+}
