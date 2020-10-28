@@ -71,7 +71,8 @@
 .Top .menuadmin .logo{
     color: #fff;       /*Color del titulo*/
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    font-size: 20px;
 }
 
 .Top .menuadmin .menu_derecho ul li{
@@ -109,12 +110,22 @@
     color: #fff;
 }
 
+.Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil .fas{
+    color: #fff;
+    font-size: 16px;
+}
+
 .Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil:hover{
     background: #fff;    /*Color de una opcion del submenu cuando pasa el mouse sobre él*/
 }
 
 .Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil:hover a{
     color: #000;
+}
+
+.Top .menuadmin .menu_derecho ul li .menu_perfil .item_menu_perfil:hover .fas{
+    color: #000;
+    font-size: 16px;
 }
 
 .Top .menuadmin .menu_derecho ul li .menu_perfil:before{
@@ -230,38 +241,82 @@
 .Contenido_Cartas_Estadisticos{
     width: 100%;
     max-width: 1200px;
-    height: 430px;
+    height: 215px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
 }
 
-.Contenido_Cartas_Estadisticos .Carta_Estadisticos{
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios{
     width: 300px;
-    height: 100px;
+    height: 125px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin: 20px;
     text-align: center;
     transition: all 0.25s;
-    background: rgb(27, 172, 75);
 }
 
-.Contenido_Cartas_Estadisticos .Carta_Estadisticos:hover{
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados{
+    background: rgb(74, 212, 92);
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion{
+    background: rgb(236, 214, 90);
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios{
+    background: rgb(75, 146, 226);
+}
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados:hover, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion:hover, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios:hover{
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
-.Contenido_Cartas_Estadisticos .Carta_Estadisticos h4{
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados h4, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion h4, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios h4{
     font-weight: 600;
+    margin-top: 10px;
 }
 
-.Contenido_Cartas_Estadisticos .Carta_Estadisticos p{
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados p, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion p, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios p{
     padding: 0 1rem;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 300;
+}
+
+.Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados h5, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion h5, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios h5{
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.Caja_Estadisticos_Administrador{
+    margin: auto;
+    max-width: 250px;
+    padding: 20px;
+    border: 1px solid #BDBDBD;
+}
+
+.Caja_Estadisticos_Administrador select{
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.Resultados_Estadisticos_Administrador{
+    margin: auto;
+    margin-top: 45px;
+    width: 1000px;
+}
+
+.Contenedor_Grafica{
+    text-align: center;
+}
+
+.Contenedor_Grafica h2{
+    text-align: center;
+    font-size: 24px;
 }
 #Contenedor_Adoptados_Mascotas form {
     color: #d5e6da;
@@ -287,4 +342,49 @@
     text-align: center;
     background-color: rgb(250, 16, 16); 
     font-size: 10px;
+}
+
+#Fecha_Grafica_Estadistica{
+    padding: 90px 15px 15px;
+}
+
+.Fecha_Estadistico_Administrador{
+    width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.Fecha_Estadistico_Administrador form{
+    background: #FFF;
+    margin: auto;
+    padding: 20px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.Fecha_Estadistico_Administrador label{
+    display: block;
+    font-size: 14pt;
+    font-family: 'arial';
+    margin: 10px auto 5px auto;
+}
+
+.Fecha_Estadistico_Administrador input{
+    display: block;
+    width: 100%;
+    font-size: 14pt;
+    padding: 5px;
+    border: 1px solid #85929e;
+    border-radius: 7px;
+    margin: 7px;
+}
+
+.Btn_Fecha_Search{
+    color: #ffffff;
+    padding: 5px;
+    width:100px;
+    text-align: center;
+    background-color: rgb(36, 150, 36);
+    font-size: 16px;
+    border-radius: 5px;
 }

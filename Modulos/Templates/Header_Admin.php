@@ -91,8 +91,14 @@
                             </li>
                             <li>
                                 <a href="Adoptado_Admin.php">
+                                    <span class="icon"><i class="fas fa-users"></i></span>
+                                    <span class="titulo">Solicitudes</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
                                     <span class="icon"><i class="fas fa-bone"></i></span>
-                                    <span class="titulo">Adoptado</span>
+                                    <span class="titulo">Adoptados</span>
                                 </a>
                             </li>
                         </ul>
