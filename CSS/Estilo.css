@@ -82,10 +82,11 @@ body{
 .menu{
 	display: flex;
 	align-items: center;
-	padding: 1rem;
+	padding: 2rem;
 	background: #353535;
 	margin: 0rem;
 	justify-content: center;
+	text-align: center;
 }
 /*
 font-family: 'PT Sans', sans-serif; h1
@@ -95,8 +96,8 @@ font-family: 'Oswald', sans-serif; encabezados h2
 	text-decoration: none;
 	color: #fff;
 	background: #353535;
-	padding: 0.5rem;
-	padding-left: 3.5rem;
+	padding: 0.2rem;
+	padding-left: 1rem;
 	display: inline-block;
 }
 
