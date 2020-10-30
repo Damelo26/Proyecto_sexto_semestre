@@ -5,6 +5,8 @@
     $Resultado_Adopcion = mysqli_num_rows($Total_Adoptacion);
     $Total_Adoptados = mysqli_query($conexion,"SELECT * FROM mascotas WHERE ID_Estado = '2'");
     $Resultado_Adoptados = mysqli_num_rows($Total_Adoptados);
+    $Total_Proceso = mysqli_query($conexion,"SELECT * FROM mascotas WHERE ID_Estado = '3'");
+    $Resultado_Proceso = mysqli_num_rows($Total_Adoptados);
     $Total_Usuarios = mysqli_query($conexion,"SELECT * FROM usuario WHERE ID_Rol = '2'");
     $Resultado_Usuarios = mysqli_num_rows($Total_Usuarios);
 
@@ -59,31 +61,40 @@
 <div class="Contenido">
     <div class="Contenido_Cartas_Estadisticos">
         <div class="Carta_Estadisticos_Adopcion">
-            <h4>Mascotas en adopción</h4>
+            <h5>Mascotas en adopción</h5>
             <p>
                 <?php
                     echo $Resultado_Adopcion;
                 ?>
             </p>
-            <h5>Pets' Home</h5>
+            <h7>Pets' Home</h7>
         </div>
         <div class="Carta_Estadisticos_Adoptados">
-            <h4>Mascotas adoptadas</h4>
+            <h5>Mascotas adoptadas</h5>
             <p>
                 <?php
                     echo $Resultado_Adoptados;
                 ?>
             </p>
-            <h5>Pets' Home</h5>
+            <h7>Pets' Home</h7>
         </div>
-        <div class="Carta_Estadisticos_Usuarios">
-            <h4>Usuarios registrados</h4>
+        <div class="Carta_Estadisticos_Proceso">
+            <h5>Mascotas en proceso</h5>
             <p>
                 <?php
-                    echo $Resultado_Usuarios ;
+                    echo $Resultado_Proceso;
                 ?>
             </p>
-            <h5>Pets' Home</h5>
+            <h7>Pets' Home</h7>
+        </div>
+        <div class="Carta_Estadisticos_Usuarios">
+            <h5>Usuarios registrados</h5>
+            <p>
+                <?php
+                    echo $Resultado_Usuarios;
+                ?>
+            </p>
+            <h7>Pets' Home</h7>
         </div>
     </div>
 

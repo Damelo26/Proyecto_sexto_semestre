@@ -22,8 +22,9 @@ include "Configuraciones/Funciones.php";
 						$frase = $_POST['Frase'];
 						$peso = $_POST['Peso'];
 						$descripcion = $_POST['Descripcion'];
-						$query_insert = mysqli_query($conexion, "INSERT INTO mascotas(ID_Categoria,	Nombre_Mascota,	Raza, Edad, Descripcion, Foto, ID_Color, ID_Tamano, Frase, Peso) 
-						VALUES('$categoria','$nombre','$raza','$edad','$descripcion','$archivo','$color','$tamano','$frase','$peso')");
+						$id_estado = $_POST['Estado'];
+						$query_insert = mysqli_query($conexion, "INSERT INTO mascotas(ID_Categoria,	Nombre_Mascota,	Raza, Edad, Descripcion, Foto, ID_Color, ID_Tamano, Frase, Peso, ID_Estado) 
+						VALUES('$categoria','$nombre','$raza','$edad','$descripcion','$archivo','$color','$tamano','$frase','$peso','$id_estado')");
 						if($query_insert){
 							$Register_alert='<p class = "msg_save">Mascota registrada correctamente.</p>';
 						}else{
@@ -43,10 +44,9 @@ include "Configuraciones/Funciones.php";
 ?>
 <?php include_once 'Modulos/Templates/Header_Admin.php';  ?>
   <div class="Contenido">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <section id="Conteiner_Registro_Mascota">
 		<div class="Formulario_Registro_Mascota">
-			<h1><i class="fas fa-paw"></i>Registro usuario</h1>
+			<h1><i class="fas fa-paw"></i>Registro de mascota</h1>
 			<hr>
 			<div class = "Register_alert"><?php echo isset($Register_alert) ? $Register_alert : ''; ?></div>
 			<form action="" method="post" enctype = "multipart/form-data">
@@ -67,11 +67,11 @@ include "Configuraciones/Funciones.php";
 				?>
 				</select>
 				<label for="Nombre_Mascota">Nombre</label>
-					<input type="text" name="Nombre_Mascota" id="Nombre_Mascota" placeholder="Inserte el nombre">				
-					<label for = "Raza">Raza</label>
-					<input type="text" name="Raza" id="Raza" placeholder="Inserte la raza">
-					<label for = "Edad">Edad</label>
-					<input type="text" name="Edad" id="Edad" placeholder="Inserte la edad">
+				<input type="text" name="Nombre_Mascota" id="Nombre_Mascota" placeholder="Inserte el nombre">				
+				<label for = "Raza">Raza</label>
+				<input type="text" name="Raza" id="Raza" placeholder="Inserte la raza">
+				<label for = "Edad">Edad</label>
+				<input type="text" name="Edad" id="Edad" placeholder="Inserte la edad">
 				<label for = "Color">Color</label>
 				<?php
 					$query_color = mysqli_query($conexion, "SELECT * FROM color");
@@ -112,7 +112,26 @@ include "Configuraciones/Funciones.php";
 				<input type="text" name="Frase" id="Frase" placeholder="Inserte la frase">
 				<label for="foto">Foto</label>
 				<input type="file" name="foto">
-				<!--
+				<label for = "Estado">Estado</label>
+				<?php
+					$query_estado = mysqli_query($conexion, "SELECT * FROM estado");
+					$result_estado = mysqli_num_rows($query_estado);	
+				?>
+					<select name="Estado" id="Estado">
+				<?php   	
+					if($result_estado > 0){
+						while ($estado = mysqli_fetch_array($query_estado)){
+				?>
+							<option value="<?php echo $estado["ID_Estado"]; ?>"><?php echo $estado["Estado"] ?></option>
+				<?php
+						}
+					}
+				?>
+				</select>
+				
+				<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+				<script type="text/javascript" src="Sistema/jquery.min.js"></script>
+				<script type="text/javascript" src="JavaScript/Foto_Mascota.js"></script>
 				<div class="photo">
 					<label for="foto">Foto</label>
 					<div class="prevPhoto">
@@ -123,8 +142,8 @@ include "Configuraciones/Funciones.php";
 						<input type="file" name="foto" id="foto">
 					</div>
 					<div class="form_alert"></div>
-				</div>
-				-->
+				</div>-->
+				
 
 
 				<button class="Btn_save" type="submit"><i class="far fa-save"></i> Registrar mascota</button>

@@ -195,11 +195,15 @@ padding: 10px;
 
 .Btn_Nuevo_Administrar_Mascota{
 	display: inline-block;
-	background: #5ce088;
+	background: #3ac96a;
 	color: #FFF;
 	padding: 5px;
 	border-radius: 4px;
 	margin: 20px;
+}
+
+.Btn_Nuevo_Administrar_Mascota:hover{
+	color: #FFF;
 }
 
 table{
@@ -207,21 +211,24 @@ table{
 	font-size: 12pt;
 	font-family: 'arial';
 	width: 100%;
+	
 }
 
 table th{
-	text-align: left;
 	padding: 10px;
-	background: #36a5d8;
+	background: #e73535;
 	color: #FFF;
+	text-align: center;
 }
 
 table tr:mth-child(odd){
 	background: #FFF;
+	border-radius: 10px;
 }
 
 table td{
-	padding: 8px;
+	padding: 5px;
+	text-align: center;
 }
 
 .Link_Modificar_Mascota{
@@ -232,5 +239,63 @@ table td{
 	color: #ee6a4a;
 }
 
+.Paginador_Administrador_Tabla ul{
+	padding: 12px;
+	list-style: none;
+	background: #FFF;
+	margin-top: 15px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: flex-end;
+}
 
+.Paginador_Administrador_Tabla a, .Pagina_Seleccionada{
+	color: #e73535;
+	border: 1px solid #ddd;
+	padding: 5px;
+	display: inline-block;
+	font-size: 13px;
+	text-align: center;
+	width: 40px;
+}
 
+.Paginador_Administrador_Tabla a:hover{
+	background: #ddd;
+}
+
+.Pagina_Seleccionada{
+	color: #FFF;
+	background: #e73535;
+	border: 1px solid #e73535;
+}
+
+.Formulario_Buscador{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	float: right;
+	background: initial;
+	padding: 5px;
+	border-radius: 10px;
+	border: 0;
+	
+}
+
+.Formulario_Buscador label{
+	font-size: 14px;
+}
+.Formulario_Buscador .Btn_Buscador{
+	background: #e73535;
+	color: #FFF;
+	padding: 0 20px;
+	border: 0;
+	cursor: pointer;
+	margin-left: 10px;
+	width: 20px;
+	font-size: 14px;
+}

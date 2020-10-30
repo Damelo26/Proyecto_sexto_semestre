@@ -1,5 +1,5 @@
 #Conteiner_Registro_Mascota{
-    padding: 90px 15px 15px;
+    padding: 25px 15px 15px;
 }
 
 .Formulario_Registro_Mascota{
@@ -33,6 +33,24 @@ input,select{
     padding: 5px;
     border: 1px solid #85929e;
     border-radius: 5px;
+}
+
+.notItemOne option:first-child{
+	display: none;
+}
+
+.Ver_Foto_Mascota_Tamano{
+	width: 100px;
+	height: auto;
+	margin: 10px auto;
+    display: block;
+}
+
+.Foto_Mascota_Tabla_Administrar{
+	width: 60px;
+	height: auto;
+	margin: 5px auto;
+    display: block;
 }
 
 /*Estilos para mostrar la foto de la mascota en el registro
