@@ -96,7 +96,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="Mascota_Aprobada.php">
                                     <span class="icon"><i class="fas fa-bone"></i></span>
                                     <span class="titulo">Adoptados</span>
                                 </a>

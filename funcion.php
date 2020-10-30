@@ -1,5 +1,5 @@
 <?php
-    
+   
         include "Configuraciones/Funciones.php";
               /*        $CCpersona = "657";
                       $idmasc = "1";
@@ -12,6 +12,16 @@
                       }else{
                         echo "No se pudo registrar";
                       }*/ /* PUSE ESTO EN COMENTARIO PORQUE AQUI LO QUE HARIA ES METER LO QUE SE RECIBA EN BASE A LO DE OXH*/
-                      header("Location:Mascota_Aprobada.php");
-                    ?>
+                   if(empty($_REQUEST['id'])){
+                     header('Location: Adoptado_Admin.php');
+                   }
+                   else{
+                    $dato= $_REQUEST['id'];
+                    $query_insert = mysqli_query($conexion, "UPDATE mascotas SET ID_Estado='2' WHERE ID_Mascota='$dato'");
+                    header('Location: Adoptado_Admin.php');
+                    echo "Proceso exitoso, mascota aprobada";
+                  }
+                     
+                     
+                  ?>
                  

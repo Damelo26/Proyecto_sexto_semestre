@@ -6,7 +6,9 @@
 
 <?php 
    require_once "Configuraciones/Funciones.php";
-        $sql="SELECT * from mascotas ";
+   $indicador=2; /*Mientras se generan los otros pruebo con el 1, en realidad es el 3*/
+        $sql="SELECT * from mascotas  WHERE ID_Estado = '$indicador'";
+       
         $result=mysqli_query($conexion, $sql);
         
 		
@@ -14,18 +16,18 @@
         while($mostrar=mysqli_fetch_array($result)){
     ?>
 
-    <section class = "mascotas_busqueda">
+    <section class = "adoptados_busqueda">
      
         
                 
-                <ul class="lista_mascotas">
+                <ul class="lista_adoptados">
             <li>
-            <div class="mascota">
-                    <a class="cinta uno">
-                        <img class ="img_mascotas" src="<?php echo $mostrar ['Foto'] ?>" alt=""/>
+            <div class="adoptados">
+                    <a class="cint q">
+                        <img class ="img_adoptados" src="<?php echo $mostrar ['Foto'] ?>" alt=""/>
                     </a> 
-                        <p class="Nombre_Mascota"><?php echo $mostrar ['ID_Mascota'] ?></p>
-                        <p class="Frase_Oculta"><?php echo $mostrar ['Frase'] ?></p>                     
+                        <p class="Nombre_Adop"><?php echo $mostrar ['Nombre_Mascota'] ?></p>
+                        <p class="Frase_OcultaA"><?php echo $mostrar ['Frase'] ?></p>                     
                         </div>    
                     </li>
         </ul>
