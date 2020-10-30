@@ -1,47 +1,49 @@
 <?php include_once 'Modulos/Templates/header.php';  ?>
-<?php /*Consulta a la base de datos*/    
-    try{
-        require_once "Configuraciones/Funciones.php";
-        $sql = "SELECT Nombre_Mascota, ID_Categoria FROM mascotas";
-        $resultado = $conexion->query($sql);
-     }catch(\Exeption $e){
-        echo $e->getMessage(); 
-
-    }
+<?php 
+        try {
+            require_once "Configuraciones/Funciones.php";
+            $sql = "SELECT * FROM `mascotas` WHERE Foto != '' ";
+            $resultado = $conexion->query($sql);
+        }catch(\Exeption $e){
+            echo $e->getMessage();
+        }
 ?>
-   
-    <?php/*
-        $conexion->close();
-        
-    */?>
-  <?php /*
-    <?php   
-    try{
-        require_once "Configuraciones/Funciones.php";
-        $sql = "SELECT * FROM mascotas";
-        $resultado = $conexion->query($sql);
-
-    }catch(\Exeption $e){
-        echo $e->getMessage(); 
-
-    }
-    ?>
-        <?php
-            $eventos = $resultado->fetch_assoc(); 
-        ?>
-
-        <pre>
-            <?php
-            var_dump($eventos);
-            ?>
-        </pre>
-        <?php
-            $conexion->close();
-        ?> */ 
-    ?>
 
     <section class = "mascotas_busqueda">
         <h2 class="prueba"> Las mascotas son</h2>
+            
+        <ul class="lista_mascotas">
+        <?php
+            $arreglo_mascota = array();
+           while($mascotas = $resultado->fetch_assoc()){?>
+                
+                    <li>
+                        <div class="mascota">
+                            <a href="Adopta_Esp.php?mascota=<?php echo $mascotas['ID_Mascota']?>" class="cinta uno" <?php echo $mascotas['ID_Mascota']?>>
+                                <img class ="img_mascotas" src= "<?php echo $mascotas['Foto'] ?>" alt="Imagen perro uno"/>
+                                <p><?php ?></p>
+                            </a> 
+                                <p class="Nombre_Mascota"><?php echo $mascotas['Nombre_Mascota']?></p>
+                                <p class="Frase_Oculta"><?php echo $mascotas['Frase']?></p>      
+                                               
+                        </div>
+                    </li>
+                
+             <?php } /**while de fetch*/ ?>
+               
+             
+
+        <?php
+            $conexion->close();
+        ?>  
+
+        <?php 
+            //Imprimir los datos
+
+
+        ?>
+
+        <!--
         <ul class="lista_mascotas">
             <li>
                 <div class="mascota">
@@ -78,6 +80,8 @@
             </li>
 
         </ul>
+    -->
+    </ul>
     </section>
    
    

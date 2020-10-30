@@ -1,6 +1,6 @@
-/*INVITADOS**/
+/*ADOPTA**/
 ul.lista_mascotas {
-    margin: 3rem;
+    margin: 2rem;
 }
 ul.lista_mascotas li{
     /*padding: 10px;*/
@@ -9,8 +9,6 @@ ul.lista_mascotas li{
     padding: 10px;
     margin: 0;
     position: relative;
-    
-    
     }
 
 .Frase_Oculta{
@@ -18,14 +16,12 @@ ul.lista_mascotas li{
     position: absolute;
     bottom: 0;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.60);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);
-    width: 300px;
+    background: rgba(0, 0, 0, 0.73);
+    /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#50000000,endColorstr=#50000000);*/
+    width: 100%;
     color: #FFF;
     padding: 10px;
 }
-
-
 ul.lista_mascotas li:hover .Frase_Oculta {
     display: block;
     }
@@ -47,22 +43,27 @@ ul.lista_mascotas li:hover .Frase_Oculta {
 div.mascota{
     position: relative;
     overflow: hidden;
+    width: 350px; 
+    height: 330px;
 }
 
 div.mascota img{
-    max-width: 100%;
-    /*-webkit-filter: grayscale(0); */
+    width: 100%;
     -webkit-transition: all .3s ease-in-out;
+    height: 100%;
+    /*-webkit-filter: grayscale(0); */
 }
 
 div.mascota:hover img{  
-    filter: gray;
+   /* filter: gray;
     -webkit-filter: grayscale(1);
+    */
+    
     -webkit-transform: scale(1.3);
     transform: rotate(3deg);
 }
 
-div.mascota p {
+div.mascota p { /*Bajar el tamaño creo que esta muy grande*/
     position: absolute;
     bottom: 0;
     left: 0;
@@ -73,8 +74,7 @@ div.mascota p {
     font-family:'Oswald',sans-serif;
     font-weight: bold;
     font: bold;
-    background-color: rgba(0,0,0,0.60);
-    width: 100%;
+    background-color: rgba(0,0,0,0.73);
     color :  #fe4918;
     text-transform: uppercase;   
     -webkit-transition: all .3s ease-in-out; 
@@ -126,11 +126,72 @@ div.mascota:hover .Frase_Oculta{
     
     }
 
+/*ADOPTA ESP */
+.contenedor_adopta{
+    max-width: 110rem; /*== 1200px*/
+    margin: 15px auto;
+}
+.Img_adopta_esp{
+    width: 700px;
+    height: 450px;
+}
 
+.division{ /*Imagen de texto*/
+    display: flex;
+}
+.left{ /*Imagen de texto*/
+    margin-left: 10px;    
+}
+.division_datos{ /* texto de texto*/
+    display: inline-block;
+    border-bottom: 1px solid #D2D2D2;
+    padding: 2px 0px;
+    width: 47%;
+}
+.division_datos p{
+    display: block;
+    padding: 2px 0;
+    margin: 5px;
+    
+    
+}
+/*ADOPTA SUGERIDOS*/
+ul.lista_mascotas_suge {
+    margin: 1rem 0.5rem;
+}
+ul.lista_mascotas_suge li{
+    
+    display: inline-block;
+    list-style: none;   
+    margin: 0;
+    position: relative;
+}
 
+div.mascota_suge{
+    position: relative;
+    overflow: hidden;
+    width: 250px; 
+    height: 230px;
+}
 
-
-
-
+div.mascota_suge img{
+    width: 100%; 
+    height: 100%;
+}
    
-   
+div.mascota_suge p { /*Bajar el tamaño creo que esta muy grande*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 9px 5px;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-family:'Oswald',sans-serif;
+    font-weight: bold;
+    font: bold;
+    background-color: rgba(0,0,0,0.73);
+    color :  #fe4918;
+    text-transform: uppercase;   
+}   
