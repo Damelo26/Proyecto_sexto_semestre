@@ -1,9 +1,9 @@
 <?php
     
     require_once "Configuraciones/Funciones.php";
-    $Total_Adoptacion = mysqli_query($conexion,"SELECT * FROM mascotas WHERE Adoptado = '1'");
+    $Total_Adoptacion = mysqli_query($conexion,"SELECT * FROM mascotas WHERE ID_Estado = '1'");
     $Resultado_Adopcion = mysqli_num_rows($Total_Adoptacion);
-    $Total_Adoptados = mysqli_query($conexion,"SELECT * FROM mascotas WHERE Adoptado = '2'");
+    $Total_Adoptados = mysqli_query($conexion,"SELECT * FROM mascotas WHERE ID_Estado = '2'");
     $Resultado_Adoptados = mysqli_num_rows($Total_Adoptados);
     $Total_Usuarios = mysqli_query($conexion,"SELECT * FROM usuario WHERE ID_Rol = '2'");
     $Resultado_Usuarios = mysqli_num_rows($Total_Usuarios);
@@ -16,34 +16,40 @@
         $chart_data= "{Mes: '".$anio."'-'".$i."', Adopcion:'".$Total_Mensual["Adopcion"]."', Adoptados:'".$Total_Mensual["Adoptado"]."'}, ";
         $chart_data = substr($chart_data, 0);
     }*/
-
+    $annio = '2020';
+    if(!empty($_POST)){
+        if(empty($_POST['Fecha_Estadistico'])){
+            $annio = '2020';
+    }else{
+        $annio = $_POST['Fecha_Estadistico'];
+    }
+    }
     
-    
-    $enero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 1"));
-    $chart_data= "{Mes: '2020-01', Adopcion:'".$enero["Adopcion"]."', Adoptados:'".$enero["Adoptado"]."'}, ";
+    $enero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 1"));
+    $chart_data= "{Mes: '".$annio."-01', Adopcion:'".$enero["Adopcion"]."', Adoptados:'".$enero["Adoptado"]."'}, ";
     $chart_data = substr($chart_data, 0);
-    $febrero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 2"));
-    $chart_data= $chart_data."{Mes: '2020-02', Adopcion:'".$febrero["Adopcion"]."', Adoptados:'".$febrero["Adoptado"]."'}, ";
-    $marzo = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 3"));
-    $chart_data= $chart_data."{Mes: '2020-03', Adopcion:'".$marzo["Adopcion"]."', Adoptados:'".$marzo["Adoptado"]."'}, ";
-    $abril = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 4"));
-    $chart_data= $chart_data."{Mes: '2020-04', Adopcion:'".$abril["Adopcion"]."', Adoptados:'".$abril["Adoptado"]."'}, ";
-    $mayo = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 5"));
-    $chart_data= $chart_data."{Mes: '2020-05', Adopcion:'".$mayo["Adopcion"]."', Adoptados:'".$mayo["Adoptado"]."'}, ";
-    $junio = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 6"));
-    $chart_data= $chart_data."{Mes: '2020-06', Adopcion:'".$junio["Adopcion"]."', Adoptados:'".$junio["Adoptado"]."'}, ";
-    $julio = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 7"));
-    $chart_data= $chart_data."{Mes: '2020-07', Adopcion:'".$julio["Adopcion"]."', Adoptados:'".$julio["Adoptado"]."'}, ";
-    $agosto = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 8"));
-    $chart_data= $chart_data."{Mes: '2020-08', Adopcion:'".$agosto["Adopcion"]."', Adoptados:'".$agosto["Adoptado"]."'}, ";
-    $septiembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 9"));
-    $chart_data= $chart_data."{Mes: '2020-09', Adopcion:'".$septiembre["Adopcion"]."', Adoptados:'".$septiembre["Adoptado"]."'}, ";
-    $octubre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 10"));
-    $chart_data= $chart_data."{Mes: '2020-10', Adopcion:'".$octubre["Adopcion"]."', Adoptados:'".$octubre["Adoptado"]."'}, ";
-    $noviembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 11"));
-    $chart_data= $chart_data."{Mes: '2020-11', Adopcion:'".$noviembre["Adopcion"]."', Adoptados:'".$noviembre["Adoptado"]."'}, ";
-    $diciembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = 2020 AND MONTH(Fecha) = 12"));
-    $chart_data= $chart_data."{Mes: '2020-12', Adopcion:'".$diciembre["Adopcion"]."', Adoptados:'".$diciembre["Adoptado"]."'} ";
+    $febrero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 2"));
+    $chart_data= $chart_data."{Mes: '".$annio."-02', Adopcion:'".$febrero["Adopcion"]."', Adoptados:'".$febrero["Adoptado"]."'}, ";
+    $marzo = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 3"));
+    $chart_data= $chart_data."{Mes: '".$annio."-03', Adopcion:'".$marzo["Adopcion"]."', Adoptados:'".$marzo["Adoptado"]."'}, ";
+    $abril = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 4"));
+    $chart_data= $chart_data."{Mes: '".$annio."-04', Adopcion:'".$abril["Adopcion"]."', Adoptados:'".$abril["Adoptado"]."'}, ";
+    $mayo = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 5"));
+    $chart_data= $chart_data."{Mes: '".$annio."-05', Adopcion:'".$mayo["Adopcion"]."', Adoptados:'".$mayo["Adoptado"]."'}, ";
+    $junio = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 6"));
+    $chart_data= $chart_data."{Mes: '".$annio."-06', Adopcion:'".$junio["Adopcion"]."', Adoptados:'".$junio["Adoptado"]."'}, ";
+    $julio = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 7"));
+    $chart_data= $chart_data."{Mes: '".$annio."-07', Adopcion:'".$julio["Adopcion"]."', Adoptados:'".$julio["Adoptado"]."'}, ";
+    $agosto = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 8"));
+    $chart_data= $chart_data."{Mes: '".$annio."-08', Adopcion:'".$agosto["Adopcion"]."', Adoptados:'".$agosto["Adoptado"]."'}, ";
+    $septiembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 9"));
+    $chart_data= $chart_data."{Mes: '".$annio."-09', Adopcion:'".$septiembre["Adopcion"]."', Adoptados:'".$septiembre["Adoptado"]."'}, ";
+    $octubre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 10"));
+    $chart_data= $chart_data."{Mes: '".$annio."-10', Adopcion:'".$octubre["Adopcion"]."', Adoptados:'".$octubre["Adoptado"]."'}, ";
+    $noviembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 11"));
+    $chart_data= $chart_data."{Mes: '".$annio."-11', Adopcion:'".$noviembre["Adopcion"]."', Adoptados:'".$noviembre["Adoptado"]."'}, ";
+    $diciembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 12"));
+    $chart_data= $chart_data."{Mes: '".$annio."-12', Adopcion:'".$diciembre["Adopcion"]."', Adoptados:'".$diciembre["Adoptado"]."'} ";
 
     $chart_data = substr($chart_data, 0);
 
@@ -86,7 +92,7 @@
             <form class="Formulario_Fecha_Estadistico" action="" method="post">
             <label for="Fecha_Estadistico"></label>
             <input type="text" name="Fecha_Estadistico" id="Fecha_Estadistico" placeholder="Digite la fecha">
-            <button class="Btn_save" type="submit"><i class="fas fa-chart-line"></i> Buscar</button>
+            <button class="Btn_Fecha_Search" type="submit"><i class="fas fa-chart-line"></i> Buscar</button>
             </form>
         </div>
     </section>
@@ -98,7 +104,7 @@
 
     <br /><br />
     <div class="Contenedor_Grafica" style="width: 1000px;">
-        <h2 >Total de adopciones y adoptados en el año</h2>
+        <h2>Total de adopciones y adoptados en el año <?php echo $annio; ?></h2>
         <br /><br />
         <div id="chart"></div>
     </div>
