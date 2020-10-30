@@ -2,7 +2,7 @@
 include "Configuraciones/Funciones.php";
   if(!empty($_POST)){
 	$Register_alert='';
-	if(empty($_POST['Categoria']) || empty($_POST['Nombre_Mascota']) || empty($_POST['Raza']) || empty($_POST['Edad']) || empty($_POST['Color']) || empty($_POST['Frase']) || empty($_POST['Peso']) || empty($_POST['Descripcion'])
+	if(empty($_POST['Categoria']) || empty($_POST['Nombre_Mascota']) || empty($_POST['Edad']) || empty($_POST['Color']) || empty($_POST['Frase']) || empty($_POST['Peso']) || empty($_POST['Descripcion'])
 	|| empty($_POST['Tamano'])){
 			$Register_alert = '<p class="msg_error">Todos los campos son obligatorios.</p>';
 		}else{
@@ -20,11 +20,12 @@ include "Configuraciones/Funciones.php";
 						$color = $_POST['Color'];
 						$tamano = $_POST['Tamano'];
 						$frase = $_POST['Frase'];
+						$sexo = $_POST['Sexo'];
 						$peso = $_POST['Peso'];
 						$descripcion = $_POST['Descripcion'];
 						$id_estado = $_POST['Estado'];
-						$query_insert = mysqli_query($conexion, "INSERT INTO mascotas(ID_Categoria,	Nombre_Mascota,	Raza, Edad, Descripcion, Foto, ID_Color, ID_Tamano, Frase, Peso, ID_Estado) 
-						VALUES('$categoria','$nombre','$raza','$edad','$descripcion','$archivo','$color','$tamano','$frase','$peso','$id_estado')");
+						$query_insert = mysqli_query($conexion, "INSERT INTO mascotas(ID_Categoria,	Nombre_Mascota,	ID_Raza, Edad, Descripcion, Foto, ID_Color, ID_Tamano, Frase, Peso, ID_Sexo,ID_Estado) 
+						VALUES('$categoria','$nombre','$raza','$edad','$descripcion','$archivo','$color','$tamano','$frase','$peso','$sexo','$id_estado')");
 						if($query_insert){
 							$Register_alert='<p class = "msg_save">Mascota registrada correctamente.</p>';
 						}else{
@@ -46,7 +47,7 @@ include "Configuraciones/Funciones.php";
   <div class="Contenido">
   <section id="Conteiner_Registro_Mascota">
 		<div class="Formulario_Registro_Mascota">
-			<h1><i class="fas fa-paw"></i>Registro de mascota</h1>
+			<h2><i class="fas fa-paw"></i>Registro de mascota</h2>
 			<hr>
 			<div class = "Register_alert"><?php echo isset($Register_alert) ? $Register_alert : ''; ?></div>
 			<form action="" method="post" enctype = "multipart/form-data">
@@ -69,7 +70,21 @@ include "Configuraciones/Funciones.php";
 				<label for="Nombre_Mascota">Nombre</label>
 				<input type="text" name="Nombre_Mascota" id="Nombre_Mascota" placeholder="Inserte el nombre">				
 				<label for = "Raza">Raza</label>
-				<input type="text" name="Raza" id="Raza" placeholder="Inserte la raza">
+				<?php
+					$query_Raza = mysqli_query($conexion, "SELECT * FROM Raza");
+					$result_Raza = mysqli_num_rows($query_Raza);	
+				?>
+				<select name="Raza" id="Raza">
+				<?php   	
+					if($result_Raza > 0){
+						while ($Raza = mysqli_fetch_array($query_Raza)){
+				?>
+							<option value="<?php echo $Raza["ID_Raza"]; ?>"><?php echo $Raza["Raza"] ?></option>
+				<?php
+						}
+					}
+				?>
+				</select>
 				<label for = "Edad">Edad</label>
 				<input type="text" name="Edad" id="Edad" placeholder="Inserte la edad">
 				<label for = "Color">Color</label>
@@ -106,12 +121,30 @@ include "Configuraciones/Funciones.php";
 				</select>
 				<label for = "Peso">Peso</label>
 				<input type="text" name="Peso" id="Peso" placeholder="Inserte el peso">
+				<label for = "Sexo">Sexo</label>
+				<?php
+					$query_Sexo = mysqli_query($conexion, "SELECT * FROM Sexo");
+					$result_Sexo = mysqli_num_rows($query_Sexo);	
+				?>
+				<select name="Sexo" id="Sexo">
+				<?php   	
+					if($result_Sexo > 0){
+						while ($Sexo = mysqli_fetch_array($query_Sexo)){
+				?>
+							<option value="<?php echo $Sexo["ID_Sexo"]; ?>"><?php echo $Sexo["Sexo"] ?></option>
+				<?php
+						}
+					}
+				?>
+				</select>
 				<label for = "Descripcion">Descripcion</label>
 				<input type="text" name="Descripcion" id="Descripcion" placeholder="Inserte la descripcion">
 				<label for = "Frase">Frase</label>
 				<input type="text" name="Frase" id="Frase" placeholder="Inserte la frase">
 				<label for="foto">Foto</label>
-				<input type="file" name="foto">
+                <input type="file" name="foto" id="seleccionArchivos">
+				<img alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">
+                <script src="JavaScript/Previsualizar_Imagen.js"></script>
 				<label for = "Estado">Estado</label>
 				<?php
 					$query_estado = mysqli_query($conexion, "SELECT * FROM estado");

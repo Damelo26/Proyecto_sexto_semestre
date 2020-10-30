@@ -4,7 +4,7 @@ include "Configuraciones/Funciones.php";
       header('Location: Administrar_Mascotas_Admin.php');
   }
   $ID_Modificar = $_GET['id'];
-  $Query_Modificar = mysqli_query($conexion, "SELECT m.ID_Mascota, m.ID_Categoria, C.Nombre as Categoria, m.Nombre_Mascota as Nombre, m.Raza, m.Edad, m.Descripcion, m.Foto, m.ID_Color, Cl.Nombre as Color, m.ID_Tamano, T.Nombre as Tamano, m.Frase, m.Peso,m.ID_Estado, Es.Estado as Estado FROM mascotas m INNER JOIN categoria_mascota C ON m.ID_Categoria = C.ID_Categoria INNER JOIN color Cl ON m.ID_Color = Cl.ID_Color INNER JOIN tamano T ON m.ID_Tamano = T.ID_Tamano INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado WHERE m.ID_Mascota = $ID_Modificar");
+  $Query_Modificar = mysqli_query($conexion, "SELECT m.ID_Mascota, m.ID_Categoria, C.Nombre as Categoria, m.Nombre_Mascota as Nombre, m.ID_Raza, R.Raza AS Raza, m.Edad, m.Descripcion, m.Foto, m.ID_Color, Cl.Nombre as Color, m.ID_Tamano, T.Nombre as Tamano, m.Frase, m.Peso, m.ID_Sexo, S.Sexo as Sexo, m.ID_Estado, Es.Estado as Estado FROM mascotas m INNER JOIN categoria_mascota C ON m.ID_Categoria = C.ID_Categoria INNER JOIN color Cl ON m.ID_Color = Cl.ID_Color INNER JOIN tamano T ON m.ID_Tamano = T.ID_Tamano INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo WHERE m.ID_Mascota = $ID_Modificar");
   $Resultado_Modificar = mysqli_num_rows($Query_Modificar);
     if($Resultado_Modificar == 0){
         header('Location: Administrar_Mascotas_Admin.php');
@@ -18,14 +18,14 @@ include "Configuraciones/Funciones.php";
             $ID_Modificar_Categoria = $Datos_Modificar['ID_Categoria'];
             $Categoria_Modificar = $Datos_Modificar['Categoria'];
 
-            if($ID_Modificar_Categoria == 1){
                 $option_Categoria = '<option value="'.$ID_Modificar_Categoria.'" select>'.$Categoria_Modificar.'</option>';
-            }else if($ID_Modificar_Categoria == 2){
-                $option_Categoria = '<option value="'.$ID_Modificar_Categoria.'" select>'.$Categoria_Modificar.'</option>';
-            }
 
-            $Nombre_Modificar = $Datos_Modificar['Nombre'];
-            $Raza_Modificar = $Datos_Modificar['Raza'];
+			$Nombre_Modificar = $Datos_Modificar['Nombre'];
+			$ID_Modificar_Raza = $Datos_Modificar['ID_Raza'];
+			$Raza_Modificar = $Datos_Modificar['Raza'];
+			
+			$option_Raza = '<option value="'.$ID_Modificar_Raza.'" select>'.$Raza_Modificar.'</option>';
+
             $Edad_Modificar = $Datos_Modificar['Edad'];
 			$Descripcion_Modificar = $Datos_Modificar['Descripcion'];
 			$Foto_Modificar = $Datos_Modificar['Foto'];
@@ -33,43 +33,30 @@ include "Configuraciones/Funciones.php";
             $ID_Modificar_Color = $Datos_Modificar['ID_Color'];
             $Color_Modificar = $Datos_Modificar['Color'];
 
-            if($ID_Modificar_Color == 1){
                 $option_Color = '<option value="'.$ID_Modificar_Color.'" select>'.$Color_Modificar.'</option>';
-            }else if($ID_Modificar_Color == 2){
-                $option_Color = '<option value="'.$ID_Modificar_Color.'" select>'.$Color_Modificar.'</option>';
-            }else if($ID_Modificar_Color == 3){
-                $option_Color = '<option value="'.$ID_Modificar_Color.'" select>'.$Color_Modificar.'</option>';
-            }
 
             $ID_Modificar_Tamano = $Datos_Modificar['ID_Tamano'];
             $Tamano_Modificar = $Datos_Modificar['Tamano'];
 
-            if($ID_Modificar_Tamano == 1){
                 $option_Tamano = '<option value="'.$ID_Modificar_Tamano.'" select>'.$Tamano_Modificar.'</option>';
-            }else if($ID_Modificar_Tamano == 2){
-                $option_Tamano = '<option value="'.$ID_Modificar_Tamano.'" select>'.$Tamano_Modificar.'</option>';
-            }else if($ID_Modificar_Tamano == 3){
-                $option_Tamano = '<option value="'.$ID_Modificar_Tamano.'" select>'.$Tamano_Modificar.'</option>';
-            }
 
             $Frase_Modificar = $Datos_Modificar['Frase'];
-            $Peso_Modificar = $Datos_Modificar['Peso'];
+			$Peso_Modificar = $Datos_Modificar['Peso'];
+			$ID_Modificar_Sexo = $Datos_Modificar['ID_Sexo'];
+			$Sexo_Modificar = $Datos_Modificar['Sexo'];
+
+			$option_Sexo = '<option value="'.$ID_Modificar_Sexo.'" select>'.$Sexo_Modificar.'</option>';
+
             $ID_Modificar_Estado = $Datos_Modificar['ID_Estado'];
             $Estado_Modificar = $Datos_Modificar['Estado'];
 
-            if($ID_Modificar_Estado == 1){
                 $option_Estado = '<option value="'.$ID_Modificar_Estado.'" select>'.$Estado_Modificar.'</option>';
-            }else if($ID_Modificar_Estado == 2){
-                $option_Estado = '<option value="'.$ID_Modificar_Estado.'" select>'.$Estado_Modificar.'</option>';
-            }else if($ID_Modificar_Estado == 3){
-                $option_Estado = '<option value="'.$ID_Modificar_Estado.'" select>'.$Estado_Modificar.'</option>';
-            }
 
         }
 	}
 	if(!empty($_POST)){
 		$Register_alert='';
-		if(empty($_POST['Categoria']) || empty($_POST['Nombre_Mascota']) || empty($_POST['Raza']) || empty($_POST['Edad']) || empty($_POST['Color']) || empty($_POST['Frase']) || empty($_POST['Peso']) || empty($_POST['Descripcion'])
+		if(empty($_POST['Categoria']) || empty($_POST['Nombre_Mascota']) || empty($_POST['Edad']) || empty($_POST['Color']) || empty($_POST['Frase']) || empty($_POST['Peso']) || empty($_POST['Descripcion'])
 		|| empty($_POST['Tamano'])){
 				$Register_alert = '<p class="msg_error">Todos los campos son obligatorios.</p>';
 			}else{
@@ -93,8 +80,9 @@ include "Configuraciones/Funciones.php";
 								$frase = $_POST['Frase'];
 								$peso = $_POST['Peso'];
 								$descripcion = $_POST['Descripcion'];
+								$sexo = $_POST['Sexo'];
 								$id_estado = $_POST['Estado'];
-								$query_update = mysqli_query($conexion, "UPDATE mascotas SET ID_Categoria = '$categoria', Nombre_Mascota = '$nombre', Raza = '$raza', Edad = '$edad', Descripcion = '$descripcion', Foto = '$archivo', ID_Color = '$color', ID_Tamano = '$tamano', Frase ='$frase', Peso = '$peso', ID_Estado = '$id_estado' WHERE ID_Mascota = $ID_Mascota");
+								$query_update = mysqli_query($conexion, "UPDATE mascotas SET ID_Categoria = '$categoria', Nombre_Mascota = '$nombre', ID_Raza = '$raza', Edad = '$edad', Descripcion = '$descripcion', Foto = '$archivo', ID_Color = '$color', ID_Tamano = '$tamano', Frase ='$frase', Peso = '$peso', ID_Sexo = '$sexo', ID_Estado = '$id_estado' WHERE ID_Mascota = $ID_Mascota");
 								if($query_update){
 									$Register_alert='<p class = "msg_save">Mascota modificada correctamente.</p>';
 								}else{
@@ -121,8 +109,9 @@ include "Configuraciones/Funciones.php";
 					$frase = $_POST['Frase'];
 					$peso = $_POST['Peso'];
 					$descripcion = $_POST['Descripcion'];
+					$sexo = $_POST['Sexo'];
 					$id_estado = $_POST['Estado'];
-					$query_update = mysqli_query($conexion, "UPDATE mascotas SET ID_Categoria = '$categoria', Nombre_Mascota = '$nombre', Raza = '$raza', Edad = '$edad', Descripcion = '$descripcion', Foto = '$archivo', ID_Color = '$color', ID_Tamano = '$tamano', Frase ='$frase', Peso = '$peso', ID_Estado = '$id_estado' WHERE ID_Mascota = $ID_Mascota");
+					$query_update = mysqli_query($conexion, "UPDATE mascotas SET ID_Categoria = '$categoria', Nombre_Mascota = '$nombre', ID_Raza = '$raza', Edad = '$edad', Descripcion = '$descripcion', Foto = '$archivo', ID_Color = '$color', ID_Tamano = '$tamano', Frase ='$frase', Peso = '$peso', ID_Sexo = '$sexo', ID_Estado = '$id_estado' WHERE ID_Mascota = $ID_Mascota");
 					if($query_update){
 					$Register_alert='<p class = "msg_save">Mascota modificada correctamente.</p>';
 					}else{
@@ -162,7 +151,22 @@ include "Configuraciones/Funciones.php";
 				<label for="Nombre_Mascota">Nombre</label>
 				<input type="text" name="Nombre_Mascota" id="Nombre_Mascota" placeholder="Inserte el nombre" value="<?php echo $Nombre_Modificar; ?>">				
 				<label for = "Raza">Raza</label>
-				<input type="text" name="Raza" id="Raza" placeholder="Inserte la raza" value="<?php echo $Raza_Modificar; ?>">
+				<?php
+					$query_Raza = mysqli_query($conexion, "SELECT * FROM Raza");
+					$result_Raza = mysqli_num_rows($query_Raza);	
+				?>
+				<select name="Raza" id="Raza" class="notItemOne">
+				<?php   
+					echo $option_Raza;	
+					if($result_Raza > 0){
+						while ($Raza = mysqli_fetch_array($query_Raza)){
+				?>
+							<option value="<?php echo $Raza["ID_Raza"]; ?>"><?php echo $Raza["Raza"] ?></option>
+				<?php
+						}
+					}
+				?>
+				</select>
 				<label for = "Edad">Edad</label>
 				<input type="text" name="Edad" id="Edad" placeholder="Inserte la edad" value="<?php echo $Edad_Modificar; ?>">
 				<label for = "Color">Color</label>
@@ -201,6 +205,23 @@ include "Configuraciones/Funciones.php";
 				</select>
 				<label for = "Peso">Peso</label>
 				<input type="text" name="Peso" id="Peso" placeholder="Inserte el peso" value="<?php echo $Peso_Modificar; ?>">
+				<label for = "Sexo">Sexo</label>
+				<?php
+					$query_Sexo = mysqli_query($conexion, "SELECT * FROM Sexo");
+					$result_Sexo = mysqli_num_rows($query_Sexo);	
+				?>
+				<select name="Sexo" id="Sexo" class="notItemOne">
+				<?php   
+					echo $option_Sexo;	
+					if($result_Sexo > 0){
+						while ($Sexo = mysqli_fetch_array($query_Sexo)){
+				?>
+							<option value="<?php echo $Sexo["ID_Sexo"]; ?>"><?php echo $Sexo["Sexo"] ?></option>
+				<?php
+						}
+					}
+				?>
+				</select>
 				<label for = "Descripcion">Descripcion</label>
 				<input type="text" name="Descripcion" id="Descripcion" placeholder="Inserte la descripcion" value="<?php echo $Descripcion_Modificar; ?>">
 				<label for = "Frase">Frase</label>

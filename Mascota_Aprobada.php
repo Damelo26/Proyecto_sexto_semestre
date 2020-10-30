@@ -12,10 +12,8 @@
           <th>Edad</th>
           <th>Descripción</th>
           <th>Foto</th> 
-          
-          
-          
           <th>Peso</th>
+          <th>Sexo</th>
           <th>Acciones</th>
           
         </tr>
@@ -24,7 +22,7 @@
         <?php 
          require_once "Configuraciones/Funciones.php";
          $indicador=2; 
-         $sql="SELECT * from mascotas  WHERE ID_Estado = '$indicador'"; 
+         $sql="SELECT m.ID_Mascota, m.Nombre_Mascota, R.Raza, m.Edad, m.Descripcion, m.Foto, m.Peso, S.Sexo from mascotas m INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo WHERE ID_Estado  = '$indicador'"; 
          $result=mysqli_query($conexion, $sql);
         while($mostrar=mysqli_fetch_array($result)){
 
@@ -32,7 +30,6 @@
         ?>
         <tr>
         <td><?php echo $mostrar ['ID_Mascota'] ?></td>
-          
           <td><?php echo $mostrar ['Nombre_Mascota'] ?></td>
           <td><?php echo $mostrar ['Raza'] ?></td>
           <td><?php echo $mostrar ['Edad'] ?></td>
@@ -40,6 +37,7 @@
           <td><img  src="<?php echo $mostrar ['Foto']?>" alt=""></td>
          
           <td><?php echo $mostrar ['Peso'] ?></td>
+          <td><?php echo $mostrar ['Sexo'] ?></td>
           <td>
          
          <a class="link_modif_masc" href="funcionadop.php?id=<?php echo $mostrar["ID_Mascota"]; ?>">Modificar </a>

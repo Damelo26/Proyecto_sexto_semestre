@@ -227,6 +227,7 @@ table tr:mth-child(odd){
 table td{
 	padding: 5px;
 	text-align: center;
+	font-size: 14px;
 }
 
 .Link_Modificar_Mascota{

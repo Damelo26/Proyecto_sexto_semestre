@@ -21,6 +21,7 @@
           <th>Color</th>
           <th>Tamaño</th>
           <th>Peso</th>
+          <th>Sexo</th>
           <th>Foto</th>
           <th>Adoptado</th>
           <th>Acciones</th>
@@ -39,7 +40,7 @@
           $Desde = ($Pagina-1) * $Total_Registros_Por_Pagina;
           $Total_Paginas = ceil($Total_Cantidad_Registros / $Total_Registros_Por_Pagina);
 
-          $Busqueda_Tabla_Mascotas = mysqli_query($conexion, "SELECT m.ID_Mascota, C.Nombre as Categoria, m.Nombre_Mascota as Nombre, m.Raza, m.Edad, m.Foto, Cl.Nombre as Color, T.Nombre as Tamano, m.Peso, Es.Estado as Estado FROM mascotas m INNER JOIN categoria_mascota C ON m.ID_Categoria = C.ID_Categoria INNER JOIN color Cl ON m.ID_Color = Cl.ID_Color INNER JOIN tamano T ON m.ID_Tamano = T.ID_Tamano INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado WHERE Es.ID_Estado = 1 OR Es.ID_Estado = 3 ORDER BY m.ID_Mascota ASC LIMIT $Desde,$Total_Registros_Por_Pagina");
+          $Busqueda_Tabla_Mascotas = mysqli_query($conexion, "SELECT m.ID_Mascota, C.Nombre as Categoria, m.Nombre_Mascota as Nombre, m.ID_Raza, R.Raza AS Raza, m.Edad, m.Foto, Cl.Nombre as Color, T.Nombre as Tamano, m.Peso, m.ID_Sexo, S.Sexo as Sexo, Es.Estado as Estado FROM mascotas m INNER JOIN categoria_mascota C ON m.ID_Categoria = C.ID_Categoria INNER JOIN color Cl ON m.ID_Color = Cl.ID_Color INNER JOIN tamano T ON m.ID_Tamano = T.ID_Tamano INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo WHERE Es.ID_Estado = 1 OR Es.ID_Estado = 3 ORDER BY m.ID_Mascota ASC LIMIT $Desde,$Total_Registros_Por_Pagina");
           $Resultado_Tabla = mysqli_num_rows($Busqueda_Tabla_Mascotas);
           if($Resultado_Tabla > 0){
             while($Datos_Tabla = mysqli_fetch_array($Busqueda_Tabla_Mascotas)){
@@ -53,6 +54,7 @@
                 <td><?php echo $Datos_Tabla["Color"]; ?></td>
                 <td><?php echo $Datos_Tabla["Tamano"]; ?></td>
                 <td><?php echo $Datos_Tabla["Peso"]; ?></td>
+                <td><?php echo $Datos_Tabla["Sexo"]; ?></td>
                 <td><img src="<?php echo $Datos_Tabla["Foto"]; ?>" alt="" class="Foto_Mascota_Tabla_Administrar"></td>
                 <td><?php echo $Datos_Tabla["Estado"]; ?></td>
                 <td>
