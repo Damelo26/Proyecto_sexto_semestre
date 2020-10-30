@@ -231,6 +231,75 @@ table td{
 .Link_Borrar_Mascota{
 	color: #ee6a4a;
 }
+.link_aprobar_masc{
+	color: red;
+}
 
+.link_rechazar{
+	color: rgb(4, 82, 4);
+}
 
+.Tabla_Adoptados th{
+	text-align: center;
+	padding: 10px;
+	background: #5ada64;
+	color: #FFF;
+}
+.Tabla_Solicitudes th{
+	text-align: center;
+	padding: 10px;
+	background: #da3621;
+	color: #FFF;
+}
+.Tabla_Solicitudes{
+	
+		border-collapse: collapse;
+		font-size: 11pt;
+		font-family: 'arial';
+		width: 100%;
+	
+}
+.Tabla_Adoptados{
+	border-collapse: collapse;
+		font-size: 11pt;
+		font-family: 'arial';
+		width: 100%;
+}
+.Tabla_Adoptados tr{
+	text-align: center;
+}
+.Tabla_Solicitudes tr{
+	text-align: center;
+}
+.link_modif_masc{
+	color: rgb(114, 7, 255);
+}
+#Conteiner_Modificar_Adoptado{
+    padding: 90px 15px 15px;
+}
 
+.Formulario_Modificar_Adoptado{
+    width: 550px;
+    margin: auto;
+}
+
+.Formulario_Modificar_Adoptado h1{
+    color: #000;
+}
+
+.FormAdop{
+	background: #FFF;
+    margin: auto;
+    padding: 20px 50px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+td img{
+	width:50 px;
+	height:50px;
+}
+.ContenidoAdoptado img{
+	width:200 px;
+	height:100px;
+	align-content: center;
+}

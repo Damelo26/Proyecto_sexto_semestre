@@ -46,7 +46,7 @@ include "Configuraciones/Funciones.php";
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <section id="Conteiner_Registro_Mascota">
 		<div class="Formulario_Registro_Mascota">
-			<h1><i class="fas fa-paw"></i>Registro usuario</h1>
+			<h1><i class="fas fa-paw"></i>Registro Mascota</h1>
 			<hr>
 			<div class = "Register_alert"><?php echo isset($Register_alert) ? $Register_alert : ''; ?></div>
 			<form action="" method="post" enctype = "multipart/form-data">
