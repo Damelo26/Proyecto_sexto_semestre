@@ -27,35 +27,52 @@
     }
     }
     
-    $enero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 1"));
+    $enero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 1"));
     $chart_data= "{Mes: '".$annio."-01', Adopcion:'".$enero["Adopcion"]."', Adoptados:'".$enero["Adoptado"]."'}, ";
     $chart_data = substr($chart_data, 0);
-    $febrero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 2"));
+    $febrero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 2"));
     $chart_data= $chart_data."{Mes: '".$annio."-02', Adopcion:'".$febrero["Adopcion"]."', Adoptados:'".$febrero["Adoptado"]."'}, ";
-    $marzo = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 3"));
+    $marzo = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 3"));
     $chart_data= $chart_data."{Mes: '".$annio."-03', Adopcion:'".$marzo["Adopcion"]."', Adoptados:'".$marzo["Adoptado"]."'}, ";
-    $abril = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 4"));
+    $abril = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 4"));
     $chart_data= $chart_data."{Mes: '".$annio."-04', Adopcion:'".$abril["Adopcion"]."', Adoptados:'".$abril["Adoptado"]."'}, ";
-    $mayo = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 5"));
+    $mayo = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 5"));
     $chart_data= $chart_data."{Mes: '".$annio."-05', Adopcion:'".$mayo["Adopcion"]."', Adoptados:'".$mayo["Adoptado"]."'}, ";
-    $junio = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 6"));
+    $junio = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 6"));
     $chart_data= $chart_data."{Mes: '".$annio."-06', Adopcion:'".$junio["Adopcion"]."', Adoptados:'".$junio["Adoptado"]."'}, ";
-    $julio = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 7"));
+    $julio = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 7"));
     $chart_data= $chart_data."{Mes: '".$annio."-07', Adopcion:'".$julio["Adopcion"]."', Adoptados:'".$julio["Adoptado"]."'}, ";
-    $agosto = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 8"));
+    $agosto = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 8"));
     $chart_data= $chart_data."{Mes: '".$annio."-08', Adopcion:'".$agosto["Adopcion"]."', Adoptados:'".$agosto["Adoptado"]."'}, ";
-    $septiembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 9"));
+    $septiembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 9"));
     $chart_data= $chart_data."{Mes: '".$annio."-09', Adopcion:'".$septiembre["Adopcion"]."', Adoptados:'".$septiembre["Adoptado"]."'}, ";
-    $octubre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 10"));
+    $octubre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 10"));
     $chart_data= $chart_data."{Mes: '".$annio."-10', Adopcion:'".$octubre["Adopcion"]."', Adoptados:'".$octubre["Adoptado"]."'}, ";
-    $noviembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 11"));
+    $noviembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 11"));
     $chart_data= $chart_data."{Mes: '".$annio."-11', Adopcion:'".$noviembre["Adopcion"]."', Adoptados:'".$noviembre["Adoptado"]."'}, ";
-    $diciembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 12"));
+    $diciembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 12"));
     $chart_data= $chart_data."{Mes: '".$annio."-12', Adopcion:'".$diciembre["Adopcion"]."', Adoptados:'".$diciembre["Adoptado"]."'} ";
 
     $chart_data = substr($chart_data, 0);
 
+    $QueryDonut = mysqli_query($conexion,"SELECT Es.Estado, COUNT(*) AS Total from mascotas m INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado WHERE YEAR(Fecha) = '$annio'  GROUP BY Es.Estado ORDER by Total asc");
+    $TotalDonut = mysqli_num_rows($QueryDonut);
+    $DatosDonut = array();
+    if($TotalDonut > 0){
+        while($RowDonut = mysqli_fetch_array($QueryDonut)){
+            $DatosDonut[] = array(
+                'label' => $RowDonut["Estado"],
+                'value' => $RowDonut["Total"]
+            );
+        }
+    }else{
+        $DatosDonut[] = array(
+            'label' => "No hay datos",
+            'value' => "0"
+        );
+    }
 
+    $DatosDonut = json_encode($DatosDonut);
 ?>
 <?php include_once 'Modulos/Templates/Header_Admin.php';  ?>
 <div class="Contenido">
@@ -97,7 +114,6 @@
             <h7>Pets' Home</h7>
         </div>
     </div>
-
     <section class = "Fecha_Grafica_Estadistica">
         <div class="Fecha_Estadistico_Administrador">
             <form class="Formulario_Fecha_Estadistico" action="" method="post">
@@ -107,26 +123,22 @@
             </form>
         </div>
     </section>
-
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
-    <br /><br />
-    <div class="Contenedor_Grafica" style="width: 1000px;">
-        <h2>Total de adopciones y adoptados en el año <?php echo $annio; ?></h2>
-        <br /><br />
-        <div id="chart"></div>
+    <div class="row">
+        <div class="Contenedor_Grafica">
+            <h6>Total de adopciones y adoptados en el año <?php echo $annio; ?></h6>
+            <br /><br />
+            <div id="chart"></div>
+        </div>
+        <div class="Contenedor_Grafica">
+            <h6>Adopciones, adoptados y en proceso del año <?php echo $annio; ?></h6>
+            <br /><br />
+            <div id="donut-example"></div>
+        </div>
     </div>
-
-    <!--
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="Sistema/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    -->
 </div>
 <?php include_once 'Modulos/Templates/Footer_Admin.php';?>
 <script>
@@ -136,6 +148,15 @@
         xkey:'Mes',
         ykeys:['Adopcion', 'Adoptados'],
         labels:['Adopción', 'Adoptados'],
-        xLabelAngle: 60
+        xLabelAngle: 60,
+        lineColors: ['#419918',' #971414'],
+        resize: true
    }); 
+
+   Morris.Donut({
+  element: 'donut-example',
+  data: <?php echo $DatosDonut; ?>,
+  colors: ['rgb(74, 212, 92)','rgb(236, 214, 90)', 'rgb(209, 134, 72)'],
+  resize: true
+});
 </script>

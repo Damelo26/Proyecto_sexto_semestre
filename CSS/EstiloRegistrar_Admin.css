@@ -40,14 +40,14 @@ input,select{
 }
 
 .Ver_Foto_Mascota_Tamano{
-	width: 100px;
+	width: 150px;
 	height: auto;
 	margin: 10px auto;
     display: block;
 }
 
 .Foto_Mascota_Tabla_Administrar{
-	width: 60px;
+	width: 70px;
 	height: auto;
 	margin: 5px auto;
     display: block;

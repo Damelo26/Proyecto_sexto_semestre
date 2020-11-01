@@ -53,7 +53,7 @@ include "Configuraciones/Funciones.php";
 			<form action="" method="post" enctype = "multipart/form-data">
 				<label for = "Categoria">Categoria</label>
 				<?php
-					$query_Categoria = mysqli_query($conexion, "SELECT * FROM categoria_mascota");
+					$query_Categoria = mysqli_query($conexion, "SELECT * FROM categoria_mascota ORDER BY Nombre ASC");
 					$result_Categoria = mysqli_num_rows($query_Categoria);	
 				?>
 				<select name="Categoria" id="Categoria">
@@ -71,7 +71,7 @@ include "Configuraciones/Funciones.php";
 				<input type="text" name="Nombre_Mascota" id="Nombre_Mascota" placeholder="Inserte el nombre">				
 				<label for = "Raza">Raza</label>
 				<?php
-					$query_Raza = mysqli_query($conexion, "SELECT * FROM Raza");
+					$query_Raza = mysqli_query($conexion, "SELECT * FROM Raza ORDER BY Raza ASC");
 					$result_Raza = mysqli_num_rows($query_Raza);	
 				?>
 				<select name="Raza" id="Raza">
@@ -89,7 +89,7 @@ include "Configuraciones/Funciones.php";
 				<input type="text" name="Edad" id="Edad" placeholder="Inserte la edad">
 				<label for = "Color">Color</label>
 				<?php
-					$query_color = mysqli_query($conexion, "SELECT * FROM color");
+					$query_color = mysqli_query($conexion, "SELECT * FROM color ORDER BY Nombre ASC");
 					$result_color = mysqli_num_rows($query_color);	
 				?>
 					<select name="Color" id="Color">

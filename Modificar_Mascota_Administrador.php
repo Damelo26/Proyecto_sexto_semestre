@@ -29,7 +29,7 @@ include "Configuraciones/Funciones.php";
             $Edad_Modificar = $Datos_Modificar['Edad'];
 			$Descripcion_Modificar = $Datos_Modificar['Descripcion'];
 			$Foto_Modificar = $Datos_Modificar['Foto'];
-			$Foto_Etiqueta = '<img src='.$Foto_Modificar.' alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">';
+			//$Foto_Etiqueta = '<img src='.$Foto_Modificar.' alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">';
             $ID_Modificar_Color = $Datos_Modificar['ID_Color'];
             $Color_Modificar = $Datos_Modificar['Color'];
 
@@ -133,7 +133,7 @@ include "Configuraciones/Funciones.php";
             <input type="hidden" name="ID_Mascota" value="<?php echo $ID_Modificar_Mascota; ?>">    
             <label for = "Categoria">Categoria</label>
 				<?php
-					$query_Categoria = mysqli_query($conexion, "SELECT * FROM categoria_mascota");
+					$query_Categoria = mysqli_query($conexion, "SELECT * FROM categoria_mascota ORDER BY Nombre ASC");
 					$result_Categoria = mysqli_num_rows($query_Categoria);	
 				?>
 				<select name="Categoria" id="Categoria" class="notItemOne">
@@ -152,7 +152,7 @@ include "Configuraciones/Funciones.php";
 				<input type="text" name="Nombre_Mascota" id="Nombre_Mascota" placeholder="Inserte el nombre" value="<?php echo $Nombre_Modificar; ?>">				
 				<label for = "Raza">Raza</label>
 				<?php
-					$query_Raza = mysqli_query($conexion, "SELECT * FROM Raza");
+					$query_Raza = mysqli_query($conexion, "SELECT * FROM Raza  ORDER BY Raza ASC");
 					$result_Raza = mysqli_num_rows($query_Raza);	
 				?>
 				<select name="Raza" id="Raza" class="notItemOne">
@@ -171,7 +171,7 @@ include "Configuraciones/Funciones.php";
 				<input type="text" name="Edad" id="Edad" placeholder="Inserte la edad" value="<?php echo $Edad_Modificar; ?>">
 				<label for = "Color">Color</label>
 				<?php
-					$query_color = mysqli_query($conexion, "SELECT * FROM color");
+					$query_color = mysqli_query($conexion, "SELECT * FROM color ORDER BY Nombre ASC");
 					$result_color = mysqli_num_rows($query_color);	
 				?>
 					<select name="Color" id="Color" class="notItemOne">
@@ -228,7 +228,7 @@ include "Configuraciones/Funciones.php";
 				<input type="text" name="Frase" id="Frase" placeholder="Inserte la frase" value="<?php echo $Frase_Modificar; ?>">
 				<label for="foto">Foto</label>
                 <input type="file" name="foto" id="seleccionArchivos">
-				<?php echo $Foto_Etiqueta; ?>
+				<img src="<?php echo $Foto_Modificar; ?>" alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">
                 <script src="JavaScript/Previsualizar_Imagen.js"></script>
 				<label for = "Estado">Estado</label>
 				<?php

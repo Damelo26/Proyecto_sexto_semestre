@@ -44,9 +44,9 @@
                 </div>
             </div>
             <div class="menuadmin">
-                <div class="logo">
+                <a href="Principal.php"><div class="logo">
                 Pets Home
-                </div>
+                </div></a>
                 <div class="menu_derecho">
                     <ul>
                         <li><i class="fas fa-user-tie"></i>

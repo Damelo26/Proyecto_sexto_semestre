@@ -68,6 +68,9 @@
     padding: 0 20px;
 }
 
+.Top .menuadmin a:hover{
+    color: #fff;
+}
 .Top .menuadmin .logo{
     color: #fff;       /*Color del titulo*/
     text-transform: uppercase;
@@ -241,7 +244,7 @@
 .Contenido_Cartas_Estadisticos{
     width: 100%;
     max-width: 1200px;
-    height: 300px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -250,7 +253,7 @@
 
 .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adoptados, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Adopcion, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Proceso, .Contenido_Cartas_Estadisticos .Carta_Estadisticos_Usuarios{
     width: 215px;
-    height: 125px;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -311,17 +314,15 @@
 .Resultados_Estadisticos_Administrador{
     margin: auto;
     margin-top: 45px;
-    width: 1000px;
+    width: 550px;
 }
 
 .Contenedor_Grafica{
     text-align: center;
+    width: 530px;
+    box-align: center;
 }
 
-.Contenedor_Grafica h2{
-    text-align: center;
-    font-size: 24px;
-}
 #Contenedor_Adoptados_Mascotas form {
     color: #d5e6da;
     border:0;

@@ -82,7 +82,7 @@ body{
 .menu{
 	display: flex;
 	align-items: center;
-	padding: 2rem;
+	padding: 1.5rem;
 	background: #353535;
 	margin: 0rem;
 	justify-content: center;
@@ -97,7 +97,7 @@ font-family: 'Oswald', sans-serif; encabezados h2
 	color: #fff;
 	background: #353535;
 	padding: 0.2rem;
-	padding-left: 1rem;
+    padding-left: 2.3rem;
 	display: inline-block;
 }
 

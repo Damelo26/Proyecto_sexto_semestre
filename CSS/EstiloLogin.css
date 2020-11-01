@@ -188,8 +188,8 @@ padding: 10px;
 
 /*Estilos para la tabla de modificar mascotas del administrador*/
 
-#Contenedor_Administrar_Mascotas h1{
-	font-size: 30 px;
+#Contenedor_Administrar_Mascotas h2{
+	font-size: 29px;
 	display: inline-block;
 }
 
@@ -199,7 +199,7 @@ padding: 10px;
 	color: #FFF;
 	padding: 5px;
 	border-radius: 4px;
-	margin: 20px;
+	margin: 10px;
 }
 
 .Btn_Nuevo_Administrar_Mascota:hover{
@@ -208,7 +208,7 @@ padding: 10px;
 
 table{
 	border-collapse: collapse;
-	font-size: 14pt;
+	font-size: 17px;
 	font-family: 'arial';
 	width: 100%;
 }
@@ -227,7 +227,7 @@ table tr:mth-child(odd){
 table td{
 	padding: 5px;
 	text-align: center;
-	font-size: 14px;
+	font-size: 15px;
 }
 
 .Link_Modificar_Mascota{
@@ -329,7 +329,7 @@ table td{
 	padding: 5px;
 	border-radius: 10px;
 	border: 0;
-	
+	width: 225px;
 }
 
 .Formulario_Buscador label{
@@ -338,11 +338,11 @@ table td{
 .Formulario_Buscador .Btn_Buscador{
 	background: #e73535;
 	color: #FFF;
-	padding: 0 20px;
+	padding: 0 5px;
 	border: 0;
 	cursor: pointer;
 	margin-left: 10px;
-	width: 20px;
+	width: 70px;
 	font-size: 14px;
 }
 .Formulario_Modificar_Adoptado{

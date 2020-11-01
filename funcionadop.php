@@ -17,7 +17,7 @@
 		$descripadop = $mostrar['Descripcion'];
 		$fraseadop = $mostrar['Frase'];
 		$fotoadop = $mostrar['Foto'];
-		$fotoadop_Etiqueta = '<img src='.$fotoadop.' alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">';
+		//$fotoadop_Etiqueta = '<img src='.$fotoadop.' alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">';
 	}
 
 	//PARA MODIFICAR LA INFO
@@ -118,7 +118,8 @@
 					<label for="foto">Foto</label>
 				</b>
 				<input type="file" name="fotop" id="seleccionArchivos">
-				<?php echo $fotoadop_Etiqueta; ?>
+				<img src="<?php echo $fotoadop; ?>" alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">
+				<?php //echo $fotoadop_Etiqueta; ?>
                 <script src="JavaScript/Previsualizar_Imagen.js"></script>
 				<button class="Btn_save" type="submit"><i class="far fa-save"></i> Modificar Adopción</button>
 			</form>
