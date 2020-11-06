@@ -6,7 +6,7 @@
 		header("Location:Mascota_Aprobada.php");
 	}
 	$idadop = $_REQUEST['id'];
-	$sql="SELECT m.ID_Mascota, m.Nombre_Mascota, R.Raza, m.Edad, m.Descripcion, m.Foto, m.Peso, m.Frase, S.Sexo from mascotas m INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo WHERE ID_Mascota  = $idadop"; 
+	$sql="SELECT m.ID_Mascota, m.Nombre_Mascota, R.Raza, m.Edad, m.Descripcion, m.Foto, m.Peso, m.Frase, S.Sexo, Ad.Cedula, U.Primer_Nombre, U.Segundo_Nombre, U.Primer_Apellido, U.Segundo_Apellido, U.Email, U.Telefono, U.Direccion from mascotas m INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo INNER JOIN adoptados Ad ON m.ID_Mascota = Ad.ID_Mascotas INNER JOIN usuario U ON Ad.Cedula = U.Cedula WHERE ID_Mascota = $idadop"; 
 	$result=mysqli_query($conexion, $sql);
 	while($mostrar = mysqli_fetch_array($result)){
 		$nombmascotadop = $mostrar['Nombre_Mascota'];
@@ -17,7 +17,11 @@
 		$descripadop = $mostrar['Descripcion'];
 		$fraseadop = $mostrar['Frase'];
 		$fotoadop = $mostrar['Foto'];
-		//$fotoadop_Etiqueta = '<img src='.$fotoadop.' alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">';
+		$cedulaadop = $mostrar['Cedula'];
+		$usuarioadop = $mostrar['Primer_Apellido'].' '.$mostrar['Segundo_Apellido'].' '.$mostrar['Primer_Nombre'].' '.$mostrar['Segundo_Nombre'];
+		$emailadop = $mostrar['Email'];
+		$telefonoadop = $mostrar['Telefono'];
+		$direccionadop = $mostrar['Direccion'];
 	}
 
 	//PARA MODIFICAR LA INFO
@@ -106,6 +110,39 @@
 				<i>
 					<label for="Nombre_Mascotaval"><?php echo $sexoop;?></label>
 				</i>
+
+				<b>	
+					<label for="Cedula">Cedula del adoptador</label>
+				</b>
+				<i>
+					<label for="Nombre_Mascotaval"><?php echo $cedulaadop;?></label>
+				</i>
+				<b>	
+					<label for="Usuario">Nombre del adoptador</label>
+				</b>
+				<i>
+					<label for="Nombre_Mascotaval"><?php echo $usuarioadop;?></label>
+				</i>
+				<b>	
+					<label for="Email">Correo electronico</label>
+				</b>
+				<i>
+					<label for="Nombre_Mascotaval"><?php echo $emailadop;?></label>
+				</i>
+				<b>	
+					<label for="Telefono">Telefono de contacto</label>
+				</b>
+				<i>
+					<label for="Nombre_Mascotaval"><?php echo $telefonoadop;?></label>
+				</i>
+				<b>	
+					<label for="Direccion">Direccion de residencia</label>
+				</b>
+				<i>
+					<label for="Nombre_Mascotaval"><?php echo $direccionadop;?></label>
+				</i>
+
+
 				<b>
 					<label for = "Descripcion">Descripcion</label>
 				</b>

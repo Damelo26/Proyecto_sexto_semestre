@@ -154,9 +154,11 @@ include "Configuraciones/Funciones.php";
 				<?php   	
 					if($result_estado > 0){
 						while ($estado = mysqli_fetch_array($query_estado)){
+							if($estado["ID_Estado"] == 1){
 				?>
 							<option value="<?php echo $estado["ID_Estado"]; ?>"><?php echo $estado["Estado"] ?></option>
 				<?php
+							}
 						}
 					}
 				?>

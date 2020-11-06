@@ -74,7 +74,7 @@ text-transform: uppercase;
     background-repeat:no-repeat ;
     background-size: cover;
     width: 1350px;
-    height: 1100px;
+    height: 1200px;
     display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -189,6 +189,11 @@ padding: 10px;
 /*Estilos para la tabla de modificar mascotas del administrador*/
 
 #Contenedor_Administrar_Mascotas h2{
+	font-size: 29px;
+	display: inline-block;
+}
+
+#Contenedor_Adoptados_Mascotas h2{
 	font-size: 29px;
 	display: inline-block;
 }
@@ -335,6 +340,7 @@ table td{
 .Formulario_Buscador label{
 	font-size: 14px;
 }
+
 .Formulario_Buscador .Btn_Buscador{
 	background: #e73535;
 	color: #FFF;
@@ -345,6 +351,18 @@ table td{
 	width: 70px;
 	font-size: 14px;
 }
+
+.Formulario_Buscador .Btn_Buscador_Adoptados{
+	background: #5ada64;
+	color: #FFF;
+	padding: 0 5px;
+	border: 0;
+	cursor: pointer;
+	margin-left: 10px;
+	width: 70px;
+	font-size: 14px;
+}
+
 .Formulario_Modificar_Adoptado{
     width: 550px;
     margin: auto;
@@ -369,4 +387,37 @@ td img{
 	width:200 px;
 	height:100px;
 	align-content: center;
+}
+
+.Paginador_Administrador_Adoptados_Tabla ul{
+	padding: 12px;
+	list-style: none;
+	background: #FFF;
+	margin-top: 15px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.Paginador_Administrador_Adoptados_Tabla a, .Pagina_Seleccionada_Adoptados{
+	color: #5ada64;
+	border: 1px solid #ddd;
+	padding: 5px;
+	display: inline-block;
+	font-size: 13px;
+	text-align: center;
+	width: 40px;
+}
+
+.Paginador_Administrador_Adoptados_Tabla a:hover{
+	background: #ddd;
+}
+
+.Pagina_Seleccionada_Adoptados{
+	color: #FFF;
+	background: #5ada64;
+	border: 1px solid #5ada64;
 }

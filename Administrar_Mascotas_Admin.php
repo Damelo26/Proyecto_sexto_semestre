@@ -27,7 +27,7 @@
           $Query_Cantidad_Registros = mysqli_query($conexion, "SELECT COUNT(*) as Total_Registros FROM mascotas WHERE ID_Estado = 1 OR ID_Estado = 3");
           $Resultado_Cantidad_Registros = mysqli_fetch_array($Query_Cantidad_Registros);
           $Total_Cantidad_Registros = $Resultado_Cantidad_Registros['Total_Registros'];
-          $Total_Registros_Por_Pagina = 1;
+          $Total_Registros_Por_Pagina = 15;
           if(empty($_GET['Pagina'])){
             $Pagina = 1;
           }else{

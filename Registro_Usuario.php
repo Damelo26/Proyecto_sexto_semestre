@@ -83,10 +83,17 @@
 					
 						if($result_rol > 0){
 							while ($rol = mysqli_fetch_array($query_rol)){
-					?>
-								<option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"] ?></option>
-					<?php
-
+								if($_SESSION['ID_Rol'] == 1){
+									?>
+										<option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"] ?></option>
+									<?php
+								}else if($_SESSION['ID_Rol'] != 1 || empty($_SESSION['ID_Rol'])){
+									if($rol["ID_Rol"] != 1){
+										?>
+											<option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"]; ?></option>
+										<?php
+									}
+								}
 							}
 						}
 
