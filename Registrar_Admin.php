@@ -150,7 +150,7 @@ include "Configuraciones/Funciones.php";
 					$query_estado = mysqli_query($conexion, "SELECT * FROM estado");
 					$result_estado = mysqli_num_rows($query_estado);	
 				?>
-					<select name="Estado" id="Estado">
+				<select name="Estado" id="Estado">
 				<?php   	
 					if($result_estado > 0){
 						while ($estado = mysqli_fetch_array($query_estado)){

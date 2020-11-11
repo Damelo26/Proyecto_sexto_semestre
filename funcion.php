@@ -20,8 +20,6 @@
                     $query_insert = mysqli_query($conexion, "UPDATE mascotas SET ID_Estado='2' WHERE ID_Mascota='$dato'");
                     header('Location: Adoptado_Admin.php');
                     echo "Proceso exitoso, mascota aprobada";
-                  }
-                     
-                     
+                  }   
                   ?>
                  

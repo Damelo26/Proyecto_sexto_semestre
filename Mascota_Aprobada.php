@@ -40,8 +40,6 @@
          $sql="SELECT m.ID_Mascota, m.Nombre_Mascota, R.Raza, m.Edad, m.Foto, S.Sexo, Ad.Cedula, U.Primer_Nombre, U.Segundo_Nombre, U.Primer_Apellido, U.Segundo_Apellido, U.Email, U.Telefono, U.Direccion from adoptados Ad INNER JOIN mascotas m ON Ad.ID_Mascotas = m.ID_Mascota INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo INNER JOIN usuario U ON Ad.Cedula = U.Cedula WHERE m.ID_Estado = '$indicador' ORDER BY m.ID_Mascota ASC LIMIT $Desde,$Total_Registros_Por_Pagina"; 
          $result=mysqli_query($conexion, $sql);
         while($mostrar=mysqli_fetch_array($result)){
-
-        
         ?>
         <tr>
           <td><?php echo $mostrar ['ID_Mascota'] ?></td>    

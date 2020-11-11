@@ -14,8 +14,6 @@ if(!isset($_SESSION)){
     }
 
 ?>
-
-
 <html>
 <head> 
 	<meta charset="UTF-8">
