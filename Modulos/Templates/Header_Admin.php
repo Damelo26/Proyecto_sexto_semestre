@@ -101,6 +101,12 @@
                                     <span class="titulo">Adoptados</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="ManualUsu.php">
+                                    <span class="icon"><i class="fas fa-book-open"></i></span>
+                                    <span class="titulo">Manual Tecnico</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

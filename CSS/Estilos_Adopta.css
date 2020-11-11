@@ -1,16 +1,187 @@
-/*ADOPTA**/
+/*Seccion principal*/
+.seccion_mascotas_busqueda{
+    max-width: 120rem; /*== 1200px*/
+    margin: 0 auto;    
+}
+
+/*TITULOS */
+.Titulo_mascotas{
+    font-size: 38px;
+    text-align: center;
+    font-family:'Oswald',sans-serif;
+    font-weight: bold;
+    font: bold;
+    color: #AF2B2B;
+    text-transform: uppercase; 
+    margin-top: 40px;  
+}
+.Texto_caracteristicas{
+    margin-top: 8px;
+}
+/*FORLUMARIO*/
+.Agrupar_Form{
+    display: flex;
+    justify-content: space-between ;
+    flex: 80%;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.form_buscar_mascota{
+    /*display: flex;
+    justify-content: space-between;*/
+    /*float: right;*/
+   /* display: flex;*/
+   display: flex;
+   background: initial;
+   padding: 5px;
+   border: none; 
+   /*background-color: blue;*/
+   width: 26%;
+}
+.form_buscar_mascota input{
+    border-radius: 5px;
+   /* width: 100%;*/
+    height: 36px;
+}
+.Btn_Buscador{
+   width: 100%;
+   margin-left: 10px;
+}
+/*
+.form_buscar_mascota .btn_buscar_mascota{
+    background: #1faac8;
+    color: #FFF;
+    padding: 0 20px;
+    border: 0;
+    cursor: pointer;
+    margin-left: 10px;
+}
+*/
+/* SELECTS */
+.Agrupar_Select{ 
+   margin-left: 0px;
+   /*background-color: blue;*/
+}
+.select_buscar{
+    margin: 12px 5px;
+}
+
+.select_opciones{
+    background:internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+}
+.content-select select{
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+}
+/* Eliminamos la fecha que por defecto aparece en el desplegable */
+.content-select select::-ms-expand {
+   display: none;
+}
+.content-select{
+   display: inline-block;
+   max-width: 100%;
+   position: relative;
+   font-size: 14px;
+}
+.content-select select{
+   display: block;
+   width: 100%;
+   cursor: pointer;
+     padding: 7px 10px;
+     height: 38px;
+     outline: 0; 
+     border: 0;
+   background: #f0f0f0;
+   color: #7b7b7b;
+   border:2px solid rgba(0,0,0,0.2);
+   border-radius: 15px;
+   position: relative;
+   transition: all 0.25s ease;
+}
+
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.content-select i{
+   position: absolute;
+   right: 1px;
+   top: calc(50% - 9px);
+   width: 11px;
+   height: 11px;
+   display: block;
+   border-left:4px solid #AF2B2B;
+   border-bottom:4px solid #AF2B2B;
+   transform: rotate(-45deg); /* Giramos el cuadrado */
+   transition: all 0.25s ease;
+}
+
+.content-select:hover i{
+   margin-top: 3px;
+}
+/*BOTON*/
+.button {
+    background-color: #e73535;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    padding: 8px 22px 7px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 2px;
+  }
+  .button:before,
+  .button:after {
+    border: 0 solid transparent;
+    transition: all 0.25s;
+    content: '';
+    height: 24px;
+    position: absolute;
+    width: 24px;
+  }
+  .button:before {
+    border-top: 2px solid #e73535;
+    left: 0px;
+    top: -5px;
+  }
+  .button:after {
+    border-bottom: 2px solid #e73535;
+    bottom: -5px;
+    right: 0px;
+  }
+  .button:hover {
+    background-color: #e73535;
+  }
+  .button:hover:before,
+  .button:hover:after {
+    height: 100%;
+    width: 100%;
+  }
+/*******MASCOTAS_ADOPTA******/
+.ordenar{
+    /*text-align: center;
+    justify-content: center center;*/
+    width: 100%;
+    box-shadow: lightgrey 2px 2px 2px 1px;
+    background-color: #f9f9f9; 
+   
+}
 ul.lista_mascotas {
-    margin: 2rem;
+    margin: 2rem auto;
+   
 }
 ul.lista_mascotas li{
     /*padding: 10px;*/
     display: inline-block;
     list-style: none;
     padding: 10px;
+    left: 50px;
     margin: 0;
-    position: relative;
-    }
-
+    position: relative; 
+}
 .Frase_Oculta{
     display: none;
     position: absolute;
@@ -25,9 +196,6 @@ ul.lista_mascotas li{
 ul.lista_mascotas li:hover .Frase_Oculta {
     display: block;
     }
-
-
-
 @media only screen and (min-width:480px){
         ul.lista_mascotas li {
             width: 49%;
@@ -45,20 +213,19 @@ div.mascota{
     overflow: hidden;
     width: 350px; 
     height: 330px;
+    padding: 1.5px;
 }
 
 div.mascota img{
     width: 100%;
     -webkit-transition: all .3s ease-in-out;
     height: 100%;
-    /*-webkit-filter: grayscale(0); */
+   
 }
-
+.img_mascotas{
+    border-radius: 10px;
+}
 div.mascota:hover img{  
-   /* filter: gray;
-    -webkit-filter: grayscale(1);
-    */
-    
     -webkit-transform: scale(1.3);
     transform: rotate(3deg);
 }
@@ -125,17 +292,67 @@ div.mascota:hover .Frase_Oculta{
     box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
     
     }
-
-/*ADOPTA ESP */
+/*PAGINADOR ADOPTA*/
+.paginador-Adopta ul{
+    padding: 15px;
+    list-style: none;
+    background: #FFF; 
+    margin-top: 15px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: flex-end;
+    }
+    .paginador-Adopta a, .pagesSeletedAdopta{
+        color: #e73535;
+        border: 1px solid #ddd;
+        padding: 5px;
+        display: inline-block;
+        font-size: 14px;
+        text-align: center;
+        width: 35px;
+    }
+    .paginador-Adopta a:hover{
+        background: #ddd;
+    }
+    
+    .pagesSeletedAdopta{
+        color: #FFF;
+        background: #e73535;
+        border: 1px solid #e73535;
+    }
+/*ADOPTA_ESP*/
+/*SECCION PRINCIPAL*/
 .contenedor_adopta{
     max-width: 110rem; /*== 1200px*/
     margin: 15px auto;
 }
+/*TITULO*/
+.Nombre_Mascota{ 
+    margin: 20px;
+
+}
+.texto_sub_ti{
+    font-family:'Oswald',sans-serif;
+    font-weight: bold;
+    color: #222831;
+    text-transform: uppercase; 
+    
+}
+.texto_sub{
+    color:#1E1E1E; 
+    margin-top: 20px;
+}
+/*DIVISION ESPACIO*/
+/*IMAGEN*/
 .Img_adopta_esp{
     width: 700px;
     height: 450px;
+    border-radius: 10px;
 }
-
+/*TEXTO*/
 .division{ /*Imagen de texto*/
     display: flex;
 }
@@ -146,27 +363,39 @@ div.mascota:hover .Frase_Oculta{
     display: inline-block;
     border-bottom: 1px solid #D2D2D2;
     padding: 2px 0px;
-    width: 47%;
+    width: 47%;  
 }
 .division_datos p{
     display: block;
     padding: 2px 0;
     margin: 5px;
-    
-    
 }
+
 /*ADOPTA SUGERIDOS*/
+.Mas_Suge{
+    font-size: 24px;
+    text-align: left;
+    font-family:'Oswald',sans-serif;
+    font-weight: bold;
+    color: #AF2B2B;
+    text-transform: uppercase; 
+    margin-top: 12px;
+    
+
+}
 ul.lista_mascotas_suge {
     margin: 1rem 0.5rem;
+    
 }
 ul.lista_mascotas_suge li{
-    
     display: inline-block;
     list-style: none;   
     margin: 0;
     position: relative;
+    align-items: center;
+    /*justify-content: space-between;*/
+    left: 35px;
 }
-
 div.mascota_suge{
     position: relative;
     overflow: hidden;
@@ -178,7 +407,6 @@ div.mascota_suge img{
     width: 100%; 
     height: 100%;
 }
-   
 div.mascota_suge p { /*Bajar el tamaño creo que esta muy grande*/
     position: absolute;
     bottom: 0;
@@ -192,6 +420,448 @@ div.mascota_suge p { /*Bajar el tamaño creo que esta muy grande*/
     font-weight: bold;
     font: bold;
     background-color: rgba(0,0,0,0.73);
-    color :  #fe4918;
+    color : #fe4918;
     text-transform: uppercase;   
 }   
+
+ .form_adoptar{
+    display: flex;
+    background: initial;
+    padding: 10px;
+    border: none; 
+    width: 50%;
+    margin-top: 50px;
+ }
+ /*BOTON ADOPTAR*/
+.buttonap {
+    font-size: 17px;
+    background-color: #e73535;
+    border: none;
+    color: #ffffff;
+    outline: none;
+    padding: 8px 22px 7px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 4px;
+    width: 140px;
+    height: 38px;
+  }
+  .buttonap:before,
+  .buttonap:after {
+    border: 0 solid transparent;
+    transition: all 0.25s;
+    content: '';
+    height: 24px;
+    position: absolute;
+    width: 24px;
+  }
+  .buttonap:before {
+    border-top: 2px solid #e73535;
+    left: 0px;
+    top: -5px;
+  }
+  .buttonap:after {
+    border-bottom: 2px solid #e73535;
+    bottom: -5px;
+    right: 0px;
+  }
+  .buttonap:hover {
+    background-color: #e73535;
+  }
+  .buttonap:hover:before,
+  .buttonap:hover:after {
+    height: 100%;
+    width: 100%;
+  }
+/*PROCESO DE ADOPCION*/
+.Lista_Requerimientos{
+    list-style: circle;
+    
+}
+.Lista_Requerimientos li{
+    padding: 20px 0;
+    color: #1E1E1E;
+}
+.titu_adop{
+    margin-top: 20px;
+}
+.centrar_adopta{
+    align-items: center;
+    font-family:'Oswald',sans-serif;
+    font-weight: bold;
+}
+.centrar_boton_adop{
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: center;
+}
+.hipervinculo{
+    text-decoration: none; 
+}
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color:#1E1E1E;
+  }
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #AF2B2B;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .hover-underline-animation:hover{
+    color: #AF2B2B;
+  }
+
+/*POPUP*/
+.espaciado_adop{
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.Agrupar_botons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btn_Validar{
+    margin-top: 30px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    line-height: 40px;
+    width: 150px;
+    border-radius: 3px;
+    right: 80%;
+}
+.btn_Validar_Can{
+    /* left: 30%; */
+    margin-top: 30px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    line-height: 40px;
+    width: 150px;
+    border-radius: 3px;
+    left: 80%;
+
+}
+.btn-abrir-popup {
+	padding: 0 20px;
+	margin-bottom: 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+	cursor: pointer;
+}
+
+.btn-abrir-popup:hover {
+	background: rgba(94,125,227, .9);
+}
+
+/* ------------------------- */
+/* POPUP */
+/* ------------------------- */
+
+.overlay {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.popup {
+	background: #F8F8F8;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 600px;
+	
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+}
+
+.popup .btn-cerrar-popup {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+	color: #000;
+}
+
+.popup h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.popup h4 {
+	font-size: 26px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+}
+
+.popup form .contenedor-inputs {
+	opacity: 0;
+}
+
+.popup form .contenedor-inputs input {
+	width: 100%;
+	margin-bottom: 20px;
+	height: 52px;
+	font-size: 18px;
+	line-height: 52px;
+	text-align: center;
+	border: 1px solid #BBBBBB;
+}
+
+.popup form .btn-submit {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover {
+	background: rgba(94,125,227, .9);
+}
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {	transform: scale(1); opacity: 1; }
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+.msg_error_adop{
+    color: #fa1616;
+    font-size: 18px;
+    text-align: center;
+    font-family:'Oswald',sans-serif;
+    font-weight: bold;
+    font: bold;
+    display: block;
+	margin-left: auto;
+	margin-right: auto     
+}
+/*COSAS A CONSIDERAR*/
+.left_considerar{
+    padding: 10px; 
+    float: left; 
+    width: 48%; 
+    text-align: justify;
+    background-color: blueviolet;
+}
+.right_considerar{
+    padding: 10px; 
+    float: right; 
+    width: 48%; 
+    text-align: justify;
+    background-color: blue;
+}
+.left_considerar:last-of-type{
+    width: 49.9%;
+    float: inline-end;
+}
+.left_considerar img{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+}
+.right_considerar img{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+}
+
+.columnar {
+    float: left;
+    width: 48%;
+    padding: 8px;
+    margin-left: 15px;
+    
+}
+.columnar img{
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+}
+.columnar p{
+    font-family:'Montserrat', sans-serif;
+    font-size: 15px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+.dividir_considerar{
+    margin: 30px;
+    
+}
+/*SOLICITUD ADOPCION*/
+.form_Solicitud{
+    display: block;
+    /*display: flex;*/
+    background: initial;
+    border: none; 
+    padding: 10px;
+    
+    /*background-color: blue;*/
+    width: 80%;
+
+}
+.form_Solicitud select, .form_Solicitud input{
+    margin: 5px;
+    height: 38px;
+    background: #f9f9f9;
+}
+.right_boton{
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: right;
+}
+.center_boton{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: center;
+}
+.left_boton{
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: left;
+}
+.btn_enviar{
+    width: 20%;
+}
+.sombreado_texto{
+   
+}
+.Titulo_mascot_Solicitud{
+    font-size: 25px;
+    text-align: center;
+    font-family:'Oswald',sans-serif;
+    font-weight: bold;
+    font: bold;
+    color: #AF2B2B;
+    text-transform: uppercase; 
+    margin-top: 10px;
+}
+.Espaciado_solicitud{
+   background-color: #F6F6F7;
+    margin: 30px auto;
+    text-align: center;
+    align-items: center;
+    
+}
+.left_solicitud{
+ float: left;
+ width: 20%;
+ align-items: center;
+ text-align: right;
+}
+.Img_solicitud{
+    border-radius: 10px;
+    width: 240px;
+    height: 208px;
+}
+.division_datos_solicitud{ /* texto de texto*/
+    display: flex;
+    width: 100%;
+}
+.division_datos_solicitud p{
+    display: block;
+    padding: 3px 0;
+    margin-right: 3px;   
+}
+.center_solicitud{
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+   }
+
