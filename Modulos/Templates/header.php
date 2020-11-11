@@ -33,6 +33,11 @@ if(!isset($_SESSION)){
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="JavaScript/FAQ.js" defer></script>
 	<link rel="stylesheet" href="CSS/EstiloFAQ.css">
+	<script>
+    function enableSending() {
+        document.Formulario_Registro_Usuario.submit.disabled = !document.Formulario_Registro_Usuario.checkbox.checked;
+    }
+	</script>
 </head>
 <body>
 <div class="Alinear_Header">
@@ -41,18 +46,24 @@ if(!isset($_SESSION)){
 			<img src="img/logoprincipal.png" alt="">
 		</figure>
 		<p class="tamanoTitulo">PETS' HOME</p>
-		
 		<div class="perfil">
-				
 				<div class="imagen">
 			<img src="<?php echo $imagen; ?>" >
 				</div>
 				<div class="Info_Perfil">
 				<p>Bienvenido</p>
-				<p class = "Perfil_Nombre"><?php echo $usuario;?></p>
-				
+				<?php
+					if(strcmp($usuario, "Invitado")){
+				?>
+						<a href = "Actualizar_Usuario_Pets_Home.php" class = "Perfil_Nombre"><?php echo $usuario;?></a>
+				<?php
+					}else{
+				?>
+						<p class = "Perfil_Nombre"><?php echo $usuario;?></p>
+				<?php
+					}
+				?>
 			</div>
-			
 		</div>
 	</header>	
 </div>

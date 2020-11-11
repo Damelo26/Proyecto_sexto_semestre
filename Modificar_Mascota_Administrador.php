@@ -18,7 +18,7 @@ include "Configuraciones/Funciones.php";
             $ID_Modificar_Categoria = $Datos_Modificar['ID_Categoria'];
             $Categoria_Modificar = $Datos_Modificar['Categoria'];
 
-                $option_Categoria = '<option value="'.$ID_Modificar_Categoria.'" select>'.$Categoria_Modificar.'</option>';
+            $option_Categoria = '<option value="'.$ID_Modificar_Categoria.'" select>'.$Categoria_Modificar.'</option>';
 
 			$Nombre_Modificar = $Datos_Modificar['Nombre'];
 			$ID_Modificar_Raza = $Datos_Modificar['ID_Raza'];
@@ -29,16 +29,15 @@ include "Configuraciones/Funciones.php";
             $Edad_Modificar = $Datos_Modificar['Edad'];
 			$Descripcion_Modificar = $Datos_Modificar['Descripcion'];
 			$Foto_Modificar = $Datos_Modificar['Foto'];
-			//$Foto_Etiqueta = '<img src='.$Foto_Modificar.' alt="" class="Ver_Foto_Mascota_Tamano" id="imagenPrevisualizacion">';
             $ID_Modificar_Color = $Datos_Modificar['ID_Color'];
             $Color_Modificar = $Datos_Modificar['Color'];
 
-                $option_Color = '<option value="'.$ID_Modificar_Color.'" select>'.$Color_Modificar.'</option>';
+            $option_Color = '<option value="'.$ID_Modificar_Color.'" select>'.$Color_Modificar.'</option>';
 
             $ID_Modificar_Tamano = $Datos_Modificar['ID_Tamano'];
             $Tamano_Modificar = $Datos_Modificar['Tamano'];
 
-                $option_Tamano = '<option value="'.$ID_Modificar_Tamano.'" select>'.$Tamano_Modificar.'</option>';
+            $option_Tamano = '<option value="'.$ID_Modificar_Tamano.'" select>'.$Tamano_Modificar.'</option>';
 
             $Frase_Modificar = $Datos_Modificar['Frase'];
 			$Peso_Modificar = $Datos_Modificar['Peso'];
@@ -247,21 +246,6 @@ include "Configuraciones/Funciones.php";
 					}
 				?>
 				</select>
-				<!--
-				<div class="photo">
-					<label for="foto">Foto</label>
-					<div class="prevPhoto">
-						<span class="delPhoto notBlock">X</span>
-						<label for="foto"></label>
-					</div>
-					<div class="upimg">
-						<input type="file" name="foto" id="foto">
-					</div>
-					<div class="form_alert"></div>
-				</div>
-				-->
-
-
 				<button class="Btn_save" type="submit"><i class="far fa-save"></i> Guardar mascota</button>
 			</form>
 		</div>

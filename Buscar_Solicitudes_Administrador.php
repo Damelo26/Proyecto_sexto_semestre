@@ -37,6 +37,7 @@
         
         require_once "Configuraciones/Funciones.php";
         $Query_Cantidad_Registros = mysqli_query($conexion, "SELECT COUNT(*) as Total_Registros from adoptados Ad INNER JOIN mascotas m ON Ad.ID_Mascotas = m.ID_Mascota INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo INNER JOIN usuario U ON Ad.Cedula = U.Cedula INNER JOIN color C ON m.ID_Color = C.ID_Color WHERE (m.ID_Mascota LIKE '%$Buscador%' OR m.Nombre_Mascota LIKE '%$Buscador%' OR R.Raza LIKE '%$Buscador%' OR m.Edad LIKE '%$Buscador%' OR S.Sexo LIKE '%$Buscador%' OR Ad.Cedula LIKE '%$Buscador%' OR U.Primer_Nombre LIKE '%$Buscador%' OR U.Segundo_Nombre LIKE '%$Buscador%' OR U.Primer_Apellido LIKE '%$Buscador%' OR U.Segundo_Apellido LIKE '%$Buscador%'  OR U.Email LIKE '%$Buscador%' OR U.Telefono LIKE '%$Buscador%' OR U.Direccion LIKE '%$Buscador%') AND m.ID_Estado = 3");
+          //$Resultado_Cantidad_Registros ='p2w' mysqli_fetch_array($Query_Cantidad_Registros);
           $Resultado_Cantidad_Registros = mysqli_fetch_array($Query_Cantidad_Registros);
           $Total_Cantidad_Registros = $Resultado_Cantidad_Registros['Total_Registros'];
           $Total_Registros_Por_Pagina = 15;

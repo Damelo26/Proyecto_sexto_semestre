@@ -61,8 +61,8 @@
           <td><?php echo $mostrar ['Telefono'] ?></td>
           <td><?php echo $mostrar ['Direccion'] ?></td>
           <td>
-        <a class="link_aprobar_masc" href="funcion.php?id=<?php echo $mostrar["ID_Mascota"]; ?>"> Aprobar </a>
-        <a class="link_rechazar" href="funcionrec.php?id=<?php echo $mostrar["ID_Mascota"]; ?>"> Rechazar </a>
+        <a class="link_aprobar_masc" href="funcion.php?id=<?php echo $mostrar["ID_Mascota"]; ?>&usuario=<?php echo $mostrar["Cedula"]; ?>"> Aprobar </a>
+        <a class="link_rechazar" href="funcionrec.php?id=<?php echo $mostrar["ID_Mascota"]; ?>&usuario=<?php echo $mostrar["Cedula"]; ?>"> Rechazar </a>
           </td>
         </tr>
         <?php

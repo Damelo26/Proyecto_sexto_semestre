@@ -74,7 +74,7 @@ text-transform: uppercase;
     background-repeat:no-repeat ;
     background-size: cover;
     width: 1350px;
-    height: 1200px;
+    height: 1260px;
     display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -420,4 +420,23 @@ td img{
 	color: #FFF;
 	background: #5ada64;
 	border: 1px solid #5ada64;
+}
+
+.Contenido_Checkbox_Registrar{
+	display: flex;
+	width: auto;
+}
+
+.checkbox{
+	width: 20px;
+	height: 20px;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.Label_Checkbox{
+	width: 1200px;
+	display: flex;
+	font-size: 14px;
 }

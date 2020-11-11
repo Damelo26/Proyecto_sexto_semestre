@@ -62,8 +62,12 @@ body{
     font-size: 13px;  /*Tamaño de fuente del nombre del usuario*/
     color: #fff;  /*Color del nombre del usuario"*/
 	margin-bottom: 3px;
-	
 }
+
+.perfil .Perfil_Nombre:hover{
+    color: #fff;  /*Color del nombre del usuario"*/
+}
+
 .contenedor{ 
 	padding: 0rem;
 	display: flex;

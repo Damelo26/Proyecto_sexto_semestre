@@ -1,27 +1,22 @@
 <?php
-   
         include "Configuraciones/Funciones.php";
-              /*        $CCpersona = "657";
-                      $idmasc = "1";
-                      $estadom = "Si";
-                      $query_insert = mysqli_query($conexion, "INSERT INTO adoptados(cedula,	ID_Mascotas,	Aprobado) 
-                      VALUES('$CCpersona','$idmasc','$estadom')");
-                      if($query_insert){
-                        
-                        header("Location:Mascota_Aprobada.php");
-                      }else{
-                        echo "No se pudo registrar";
-                      }*/ /* PUSE ESTO EN COMENTARIO PORQUE AQUI LO QUE HARIA ES METER LO QUE SE RECIBA EN BASE A LO DE OXH*/
-                   if(empty($_REQUEST['id'])){
+                  if(empty($_REQUEST['id']) || empty($_REQUEST['usuario'])){
                      header('Location: Adoptado_Admin.php');
                    }
                    else{
-                    $dato= $_REQUEST['id'];
-                    $query_insert = mysqli_query($conexion, "UPDATE mascotas SET ID_Estado='2' WHERE ID_Mascota='$dato'");
-                    header('Location: Adoptado_Admin.php');
-                    echo "Proceso exitoso, mascota aprobada";
+                    $id_Mascota = $_REQUEST['id'];
+                    $id_Usuario = $_REQUEST['usuario'];
+                    $query_update = mysqli_query($conexion, "UPDATE mascotas INNER JOIN adoptados Ad 
+                    ON Ad.ID_Mascotas = mascotas.ID_Mascota
+                    SET mascotas.ID_Estado = '2' 
+                    WHERE Ad.ID_Mascotas = '$id_Mascota' AND Ad.Cedula = '$id_Usuario'");
+                    if($query_update){
+                      header('Location: Adoptado_Admin.php');
+                      echo "Proceso exitoso, mascota aprobada";
+                    }else{
+                      header('Location: Adoptado_Admin.php');
+                      echo "Fallo el proceso de aprobación de solicitud";
+                    }
+                    
                   }
-                     
-                     
-                  ?>
-                 
+?>

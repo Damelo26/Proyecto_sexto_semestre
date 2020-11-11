@@ -48,7 +48,7 @@
 			<h1><i class="fas fa-user-plus"></i>Registro usuario</h1>
 			<hr>
 			<div class = "Register_alert"><?php echo isset($Register_alert) ? $Register_alert : ''; ?></div>
-			<form action="" method="post">
+			<form action="" method="post" name="Formulario_Registro_Usuario">
 				<label for = "cedula">Cedula</label>
 				<input type="text" name="cedula" id="cedula" placeholder="Cedula">				
 				<label for = "primernombre">Primer Nombre</label>
@@ -100,7 +100,12 @@
 					?>
 					
 				</select>
-				<button class="Btn_save" type="submit"><i class="far fa-save"></i> Registrar usuario</button>
+				<br>
+				<div class="Contenido_Checkbox_Registrar">
+				<input type="checkbox" class="checkbox" name="checkbox" id="checkbox" onclick= "enableSending();">
+				<label for="checkbox" class="Label_Checkbox">He leído y acepto los <a href="PDF/POLITICA DE PRIVACIDAD DE PETS´ HOME.pdf" target = "_blank">Terminos y condiciones<a></label>
+				</div>
+				<button class="Btn_save" type="submit" name="submit" disabled><i class="far fa-save"></i> Registrar usuario</button>
 			</form>
 		</div>
 	</section>
