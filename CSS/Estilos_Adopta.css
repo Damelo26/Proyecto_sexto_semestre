@@ -1,3 +1,8 @@
+/*HEADER*/
+.centrar_header{
+
+}
+
 /*Seccion principal*/
 .seccion_mascotas_busqueda{
     max-width: 120rem; /*== 1200px*/
@@ -715,7 +720,7 @@ div.mascota_suge p { /*Bajar el tamaño creo que esta muy grande*/
     font: bold;
     display: block;
 	margin-left: auto;
-	margin-right: auto     
+	margin-right: auto;    
 }
 /*COSAS A CONSIDERAR*/
 .left_considerar{

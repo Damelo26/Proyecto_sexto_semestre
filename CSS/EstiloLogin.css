@@ -424,19 +424,20 @@ td img{
 
 .Contenido_Checkbox_Registrar{
 	display: flex;
-	width: auto;
+	align-items: center;
+	
 }
 
-.checkbox{
-	width: 20px;
+.checkbox_r{
+	width: 12%;
+}
+.tamaño_check{
 	height: 20px;
-	display: flex;
-	margin: 0;
-	padding: 0;
+	width: 20px;
 }
-
 .Label_Checkbox{
-	width: 1200px;
-	display: flex;
 	font-size: 14px;
+	text-align: center;
+	padding-bottom: 8px;
+	 
 }

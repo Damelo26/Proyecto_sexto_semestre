@@ -11,7 +11,7 @@
         <?php 
         require_once "Configuraciones/Funciones.php";
         $consulta_general = mysqli_query($conexion, "SELECT * FROM mascotas as m 
-                                                                WHERE m.ID_Estado = 1
+                                                                WHERE m.ID_Estado = 2
                                                                 ORDER BY m.ID_Mascota ASC");
         $Cant_Resultados = mysqli_num_rows($consulta_general); 
         $por_pagina = 15;
@@ -24,13 +24,13 @@
         $total_Paginas = ceil($Cant_Resultados / $por_pagina);                            
         $consulta_general = mysqli_query($conexion, "SELECT m.ID_Mascota, m.Nombre_Mascota, m.Foto, m.Frase 
                                                                 FROM mascotas as m 
-                                                                WHERE (m.ID_Estado = 1 OR m.ID_Estado = 3)
+                                                                WHERE (m.ID_Estado = 2)
                                                                 ORDER BY m.ID_Mascota 
                                                                 ASC LIMIT $desde,$por_pagina");
         ?>
-        <h2 class="Titulo_mascotas"> Las mascotas son:</h2>
+        <h2 class="Titulo_mascotas"> Patitas con familia</h2>
         <br> <!--Quitar poner margin-->
-        <p class="Texto_caracteristicas">Puedes buscar las mascotas por la caracteristica que mas te llame la atención.</p>
+        <p class="Texto_caracteristicas">Estas son las mascotas que encontraron un hogar. </p>
 
         <?php 
             $Consulta_Tamaño = mysqli_query($conexion, "SELECT t.Nombre as Nombre 
@@ -46,83 +46,7 @@
                                                                 FROM sexo as s 
                                                                 ORDER BY s.Sexo ASC ");                                                    
         ?>
-        <div class= "Agrupar_Form">
-            <div class="Agrupar_Select">
-                <div class="content-select">
-                    <select name="xmascota" id="xmascota" class="select_buscar">
-                        <option value="" class ="select_opciones">¿Cual mascota buscas?</option>
-                        <?php 
-                        $Cantidad_Categorias = mysqli_num_rows($consulta_Categorias);
-                        if($Cantidad_Categorias > 0){
-                            while($resulset = mysqli_fetch_array($consulta_Categorias)){?>
-                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"] ?></option>
-                            <?php
-                            }
-                        }
-                        ?>
-                        
-                    </select>
-                    <i></i>
-                </div>
-                <div class="content-select" id="raza_mas">
-                    <select name="xraza" id="xraza" class="select_buscar">
-                    <option value="" class ="select_opciones">¿Que raza buscas?</option>
-                    </select>
-                    <i></i>
-                </div>
-                <div class="content-select">
-                    <select name="xtamaño" id="xtamaño" class="select_buscar">
-                        <option value="" class ="select_opciones">¿Que tamaño buscas?</option>
-                        <?php 
-                        $Cantidad_Tamaño = mysqli_num_rows($Consulta_Tamaño);
-                        if($Cantidad_Tamaño > 0){
-                            while($resulset = mysqli_fetch_array($Consulta_Tamaño)){?>
-                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"] ?></option>
-                            <?php
-                            }
-                        }
-                        ?>                   
-                    </select>
-                    <i></i>
-                </div>
-                <div class="content-select ">
-                    <select name="xcolor" id="xcolor" class="select_buscar">
-                    <option value="" class ="select_opciones">¿Que Color te gusta?</option>
-                    <?php 
-                        $Cantidad_color = mysqli_num_rows($consulta_Color);
-                        if($Cantidad_Tamaño > 0){
-                            while($resulset = mysqli_fetch_array($consulta_Color)){?>
-                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"] ?></option>
-                            <?php
-                            }
-                        }
-                        ?>  
-                    </select>
-                    <i></i>
-                </div>
-                <div class="content-select ">
-                    <select name="xsexo" id="xsexo" class="select_buscar">
-                    <option value="" class ="select_opciones">¿Que sexo te gusta?</option>
-                    <?php 
-                        $Cantidad_sexo = mysqli_num_rows($consulta_Sexo);
-                        if($Cantidad_sexo > 0){
-                            while($resulset = mysqli_fetch_array($consulta_Sexo)){?>
-                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"] ?></option>
-                            <?php
-                            }
-                        }
-                        ?>  
-                    </select>
-                    <i></i>
-                </div>
-            </div>    
-            <form action="Search_mas.php" method="GET" class="form_buscar_mascota">            
-                <input type="text" name="search_mas" placeholder="Buscar" class ="input_buscar">
-                <div class="button-border">
-                     <button class="button Btn_Buscador">Buscar</button>
-                </div>
-            </form>
-        </div>
+        
         <div class="resultado"></div>
             <div class="ordenar">
                 <ul class="lista_mascotas">
@@ -130,7 +54,7 @@
                         while($mascotas = mysqli_fetch_array($consulta_general)){?>
                             <li>
                                 <div class="mascota">
-                                    <a href="Adopta_Esp.php?mascota=<?php echo $mascotas['ID_Mascota']?>" class="cinta uno" <?php echo $mascotas['ID_Mascota']?>>
+                                    <a class="cinta uno" <?php echo $mascotas['ID_Mascota']?>>
                                     <img class ="img_mascotas" src= "<?php echo $mascotas['Foto'] ?>" alt="Imagen perro uno"/>
                                     </a> 
                                     <p class="Nombre_Mascota"><?php echo $mascotas['Nombre_Mascota']?></p>

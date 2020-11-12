@@ -11,7 +11,7 @@
         <?php 
         require_once "Configuraciones/Funciones.php";
         $consulta_general = mysqli_query($conexion, "SELECT * FROM mascotas as m 
-                                                                WHERE m.ID_Estado = 1
+                                                                WHERE m.ID_Estado = 1 OR m.ID_Estado = 3
                                                                 ORDER BY m.ID_Mascota ASC");
         $Cant_Resultados = mysqli_num_rows($consulta_general); 
         $por_pagina = 15;

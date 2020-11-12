@@ -68,7 +68,7 @@ if(!isset($_SESSION)){
 	
 	
 	<div class= "menu">
-			<a href="Principal.php"><i class="fas fa-home"></i> Principal</a>
+			<a class = "centrar_header" href="Principal.php"><i class="fas fa-home"></i> Principal</a>
 			<a href="Adopta.php"><i class="fas fa-dog"></i> Adopta</a>
 			<a href="Adoptados.php"><i class="fas fa-heart"></i> Adoptados</a>
 			<a href="Contactenos.php"><i class="fas fa-paper-plane"></i> Contactenos</a>

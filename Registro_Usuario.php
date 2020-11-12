@@ -102,8 +102,12 @@
 				</select>
 				<br>
 				<div class="Contenido_Checkbox_Registrar">
-				<input type="checkbox" class="checkbox" name="checkbox" id="checkbox" onclick= "enableSending();">
-				<label for="checkbox" class="Label_Checkbox">He leído y acepto los <a href="PDF/POLITICA DE PRIVACIDAD DE PETS´ HOME.pdf" target = "_blank">Terminos y condiciones<a></label>
+					<div class="checkbox_r">
+						<input type="checkbox" class="tamaño_check" name="checkbox" id="checkbox" onclick= "enableSending();">
+					</div>
+					<label for="checkbox" class="Label_Checkbox">He leído y acepto los 
+						<a href="PDF/POLITICA DE PRIVACIDAD DE PETS´ HOME.pdf" target = "_blank">Terminos y condiciones<a>
+					</label>
 				</div>
 				<button class="Btn_save" type="submit" name="submit" disabled><i class="far fa-save"></i> Registrar usuario</button>
 			</form>

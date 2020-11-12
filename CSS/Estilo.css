@@ -99,10 +99,11 @@ font-family: 'Oswald', sans-serif; encabezados h2
 .menu a{
 	text-decoration: none;
 	color: #fff;
-	background: #353535;
-	padding: 0.2rem;
-    padding-left: 2.3rem;
-	display: inline-block;
+	background:353535;
+	padding: 0.6rem;
+	margin-right: 2.3rem;
+	
+	
 }
 
 .menu a:hover{
