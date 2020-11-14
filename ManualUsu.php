@@ -16,7 +16,7 @@
 
 <body>
 <div id="portapdf">
-    <object data="ManualTecnico.pdf" type="application/pdf" width="100%" height="100%"></object>
+    <object data="Archivos de Pets' Home/ManualTecnico.pdf" type="application/pdf" width="100%" height="100%"></object>
 </div>
 </body>
 
