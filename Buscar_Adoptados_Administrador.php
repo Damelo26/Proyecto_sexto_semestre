@@ -27,8 +27,6 @@
           <th>Direccion</th>
           <th>Acciones</th>
         </tr>
-      
-
         <?php 
          require_once "Configuraciones/Funciones.php";
          $Query_Cantidad_Registros = mysqli_query($conexion, "SELECT COUNT(*) as Total_Registros from adoptados Ad INNER JOIN mascotas m ON Ad.ID_Mascotas = m.ID_Mascota INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo INNER JOIN usuario U ON Ad.Cedula = U.Cedula INNER JOIN color C ON m.ID_Color = C.ID_Color WHERE (m.ID_Mascota LIKE '%$Buscador%' OR m.Nombre_Mascota LIKE '%$Buscador%' OR R.Raza LIKE '%$Buscador%' OR m.Edad LIKE '%$Buscador%' OR S.Sexo LIKE '%$Buscador%' OR Ad.Cedula LIKE '%$Buscador%' OR U.Primer_Nombre LIKE '%$Buscador%' OR U.Segundo_Nombre LIKE '%$Buscador%' OR U.Primer_Apellido LIKE '%$Buscador%' OR U.Segundo_Apellido LIKE '%$Buscador%'  OR U.Email LIKE '%$Buscador%' OR U.Telefono LIKE '%$Buscador%' OR U.Direccion LIKE '%$Buscador%') AND m.ID_Estado = 2");
@@ -46,8 +44,6 @@
          $sql="SELECT m.ID_Mascota, m.Nombre_Mascota, R.Raza, m.Edad, m.Foto, S.Sexo, Ad.Cedula, U.Primer_Nombre, U.Segundo_Nombre, U.Primer_Apellido, U.Segundo_Apellido, U.Email, U.Telefono, U.Direccion from adoptados Ad INNER JOIN mascotas m ON Ad.ID_Mascotas = m.ID_Mascota INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo INNER JOIN usuario U ON Ad.Cedula = U.Cedula INNER JOIN color C ON m.ID_Color = C.ID_Color WHERE (m.ID_Mascota LIKE '%$Buscador%' OR m.Nombre_Mascota LIKE '%$Buscador%' OR R.Raza LIKE '%$Buscador%' OR m.Edad LIKE '%$Buscador%' OR S.Sexo LIKE '%$Buscador%' OR Ad.Cedula LIKE '%$Buscador%' OR U.Primer_Nombre LIKE '%$Buscador%' OR U.Segundo_Nombre LIKE '%$Buscador%' OR U.Primer_Apellido LIKE '%$Buscador%' OR U.Segundo_Apellido LIKE '%$Buscador%'  OR U.Email LIKE '%$Buscador%' OR U.Telefono LIKE '%$Buscador%' OR U.Direccion LIKE '%$Buscador%') AND m.ID_Estado = '$indicador' ORDER BY m.ID_Mascota ASC LIMIT $Desde,$Total_Registros_Por_Pagina"; 
          $result=mysqli_query($conexion, $sql);
         while($mostrar=mysqli_fetch_array($result)){
-
-        
         ?>
         <tr>
           <td><?php echo $mostrar ['ID_Mascota'] ?></td>    

@@ -1,7 +1,5 @@
-
-<?php 
-    include_once 'Modulos/Templates/header.php';  
-    if (isset($_GET['mascota'])) {
+<?php   
+    if (isset($_GET['mascota'])) { include_once 'Modulos/Templates/header.php';
         $valor_Obtenido = $_GET["mascota"];
         try {
             require_once "Configuraciones/Funciones.php";
@@ -12,6 +10,7 @@
         }catch(\Exeption $e){
             echo $e->getMessage();
         }?>
+        <?php  ?>
 <section class="contenedor_adopta">   
     <?php $mascota = $resultado->fetch_assoc();?> 
     <div>
@@ -68,25 +67,24 @@
         <h2 class="Nombre_Mascota Titulo_mascotas Mas_Suge">Mascotas sugeridas</h2>
         <?php 
             /*OBTENCION DE LOS PARAMETROS BASES*/
-            $Consulta_Principal = mysqli_query($conexion,"SELECT m.ID_Mascota, s.ID_Sexo, r.ID_Raza, cat.ID_Categoria FROM mascotas AS m INNER JOIN sexo AS s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza AS r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota AS cat ON cat.ID_Categoria = m.ID_Categoria where m.ID_Mascota= '$valor_Obtenido'");
+            $Consulta_Principal = mysqli_query($conexion,"SELECT m.ID_Mascota, s.ID_Sexo, r.ID_Raza, cat.ID_Categoria FROM mascotas m INNER JOIN sexo s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat ON cat.ID_Categoria = m.ID_Categoria where m.ID_Mascota= '$valor_Obtenido'");
             $Mascota_Base = mysqli_fetch_array($Consulta_Principal); 
             $ID_Mascota = $Mascota_Base['ID_Mascota'];
             $ID_Sexo = $Mascota_Base['ID_Sexo'];
             $ID_Raza = $Mascota_Base['ID_Raza'];
             $ID_Categoria = $Mascota_Base['ID_Categoria'];
-            
             /*ALGORITMO PARA LAS SUGERENCIAS*/
-            $Cantidad_Principal = mysqli_query($conexion, "SELECT COUNT(*) as Filas FROM mascotas as M INNER JOIN sexo as s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza as r ON r.ID_Raza = m.ID_Raza WHERE (s.ID_Sexo = '$ID_Sexo') and (r.ID_Raza = '$ID_Raza') and (m.ID_Mascota != '$ID_Mascota')");
+            $Cantidad_Principal = mysqli_query($conexion, "SELECT COUNT(*) as Filas FROM mascotas m INNER JOIN sexo s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza r ON r.ID_Raza = m.ID_Raza WHERE (s.ID_Sexo = '$ID_Sexo') and (r.ID_Raza = '$ID_Raza') and (m.ID_Mascota != '$ID_Mascota')");
             $Filas_Cantidad_Principal = mysqli_fetch_array($Cantidad_Principal); 
             $Total_Principal = $Filas_Cantidad_Principal['Filas'];
             $Consulta_Mascota_Sola = "";
             $Consulta_Mascotas_Restantes = "";
             if($Total_Principal < 2){
-                $Consulta_Mascota_Sola =  mysqli_query($conexion, "SELECT m.ID_Mascota,m.Nombre_Mascota, m.Foto FROM mascotas as M INNER JOIN sexo as s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza as r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat on cat.ID_Categoria = m.ID_Categoria WHERE (s.ID_Sexo = '$ID_Sexo' and r.ID_Raza = '$ID_Raza' and m.ID_Mascota != '$ID_Mascota') LIMIT 1"); 
-                $Consulta_Mascotas_Restantes = mysqli_query($conexion, "SELECT m.ID_Mascota,m.Nombre_Mascota, m.Foto FROM mascotas as M INNER JOIN sexo as s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza as r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat on cat.ID_Categoria = m.ID_Categoria WHERE (m.ID_Sexo= '$ID_Sexo' and m.ID_Mascota != '$ID_Mascota' and m.ID_Categoria = '$ID_Categoria' and r.ID_Raza != '$ID_Raza')  ORDER BY RAND() LIMIT 3");
+                $Consulta_Mascota_Sola =  mysqli_query($conexion, "SELECT m.ID_Mascota,m.Nombre_Mascota, m.Foto FROM mascotas m INNER JOIN sexo s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat on cat.ID_Categoria = m.ID_Categoria WHERE (s.ID_Sexo = '$ID_Sexo' and r.ID_Raza = '$ID_Raza' and m.ID_Mascota != '$ID_Mascota') LIMIT 1"); 
+                $Consulta_Mascotas_Restantes = mysqli_query($conexion, "SELECT m.ID_Mascota,m.Nombre_Mascota, m.Foto FROM mascotas m INNER JOIN sexo s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat on cat.ID_Categoria = m.ID_Categoria WHERE (m.ID_Sexo= '$ID_Sexo' and m.ID_Mascota != '$ID_Mascota' and m.ID_Categoria = '$ID_Categoria' and r.ID_Raza != '$ID_Raza')  ORDER BY RAND() LIMIT 3");
             }else{
-                $Consulta_Mascota_Sola =  mysqli_query($conexion, "SELECT m.ID_Mascota,m.Nombre_Mascota, m.Foto FROM mascotas as M INNER JOIN sexo as s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza as r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat on cat.ID_Categoria = m.ID_Categoria WHERE (s.ID_Sexo = '$ID_Sexo' and r.ID_Raza = '$ID_Raza' and m.ID_Mascota != '$ID_Mascota') ORDER BY RAND() LIMIT 2"); 
-                $Consulta_Mascotas_Restantes = mysqli_query($conexion, "SELECT m.ID_Mascota,m.Nombre_Mascota, m.Foto FROM mascotas as M INNER JOIN sexo as s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza as r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat on cat.ID_Categoria = m.ID_Categoria WHERE (m.ID_Sexo= '$ID_Sexo' and m.ID_Mascota != '$ID_Mascota' and m.ID_Categoria = '$ID_Categoria' and r.ID_Raza != '$ID_Raza')  ORDER BY RAND() LIMIT 2");
+                $Consulta_Mascota_Sola =  mysqli_query($conexion, "SELECT m.ID_Mascota,m.Nombre_Mascota, m.Foto FROM mascotas m INNER JOIN sexo s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat on cat.ID_Categoria = m.ID_Categoria WHERE (s.ID_Sexo = '$ID_Sexo' and r.ID_Raza = '$ID_Raza' and m.ID_Mascota != '$ID_Mascota') ORDER BY RAND() LIMIT 2"); 
+                $Consulta_Mascotas_Restantes = mysqli_query($conexion, "SELECT m.ID_Mascota,m.Nombre_Mascota, m.Foto FROM mascotas m INNER JOIN sexo s ON s.ID_Sexo = m.ID_Sexo INNER JOIN raza r ON r.ID_Raza = m.ID_Raza INNER JOIN categoria_mascota cat on cat.ID_Categoria = m.ID_Categoria WHERE (m.ID_Sexo= '$ID_Sexo' and m.ID_Mascota != '$ID_Mascota' and m.ID_Categoria = '$ID_Categoria' and r.ID_Raza != '$ID_Raza')  ORDER BY RAND() LIMIT 2");
             }
             ?>
             <ul class="lista_mascotas_suge">
@@ -95,10 +93,9 @@
                         <li>
                             <div class="mascota_suge">
                                 <a href="Adopta_Esp.php?mascota=<?php echo $mascotas_resomendadas['ID_Mascota']?>" class="cinta uno" <?php echo $mascotas_resomendadas['ID_Mascota']?>>
-                                    <img class ="img_mascotas" src= "<?php echo $mascotas_resomendadas['Foto'] ?>" alt="Imagen perro uno"/>   
+                                    <img class ="img_mascotas" src= "<?php echo $mascotas_resomendadas['Foto']?>" alt="Imagen perro uno"/>   
                                 </a> 
-                                <p class="Nombre_Mascota"><?php echo $mascotas_resomendadas['Nombre_Mascota']?></p>                         
-                            </div>
+                                <p class="Nombre_Mascota"><?php echo $mascotas_resomendadas['Nombre_Mascota']?></p> </div>
                         </li>
                     <?php } /**while de fetch*/ ?> 
                 <?php
@@ -106,22 +103,17 @@
                         <li>
                             <div class="mascota_suge">
                                 <a href="Adopta_Esp.php?mascota=<?php echo $mascotas_resomendadas['ID_Mascota']?>" class="cinta uno" <?php echo $mascotas_resomendadas['ID_Mascota']?>>
-                                        <img class ="img_mascotas" src= "<?php echo $mascotas_resomendadas['Foto'] ?>" alt="Imagen perro uno"/>   
+                                        <img class ="img_mascotas" src= "<?php echo $mascotas_resomendadas['Foto']?>" alt="Imagen perro uno"/>   
                                 </a> 
-                                <p class="Nombre_Mascota"><?php echo $mascotas_resomendadas['Nombre_Mascota']?></p>                         
-                            </div>
+                                <p class="Nombre_Mascota"><?php echo $mascotas_resomendadas['Nombre_Mascota']?></p> </div>
                         </li>
-                    <?php } /**while de fetch*/ ?> 
+                    <?php } /**while de fetch*/?> 
             </ul>
             <?php/*ALGORITMO PARA LAS SUGERENCIAS*/?>
             </div><!-- Cierre Recomendados -->
-            <?php $conexion->close();?>
         </section>
-    <?php 
-    include_once 'Modulos/Templates/footer.php'; 
-    }else if(isset($_GET['adoptar'])){/*SECCION ADOPTAR*/
-        include_once 'Modulos/Templates/header.php'; ?>
-     
+    <?php include_once 'Modulos/Templates/footer.php'; 
+    }else if(isset($_GET['adoptar'])){/*SECCION ADOPTAR*/ include_once 'Modulos/Templates/header.php';?>
     <div class="seccion_mascotas_busqueda centrar_adopta">
         <h2 class="Titulo_mascotas titu_adop" >ESTAS INICIANDO EL PROCESO DE ADOPCION</h2>
         <p class="texto_sub">Para llevar a cabo con este proceso, recuerda:</p>
@@ -141,26 +133,24 @@
                 </div>
             </form>
     </div>
-   <?php include_once 'Modulos/Templates/footer.php'; 
-   }else if(isset($_GET['adopcion']) && isset($_GET['acep'])){
-        include_once 'Modulos/Templates/header.php'; 
+   <?php include_once 'Modulos/Templates/footer.php';?>
+   <?php }else if(isset($_GET['adopcion']) && isset($_GET['acep'])){
         include "Configuraciones/Funciones.php";
         $alert='';
         $ID_Mascota_adoptar = $_GET['adopcion'];
         $Aceptar = $_GET['acep'];
-        $Consulta_Adoptar = mysqli_query($conexion, "SELECT m.ID_Mascota FROM mascotas m WHERE m.ID_Mascota = $ID_Mascota_adoptar and m.ID_Estado!=2");
+        $Consulta_Adoptar = mysqli_query($conexion, "SELECT m.ID_Mascota FROM mascotas m WHERE m.ID_Mascota = '$ID_Mascota_adoptar' and m.ID_Estado!=2");
         $Filas_Adoptar = mysqli_num_rows($Consulta_Adoptar);
         if($Filas_Adoptar > 0 && $Aceptar == 1){/*Si valida la informacion comprueba si esta logeado*/
         if(!isset($_SESSION)){
             session_start();
-        }	
+        }
         if(!empty($_SESSION['active'])){
-            header('location: Solicitud_adopcion.php?mascota='.$ID_Mascota_adoptar.'');
+            header('location: Solicitud_adopcion.php?mascota='.$ID_Mascota_adoptar);
         }else{
             if(!empty($_POST)){
                 if(empty($_POST['usuario']) || empty($_POST['clave'])){
                     $alert = 'Ingrese su usuario y contraseña';
-                    
                 }else{
                     require_once "Configuraciones/Funciones.php";
                     $user = mysqli_real_escape_string($conexion,$_POST['usuario']);
@@ -182,16 +172,16 @@
                         $_SESSION['Contrasena'] = $data['Contrasena'];
                         $_SESSION['Imagen'] = $data['Imagen'];
                         $_SESSION['ID_Rol'] = $data['ID_Rol'];
-                        header('location: Solicitud_adopcion.php?mascota='.$ID_Mascota_adoptar.'');
+                        header('location: Solicitud_adopcion.php?mascota='.$ID_Mascota_adoptar);
                     }else{
                         $alert = 'El usuario o la contraseña son incorrectos';
                         session_destroy();
-                        
                     }
                 }
         }
     }      
     ?>
+    <?php include_once 'Modulos/Templates/header.php';?>
     <div class="seccion_mascotas_busqueda centrar_adopta">
 		<article>
             <h2 class="Titulo_mascotas titu_adop" >Antes de seguir debes iniciar sesion</h2>
@@ -226,11 +216,9 @@
             <p class="alert msg_error_adop"><?php echo isset($alert) ? $alert : ''; ?></p>   
         </div>
     </div>
-        
         <script src="popup.js"></script>
        <?php }else {
            echo "Error";
        } ?> 
     <?php }  
-    ?>     
-<?php  ?>
+    ?>

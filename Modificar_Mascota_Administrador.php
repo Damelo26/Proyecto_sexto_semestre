@@ -50,7 +50,6 @@ include "Configuraciones/Funciones.php";
             $Estado_Modificar = $Datos_Modificar['Estado'];
 
                 $option_Estado = '<option value="'.$ID_Modificar_Estado.'" select>'.$Estado_Modificar.'</option>';
-
         }
 	}
 	if(!empty($_POST)){
@@ -151,7 +150,7 @@ include "Configuraciones/Funciones.php";
 				<input type="text" name="Nombre_Mascota" id="Nombre_Mascota" placeholder="Inserte el nombre" value="<?php echo $Nombre_Modificar; ?>">				
 				<label for = "Raza">Raza</label>
 				<?php
-					$query_Raza = mysqli_query($conexion, "SELECT * FROM Raza  ORDER BY Raza ASC");
+					$query_Raza = mysqli_query($conexion, "SELECT * FROM raza ORDER BY Raza ASC");
 					$result_Raza = mysqli_num_rows($query_Raza);	
 				?>
 				<select name="Raza" id="Raza" class="notItemOne">
@@ -187,7 +186,7 @@ include "Configuraciones/Funciones.php";
 				</select>
 				<label for = "Tamano">Tamaño</label>
 				<?php
-					$query_Tamano = mysqli_query($conexion, "SELECT * FROM Tamano");
+					$query_Tamano = mysqli_query($conexion, "SELECT * FROM tamano");
 					$result_Tamano = mysqli_num_rows($query_Tamano);	
 				?>
 				<select name="Tamano" id="Tamano" class="notItemOne">
@@ -206,7 +205,7 @@ include "Configuraciones/Funciones.php";
 				<input type="text" name="Peso" id="Peso" placeholder="Inserte el peso" value="<?php echo $Peso_Modificar; ?>">
 				<label for = "Sexo">Sexo</label>
 				<?php
-					$query_Sexo = mysqli_query($conexion, "SELECT * FROM Sexo");
+					$query_Sexo = mysqli_query($conexion, "SELECT * FROM sexo");
 					$result_Sexo = mysqli_num_rows($query_Sexo);	
 				?>
 				<select name="Sexo" id="Sexo" class="notItemOne">

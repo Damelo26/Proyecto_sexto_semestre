@@ -4,11 +4,10 @@
         header('location: ../Login.php');
     }else{
         if($_SESSION['ID_Rol'] != 1){
-            header('location: ../Principal.php');
+            header('location: ../index.php');
         }
     }
 ?>
-
 <!DOCTYPE html>
 <html lang = "en">
 <head>
@@ -44,7 +43,7 @@
                 </div>
             </div>
             <div class="menuadmin">
-                <a href="Principal.php"><div class="logo">
+                <a href="index.php"><div class="logo">
                 Pets Home
                 </div></a>
                 <div class="menu_derecho">
@@ -110,5 +109,3 @@
                         </ul>
                     </div>
                 </div>
-    
-                

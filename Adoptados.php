@@ -44,9 +44,8 @@
                                                                 ORDER BY col.Nombre ASC ");
             $consulta_Sexo = mysqli_query($conexion, "SELECT  s.Sexo as Nombre
                                                                 FROM sexo as s 
-                                                                ORDER BY s.Sexo ASC ");                                                    
+                                                                ORDER BY s.Sexo ASC ");                    
         ?>
-        
         <div class="resultado"></div>
             <div class="ordenar">
                 <ul class="lista_mascotas">

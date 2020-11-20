@@ -31,9 +31,9 @@
         if (strcmp($table, "raza") === 0){
             $consulta_general = mysqli_query($conexion, "SELECT  m.ID_Mascota, m.Nombre_Mascota, m.Foto, m.Frase, R.Raza from mascotas m INNER JOIN raza R ON m.ID_Raza = R.ID_Raza WHERE (R.Raza LIKE '%$search_mas') AND (m.ID_Estado = 1 OR m.ID_Estado = 3) ORDER BY m.ID_Mascota ASC LIMIT $desde,$por_pagina");
         }else if (strcmp($table, "tamaño") === 0){
-            $consulta_general = mysqli_query($conexion, "SELECT  m.ID_Mascota, m.Nombre_Mascota, m.Foto, m.Frase, t.Nombre from mascotas m INNER JOIN tamano t ON m.ID_Tamano = t.ID_Tamano WHERE (T.Nombre LIKE '%$search_mas%') AND (m.ID_Estado = 1 OR m.ID_Estado = 3) ORDER BY m.ID_Mascota ASC LIMIT $desde,$por_pagina");
+            $consulta_general = mysqli_query($conexion, "SELECT  m.ID_Mascota, m.Nombre_Mascota, m.Foto, m.Frase, t.Nombre from mascotas m INNER JOIN tamano t ON m.ID_Tamano = t.ID_Tamano WHERE (t.Nombre LIKE '%$search_mas%') AND (m.ID_Estado = 1 OR m.ID_Estado = 3) ORDER BY m.ID_Mascota ASC LIMIT $desde,$por_pagina");
         } else if (strcmp($table, "color") === 0){
-            $consulta_general = mysqli_query($conexion, "SELECT  m.ID_Mascota, m.Nombre_Mascota, m.Foto, m.Frase, C.Nombre from mascotas m INNER JOIN color c ON m.ID_Color = C.ID_Color WHERE (c.Nombre LIKE '%$search_mas%') AND (m.ID_Estado = 1 OR m.ID_Estado = 3) ORDER BY m.ID_Mascota ASC LIMIT $desde,$por_pagina");
+            $consulta_general = mysqli_query($conexion, "SELECT  m.ID_Mascota, m.Nombre_Mascota, m.Foto, m.Frase, c.Nombre from mascotas m INNER JOIN color c ON m.ID_Color = c.ID_Color WHERE (c.Nombre LIKE '%$search_mas%') AND (m.ID_Estado = 1 OR m.ID_Estado = 3) ORDER BY m.ID_Mascota ASC LIMIT $desde,$por_pagina");
         } else if (strcmp($table, "sexo") === 0){
             $consulta_general = mysqli_query($conexion, "SELECT  m.ID_Mascota, m.Nombre_Mascota, m.Foto, m.Frase, S.Sexo from mascotas m INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo WHERE (S.Sexo LIKE '%$search_mas%') AND (m.ID_Estado = 1 OR m.ID_Estado = 3) ORDER BY m.ID_Mascota ASC LIMIT $desde,$por_pagina");
         }
@@ -153,22 +153,22 @@
         <div class="paginador-Adopta">
             <ul>
                 <?php if($pagina !=1 ){?>
-                    <li><a href="?pagina=<?php echo 1; ?>&search_mas=<?php echo $search_mas; ?>">|<</a></li>
-                    <li><a href="?pagina=<?php echo $pagina-1; ?>&search_mas=<?php echo $search_mas; ?>"><<</a></li>
+                    <li><a href="?pagina=<?php echo 1; ?>&search_mas=<?php echo $search_mas; ?>&table=<?php echo $table; ?>">|<</a></li>
+                    <li><a href="?pagina=<?php echo $pagina-1; ?>&search_mas=<?php echo $search_mas; ?>&table=<?php echo $table; ?>"><<</a></li>
                 <?php 
                 }
                 for ($i=1; $i <= $total_Paginas; $i++) { 
                     if($i == $pagina){
                         echo '<li class="pagesSeletedAdopta">'.$i.'</li>'; 
                         }else{
-                            echo '<li><a href="?pagina='.$i.'&search_mas='.$search_mas.'">'.$i.'</a></li>'; 
+                            echo '<li><a href="?pagina='.$i.'&search_mas='.$search_mas.'&table='.$table.'">'.$i.'</a></li>'; 
                             }
                         }
                         if($pagina != $total_Paginas){?> 
-                            <li><a href="?pagina=<?php echo $pagina + 1; ?>&search_mas=<?php echo $search_mas; ?>">>></a></li>
-                            <li><a href="?pagina=<?php echo $total_Paginas; ?>&search_mas=<?php echo $search_mas; ?>">>|</a></li>
+                            <li><a href="?pagina=<?php echo $pagina + 1; ?>&search_mas=<?php echo $search_mas; ?>&table=<?php echo $table; ?>">>></a></li>
+                            <li><a href="?pagina=<?php echo $total_Paginas; ?>&search_mas=<?php echo $search_mas; ?>&table=<?php echo $table; ?>">>|</a></li>
                         <?php }?>
-            </ul>    
+            </ul>   
         </div>
     <div id="resultadoBusqueda"><!-- No se si esto tenga funcionalidad --> </div>              
 <!--<section id="tabla_resultado">AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA </section>-->

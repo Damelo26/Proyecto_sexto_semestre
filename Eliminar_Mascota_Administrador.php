@@ -4,7 +4,6 @@ include "Configuraciones/Funciones.php";
         header('Location: Administrar_Mascotas_Admin.php');
     }else{
     $ID_Eliminar = $_REQUEST['id'];
-    //$Query_Eliminar= mysqli_query($conexion, "SELECT m.ID_Mascota, m.ID_Categoria, C.Nombre as Categoria, m.Nombre_Mascota as Nombre, m.Raza, m.Edad, m.Descripcion, m.Foto, m.ID_Color, Cl.Nombre as Color, m.ID_Tamano, T.Nombre as Tamano, m.Frase, m.Peso,m.ID_Estado, Es.Estado as Estado FROM mascotas m INNER JOIN categoria_mascota C ON m.ID_Categoria = C.ID_Categoria INNER JOIN color Cl ON m.ID_Color = Cl.ID_Color INNER JOIN tamano T ON m.ID_Tamano = T.ID_Tamano INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado WHERE m.ID_Mascota = $ID_Eliminar");
     $Query_Eliminar= mysqli_query($conexion, "SELECT m.ID_Mascota, C.Nombre as Categoria, m.Nombre_Mascota as Nombre, R.Raza, m.Edad, Cl.Nombre as Color, T.Nombre as Tamano, m.Frase, m.Peso, m.Foto, Es.Estado as Estado FROM mascotas m INNER JOIN categoria_mascota C ON m.ID_Categoria = C.ID_Categoria INNER JOIN color Cl ON m.ID_Color = Cl.ID_Color INNER JOIN tamano T ON m.ID_Tamano = T.ID_Tamano INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado INNER JOIN raza R ON R.ID_Raza = m.ID_Raza WHERE m.ID_Mascota = $ID_Eliminar");
     $Resultado_Eliminar = mysqli_num_rows($Query_Eliminar);
       if($Resultado_Eliminar > 0){

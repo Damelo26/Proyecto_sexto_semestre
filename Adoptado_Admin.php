@@ -1,11 +1,5 @@
-
- 
- <?php include_once 'Modulos/Templates/Header_Admin.php';  ?>
-
-
-    
+<?php include_once 'Modulos/Templates/Header_Admin.php';?>
 <div class="Contenido">
-  
     <section id="Contenedor_Adoptados_Mascotas">
     <h2><i class="fab fa-themeisle"></i> Solicitud de adopción</h2>
     <form action="Buscar_Solicitudes_Administrador.php" method= "get" class="Formulario_Buscador">
@@ -28,7 +22,6 @@
           <th>Acciones</th>
         </tr>
         <?php
-        
         require_once "Configuraciones/Funciones.php";
         $Query_Cantidad_Registros = mysqli_query($conexion, "SELECT COUNT(*) as Total_Registros FROM adoptados Ad INNER JOIN mascotas m ON Ad.ID_Mascotas = m.ID_Mascota WHERE m.ID_Estado = 3");
           $Resultado_Cantidad_Registros = mysqli_fetch_array($Query_Cantidad_Registros);
@@ -44,7 +37,6 @@
        $indicador=3; /*Mientras se generan los otros pruebo con el 1, en realidad es el 3*/
         $sql="SELECT m.ID_Mascota, m.Nombre_Mascota, R.Raza, m.Edad, m.Foto, S.Sexo, Ad.Cedula, U.Primer_Nombre, U.Segundo_Nombre, U.Primer_Apellido, U.Segundo_Apellido, U.Email, U.Telefono, U.Direccion from adoptados Ad INNER JOIN mascotas m ON Ad.ID_Mascotas = m.ID_Mascota INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo INNER JOIN usuario U ON Ad.Cedula = U.Cedula WHERE m.ID_Estado = '$indicador' ORDER BY m.ID_Mascota ASC LIMIT $Desde,$Total_Registros_Por_Pagina"; 
         $result=mysqli_query($conexion, $sql);
-        
         while($mostrar=mysqli_fetch_array($result)){
           $identificador= $mostrar ['ID_Mascota'];
         ?>
@@ -90,7 +82,6 @@
               }
               if($Pagina != $Total_Paginas){
             ?>
-
             <li><a href="?Pagina=<?php echo $Pagina + 1; ?>">>></a></li>
             <li><a href="?Pagina=<?php echo $Total_Paginas; ?>">>|</a></li>
             <?php 
@@ -101,8 +92,6 @@
       <?php 
         }
       ?>
-     
     </section>
     </div>
 <?php include_once 'Modulos/Templates/Footer_Admin.php'; ?>
-     

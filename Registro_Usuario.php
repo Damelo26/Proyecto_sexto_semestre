@@ -1,6 +1,4 @@
-<?php
-
-	include "Configuraciones/Funciones.php";
+<?php include "Configuraciones/Funciones.php";
 	if(!empty($_POST)){
 		$Register_alert='';
 		if(empty($_POST['cedula']) || empty($_POST['primernombre']) || empty($_POST['segundonombre']) || empty($_POST['primerapellido']) || empty($_POST['segundoapellido']) ||
@@ -20,17 +18,14 @@
 			$Primera_Letra = strtoupper($primernombre[0]);
 			$foto = 'img/Imagenes_Perfil/Perfil_'."$Primera_Letra".'.png';
 			$rol = $_POST['rol'];
-
 			$query = mysqli_query($conexion, "SELECT * FROM usuario WHERE usuario = '$usuario' OR email = '$correo'");
 			$result = mysqli_fetch_array($query);
-
 			if($result > 0){
 				$Register_alert='<p class = "msg_error">El correo o el usuario ya existe.</p>';
 			}else{
 				$query_insert = mysqli_query($conexion, "INSERT INTO usuario(Cedula, Primer_Nombre, Segundo_Nombre,
 				Primer_Apellido, Segundo_Apellido, Email, Telefono, Direccion, Usuario, Contrasena, Imagen, ID_Rol) VALUES('$cedula','$primernombre'
 				,'$segundonombre','$primerapellido','$segundoapellido','$correo','$telefono','$direccion','$usuario','$contraseña','$foto','$rol')");
-				
 				if($query_insert){
 					$Register_alert='<p class = "msg_save">Usuario creado correctamente.</p>';
 				}else{
@@ -39,10 +34,8 @@
 			}
 		}
 	}
-
 ?>
-
-<?php include_once 'Modulos/Templates/header.php';  ?>
+<?php include_once 'Modulos/Templates/header.php';?>
 <section id="containerregistro">
 		<div class="form_register">
 			<h1><i class="fas fa-user-plus"></i>Registro usuario</h1>
@@ -70,23 +63,16 @@
 				<label for = "contraseña">Contraseña</label>
 				<input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
 				<label for="rol">Tipo de usuario</label>
-
-				<?php  
-
-					$query_rol = mysqli_query($conexion, "SELECT * FROM rol");
-					$result_rol = mysqli_num_rows($query_rol);
-					
-				?>
-
-				<select name="rol" id="rol">
+				<?php $query_rol = mysqli_query($conexion, "SELECT * FROM rol");
+					$result_rol = mysqli_num_rows($query_rol);?>
+                <select name="rol" id="rol">
 					<?php   
-					
 						if($result_rol > 0){
 							while ($rol = mysqli_fetch_array($query_rol)){
 								if($_SESSION['ID_Rol'] == 1){
 									?>
-										<option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"] ?></option>
-									<?php
+										<option value="<?php echo $rol["ID_Rol"];?>"><?php echo $rol["Nombre"] ?></option>
+										<?php
 								}else if($_SESSION['ID_Rol'] != 1 || empty($_SESSION['ID_Rol'])){
 									if($rol["ID_Rol"] != 1){
 										?>
@@ -96,9 +82,7 @@
 								}
 							}
 						}
-
 					?>
-					
 				</select>
 				<br>
 				<div class="Contenido_Checkbox_Registrar">
@@ -113,5 +97,4 @@
 			</form>
 		</div>
 	</section>
-					
 	<?php include_once 'Modulos/Templates/footer.php';?>

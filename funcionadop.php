@@ -23,7 +23,6 @@
 		$telefonoadop = $mostrar['Telefono'];
 		$direccionadop = $mostrar['Direccion'];
 	}
-
 	//PARA MODIFICAR LA INFO
 	$idado= $_REQUEST['id'];
 	if(!empty($_POST)){
@@ -141,8 +140,6 @@
 				<i>
 					<label for="Nombre_Mascotaval"><?php echo $direccionadop;?></label>
 				</i>
-
-
 				<b>
 					<label for = "Descripcion">Descripcion</label>
 				</b>

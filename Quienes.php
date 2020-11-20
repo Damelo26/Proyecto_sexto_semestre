@@ -1,5 +1,4 @@
 <?php include_once 'Modulos/Templates/header.php';  ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,12 +13,4 @@
     </section>
 </body>
 </html>
-
-
-
-
-
-
-
-
 <?php include_once 'Modulos/Templates/footer.php';  ?>

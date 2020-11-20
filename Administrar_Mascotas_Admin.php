@@ -35,7 +35,6 @@
           }
           $Desde = ($Pagina-1) * $Total_Registros_Por_Pagina;
           $Total_Paginas = ceil($Total_Cantidad_Registros / $Total_Registros_Por_Pagina);
-
           $Busqueda_Tabla_Mascotas = mysqli_query($conexion, "SELECT m.ID_Mascota, C.Nombre as Categoria, m.Nombre_Mascota as Nombre, m.ID_Raza, R.Raza AS Raza, m.Edad, m.Foto, Cl.Nombre as Color, T.Nombre as Tamano, m.Peso, m.ID_Sexo, S.Sexo as Sexo, Es.Estado as Estado FROM mascotas m INNER JOIN categoria_mascota C ON m.ID_Categoria = C.ID_Categoria INNER JOIN color Cl ON m.ID_Color = Cl.ID_Color INNER JOIN tamano T ON m.ID_Tamano = T.ID_Tamano INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado INNER JOIN raza R ON m.ID_Raza = R.ID_Raza INNER JOIN sexo S ON m.ID_Sexo = S.ID_Sexo WHERE Es.ID_Estado = 1 OR Es.ID_Estado = 3 ORDER BY m.ID_Mascota ASC LIMIT $Desde,$Total_Registros_Por_Pagina");
           $Resultado_Tabla = mysqli_num_rows($Busqueda_Tabla_Mascotas);
           if($Resultado_Tabla > 0){

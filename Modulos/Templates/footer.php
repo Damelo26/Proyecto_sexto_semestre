@@ -1,4 +1,4 @@
-		<footer>
+<footer>
 			<div class="Alinear_Footer">	
 				<div class="footer">
 					<div class="footercontador">

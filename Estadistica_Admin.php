@@ -1,5 +1,4 @@
 <?php
-    
     require_once "Configuraciones/Funciones.php";
     $Total_Adoptacion = mysqli_query($conexion,"SELECT * FROM mascotas WHERE ID_Estado = '1'");
     $Resultado_Adopcion = mysqli_num_rows($Total_Adoptacion);
@@ -9,24 +8,14 @@
     $Resultado_Proceso = mysqli_num_rows($Total_Adoptados);
     $Total_Usuarios = mysqli_query($conexion,"SELECT * FROM usuario WHERE ID_Rol = '2'");
     $Resultado_Usuarios = mysqli_num_rows($Total_Usuarios);
-
-
-    /*$anio='2020';
-    $chart_data = '';
-    for($i=1; $i<12; $i++){
-        $Total_Mensual = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(Adoptado = 1, 1, null)) Adopcion, count(IF(Adoptado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$anio' AND MONTH(Fecha) = '$i'"));
-        $chart_data= "{Mes: '".$anio."'-'".$i."', Adopcion:'".$Total_Mensual["Adopcion"]."', Adoptados:'".$Total_Mensual["Adoptado"]."'}, ";
-        $chart_data = substr($chart_data, 0);
-    }*/
     $annio = '2020';
     if(!empty($_POST)){
         if(empty($_POST['Fecha_Estadistico'])){
             $annio = '2020';
-    }else{
-        $annio = $_POST['Fecha_Estadistico'];
+        }else{
+            $annio = $_POST['Fecha_Estadistico'];
+        }
     }
-    }
-    
     $enero = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 1"));
     $chart_data= "{Mes: '".$annio."-01', Adopcion:'".$enero["Adopcion"]."', Adoptados:'".$enero["Adoptado"]."'}, ";
     $chart_data = substr($chart_data, 0);
@@ -52,9 +41,7 @@
     $chart_data= $chart_data."{Mes: '".$annio."-11', Adopcion:'".$noviembre["Adopcion"]."', Adoptados:'".$noviembre["Adoptado"]."'}, ";
     $diciembre = mysqli_fetch_array(mysqli_query($conexion,"SELECT COUNT(IF(ID_Estado = 1 OR ID_Estado = 3, 1, null)) Adopcion, count(IF(ID_Estado = 2, 1, null)) Adoptado FROM mascotas WHERE YEAR(Fecha) = '$annio' AND MONTH(Fecha) = 12"));
     $chart_data= $chart_data."{Mes: '".$annio."-12', Adopcion:'".$diciembre["Adopcion"]."', Adoptados:'".$diciembre["Adoptado"]."'} ";
-
     $chart_data = substr($chart_data, 0);
-
     $QueryDonut = mysqli_query($conexion,"SELECT Es.Estado, COUNT(*) AS Total from mascotas m INNER JOIN estado Es ON m.ID_Estado = Es.ID_Estado WHERE YEAR(Fecha) = '$annio'  GROUP BY Es.Estado ORDER by Total asc");
     $TotalDonut = mysqli_num_rows($QueryDonut);
     $DatosDonut = array();
@@ -71,7 +58,6 @@
             'value' => "0"
         );
     }
-
     $DatosDonut = json_encode($DatosDonut);
 ?>
 <?php include_once 'Modulos/Templates/Header_Admin.php';  ?>
@@ -151,8 +137,7 @@
         xLabelAngle: 60,
         lineColors: ['#419918',' #971414'],
         resize: true
-   }); 
-
+   });
    Morris.Donut({
   element: 'donut-example',
   data: <?php echo $DatosDonut; ?>,

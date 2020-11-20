@@ -5,7 +5,7 @@
 		if($_SESSION['ID_Rol'] == 1){
 			header('location: Estadistica_Admin.php');
 		}else if($_SESSION['ID_Rol'] != 1){
-			header('location: Principal.php');
+			header('location: index.php');
 		}	
 	}else{
 		if(!empty($_POST)){
@@ -35,9 +35,9 @@
 					$_SESSION['Imagen'] = $data['Imagen'];
 					$_SESSION['ID_Rol'] = $data['ID_Rol'];
 					if($_SESSION['ID_Rol'] == 1){
-						header('location: Estadistica_Admin.php');
+						header('location:Estadistica_Admin.php');
 					}else if($_SESSION['ID_Rol'] != 1){
-						header('location: Principal.php');
+						header('location:index.php');
 					}	
 				}else{
 					$alert = 'El usuario o la contraseña son incorrectos';
@@ -59,8 +59,3 @@
 		</form> 
 	</section>
 	<?php include_once 'Modulos/Templates/footer.php';?>
-
-
-	
-
-	

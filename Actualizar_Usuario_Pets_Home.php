@@ -100,31 +100,28 @@
 					$query_rol = mysqli_query($conexion, "SELECT * FROM rol");
 					$result_rol = mysqli_num_rows($query_rol);
 				?>
-
 				<select name="rol" id="rol" class="notItemOne">
 					<?php   
 					    echo $option_Rol;
-						if($result_rol > 0){
-							while ($rol = mysqli_fetch_array($query_rol)){
-								if($_SESSION['ID_Rol'] == 1){
+					if($result_rol > 0){
+						while ($rol = mysqli_fetch_array($query_rol)){
+							if($_SESSION['ID_Rol'] == 1){
+								?>
+									<option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"] ?></option>
+								<?php
+							}else if($_SESSION['ID_Rol'] != 1 || empty($_SESSION['ID_Rol'])){
+								if($rol["ID_Rol"] != 1){
 									?>
-										<option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"] ?></option>
+										<option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"]; ?></option>
 									<?php
-								}else if($_SESSION['ID_Rol'] != 1 || empty($_SESSION['ID_Rol'])){
-									if($rol["ID_Rol"] != 1){
-										?>
-											<option value="<?php echo $rol["ID_Rol"]; ?>"><?php echo $rol["Nombre"]; ?></option>
-										<?php
-									}
 								}
 							}
 						}
-
-					?>
-
-                    </select>
-				<button class="Btn_save" type="submit"><i class="far fa-save"></i> Actualizar usuario</button>
-			</form>
-		</div>
-	</section>
-	<?php include_once 'Modulos/Templates/footer.php';?>
+					}
+				?>
+                </select>
+			<button class="Btn_save" type="submit"><i class="far fa-save"></i> Actualizar usuario</button>
+		</form>
+	</div>
+</section>
+<?php include_once 'Modulos/Templates/footer.php'; ?>

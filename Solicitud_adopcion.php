@@ -1,6 +1,4 @@
-<?php include_once 'Modulos/Templates/header.php';  ?>
-
-<?php 
+<?php include_once 'Modulos/Templates/header.php';
     require_once "Configuraciones/Funciones.php";
     $valor_Obtenido = $_GET["mascota"];
     $sql3 = "SELECT m.ID_Mascota, m.Foto, m.Edad, m.Peso, m.Descripcion, m.Nombre_Mascota as Nombre, s.Sexo as Sexo, C.Nombre as Color, t.Nombre as Tamaño, r.Raza as Raza FROM mascotas AS m INNER JOIN color as C ON C.ID_Color = m.ID_Color JOIN tamano t ON t.ID_Tamano = m.ID_Tamano JOIN sexo AS s ON s.ID_Sexo = m.ID_Sexo JOIN raza AS r ON r.ID_Raza = m.ID_Raza where m.ID_Mascota= '$valor_Obtenido'";
@@ -19,7 +17,7 @@
                 $Cedula = $_POST['Cedula'];
                 $ID_Mascota = $_GET['mascota'];
                 $Estado = 3;
-                $insert_adopt = mysqli_query($conexion, "INSERT INTO adoptados(Cedula,	ID_Mascotas) VALUES('$Cedula','$ID_Mascota')");
+                $insert_adopt = mysqli_query($conexion, "INSERT INTO adoptados(Cedula, ID_Mascotas) VALUES('$Cedula','$ID_Mascota')");
                 $query_update = mysqli_query($conexion, "UPDATE mascotas SET ID_Estado = '$Estado' WHERE ID_Mascota = $ID_Mascota");
                 if($insert_adopt && $insert_adopt){
                     $Adop_alert='<p class = "msg_save">Solicitud enviado correctamente.</p>';
@@ -71,8 +69,6 @@
         <button type="submit" class="buttonap Btn_Buscador btn_enviar" >Enviar solicitud</button>
         </div>
     </form> 
-    
-        
         <div class="Espaciado_solicitud"> <!--Perrito Elegido -->
             <div class="division">   
                 <div class="left_solicitud"> <!--IMAGEN-->
@@ -80,31 +76,31 @@
                 </div>
                 <div class="left"> <!--Textos-->
                     <div class="division_datos_solicitud Titulo_mascot_Solicitud">
-                        <p><?php echo $mascota['Nombre'] ?>
+                        <p><?php echo $mascota['Nombre']?>
                     </div>
                     <div class="division_datos_solicitud">
                         <p>Genero:</p>
-                        <p><?php echo $mascota['Sexo'] ?></p> 
+                        <p><?php echo $mascota['Sexo']?></p> 
                     </div>
                     <div class="division_datos_solicitud">
                         <p>Raza:</p>
-                        <p><?php echo $mascota['Raza'] ?></p> 
+                        <p><?php echo $mascota['Raza']?></p> 
                     </div>
                     <div class="division_datos_solicitud">
                         <p>Edad:</p>
-                        <p><?php echo $mascota['Edad'] ?></p>    
+                        <p><?php echo $mascota['Edad']?></p>    
                     </div>
                     <div class="division_datos_solicitud">
                         <p>Peso:</p>
-                        <p><?php echo $mascota['Peso'] ?></p>              
+                        <p><?php echo $mascota['Peso']?></p>              
                     </div >
                     <div class="division_datos_solicitud">
                         <p>Tamaño:</p>
-                        <p><?php echo $mascota['Tamaño'] ?></p>
+                        <p><?php echo $mascota['Tamaño']?></p>
                     </div>
                     <div class="division_datos_solicitud">
                         <p>Color:</p>
-                        <p><?php echo $mascota['Color'] ?></p>
+                        <p><?php echo $mascota['Color']?></p>
                     </div> 
                 </div> <!--Fin Textos--> 
                 <div class="buttonap-border center_boton center_solicitud">
@@ -113,7 +109,6 @@
                     </a>
                 </div>
             </div> <!--Fin Divison-->
-            
         </div>
 </div>
-<?php include_once 'Modulos/Templates/footer.php';  ?>
+<?php include_once 'Modulos/Templates/footer.php';?>

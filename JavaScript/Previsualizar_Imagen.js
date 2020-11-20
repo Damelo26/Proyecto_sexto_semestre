@@ -1,8 +1,6 @@
 // Obtener referencia al input y a la imagen
-
 const $seleccionArchivos = document.querySelector("#seleccionArchivos"),
   $imagenPrevisualizacion = document.querySelector("#imagenPrevisualizacion");
-
 // Escuchar cuando cambie
 $seleccionArchivos.addEventListener("change", () => {
   // Los archivos seleccionados, pueden ser muchos o uno

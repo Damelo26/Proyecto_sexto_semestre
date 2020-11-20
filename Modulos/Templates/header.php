@@ -2,17 +2,15 @@
 if(!isset($_SESSION)){
 	session_start();
 }
-   
     if(!isset($_SESSION['ID_Rol'])){
 	   $imagen="img/Imagenes_Perfil/Perfil_Invitado.png";
 	   $usuario="Invitado";
     }else{
-        if($_SESSION['ID_Rol'] >0){
+        if($_SESSION['ID_Rol'] > 0){
 			$usuario=$_SESSION['Primer_Nombre']." ".$_SESSION['Primer_Apellido'];
 			$imagen=$_SESSION['Imagen'];
         }
     }
-
 ?>
 <html>
 <head> 
@@ -22,7 +20,7 @@ if(!isset($_SESSION)){
 	<link rel="stylesheet" href="CSS/Estilo.css">
 	<link rel="stylesheet" href="CSS/Styleslider.css">
 	<link rel="stylesheet" href="CSS/EstiloRegistrar_Admin.css">
-	<link rel="stylesheet" href="CSS/Estilos_adopta.css" media="screen" title="no title">
+	<link rel="stylesheet" href="CSS/Estilos_Adopta.css" media="screen" title="no title">
 	<link rel="stylesheet" href="CSS/Estilos_Adoptados.css" media="screen" title="no title">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Oswald:wght@200;300;400;500;600;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<title>Pets' Home </title>
@@ -65,10 +63,8 @@ if(!isset($_SESSION)){
 		</div>
 	</header>	
 </div>
-	
-	
 	<div class= "menu">
-			<a class = "centrar_header" href="Principal.php"><i class="fas fa-home"></i> Principal</a>
+			<a class = "centrar_header" href="index.php"><i class="fas fa-home"></i> Principal</a>
 			<a href="Adopta.php"><i class="fas fa-dog"></i> Adopta</a>
 			<a href="Adoptados.php"><i class="fas fa-heart"></i> Adoptados</a>
 			<a href="Contactenos.php"><i class="fas fa-paper-plane"></i> Contactenos</a>
@@ -77,7 +73,5 @@ if(!isset($_SESSION)){
 			<a href="Login.php"><i class="fas fa-user"></i> Iniciar sesión</a>
 			<a href="Quienes.php"><i class="far fa-address-book"></i> Quienes somos</a>
 			<a href="Modulos/Exit.php"><i class="fas fa-times-circle"></i> Salir</a>
-		</div>
-
 	</div>
-		
+</div>

@@ -21,8 +21,6 @@
           <th>Direccion</th>
           <th>Acciones</th>
         </tr>
-      
-
         <?php 
          require_once "Configuraciones/Funciones.php";
          $Query_Cantidad_Registros = mysqli_query($conexion, "SELECT COUNT(*) as Total_Registros FROM adoptados Ad INNER JOIN mascotas m ON Ad.ID_Mascotas = m.ID_Mascota WHERE m.ID_Estado = 2");
@@ -82,7 +80,6 @@
               }
               if($Pagina != $Total_Paginas){
             ?>
-
             <li><a href="?Pagina=<?php echo $Pagina + 1; ?>">>></a></li>
             <li><a href="?Pagina=<?php echo $Total_Paginas; ?>">>|</a></li>
             <?php 

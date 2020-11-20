@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	//MASCOTAS
 	/*obtener_registros();*/
@@ -50,10 +49,8 @@ function obtener_registros(alumnos)
 		/*
 		$("#busqueda_mascotas").html(valor_caja_texto);*/
 		/*window.location.replace("adoptados.php");*/
-
 	})
 }
-
 $(document).on('keyup', '#ss', function()
 {
 	var valorBusqueda=$(this).val();
@@ -69,7 +66,6 @@ $(document).on('keyup', '#ss', function()
 		//$("#resultadoBusqueda").html('<p>JQUERY VACIO 2</p>');
 		}
 });
-
 function cambiar_tamaño(xvalor,xtabla){
 	$.ajax({
 		url : 'Search_mas.php',
@@ -85,7 +81,6 @@ function cambiar_tamaño(xvalor,xtabla){
 		//$("#xtamaños > option[value='Mediano']").attr("selected",true);
 	})
 }
-
 function Recargar_Lista(){
 	$.ajax({
 		url : 'buscar_mascotas.php',
@@ -98,12 +93,3 @@ function Recargar_Lista(){
 			//$("#xtamaños > option[value='Mediano']").attr("selected",true);		
 		})
 }
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,4 @@
 <?php include_once 'Modulos/Templates/header.php';  ?>
-
     <h1 class="TituloFAQ">Preguntas frecuentes en Pets' Home</h1>
     <h5 class="SubtituloFAQ">Todos tenemos dudas</h5>
     <div class="Acordeon">

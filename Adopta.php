@@ -34,17 +34,17 @@
 
         <?php 
             $Consulta_Tamaño = mysqli_query($conexion, "SELECT t.Nombre as Nombre 
-                                                                FROM tamano as t 
-                                                                ORDER BY t.Nombre ASC ");
+                                                                FROM tamano t 
+                                                                ORDER BY t.Nombre ASC");
             $consulta_Categorias = mysqli_query($conexion, "SELECT cat.Nombre as Nombre
                                                                     FROM categoria_mascota as cat 
                                                                     ORDER BY cat.Nombre ASC ");
             $consulta_Color =  mysqli_query($conexion, "SELECT  col.Nombre as Nombre
-                                                                FROM color as col 
-                                                                ORDER BY col.Nombre ASC ");
+                                                                FROM color col 
+                                                                ORDER BY col.Nombre ASC");
             $consulta_Sexo = mysqli_query($conexion, "SELECT  s.Sexo as Nombre
                                                                 FROM sexo as s 
-                                                                ORDER BY s.Sexo ASC ");                                                    
+                                                                ORDER BY s.Sexo ASC ");                     
         ?>
         <div class= "Agrupar_Form">
             <div class="Agrupar_Select">
@@ -55,12 +55,11 @@
                         $Cantidad_Categorias = mysqli_num_rows($consulta_Categorias);
                         if($Cantidad_Categorias > 0){
                             while($resulset = mysqli_fetch_array($consulta_Categorias)){?>
-                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"] ?></option>
+                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"]; ?></option>
                             <?php
                             }
                         }
                         ?>
-                        
                     </select>
                     <i></i>
                 </div>
@@ -77,7 +76,7 @@
                         $Cantidad_Tamaño = mysqli_num_rows($Consulta_Tamaño);
                         if($Cantidad_Tamaño > 0){
                             while($resulset = mysqli_fetch_array($Consulta_Tamaño)){?>
-                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"] ?></option>
+                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"]; ?></option>
                             <?php
                             }
                         }
@@ -92,7 +91,7 @@
                         $Cantidad_color = mysqli_num_rows($consulta_Color);
                         if($Cantidad_Tamaño > 0){
                             while($resulset = mysqli_fetch_array($consulta_Color)){?>
-                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"] ?></option>
+                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"]; ?></option>
                             <?php
                             }
                         }
@@ -107,7 +106,7 @@
                         $Cantidad_sexo = mysqli_num_rows($consulta_Sexo);
                         if($Cantidad_sexo > 0){
                             while($resulset = mysqli_fetch_array($consulta_Sexo)){?>
-                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"] ?></option>
+                                <option value="<?php echo $resulset["Nombre"]; ?>"><?php echo $resulset["Nombre"]; ?></option>
                             <?php
                             }
                         }

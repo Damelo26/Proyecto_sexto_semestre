@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     //Codigo para seleccionar la foto de la mascota//
     $("#foto").on("change",function(){
     	var uploadFoto = document.getElementById("foto").value;
@@ -10,7 +9,7 @@ $(document).ready(function(){
                 var type = foto[0].type;
                 var name = foto[0].name;
                 if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png'){
-                    contactAlert.innerHTML = '<p class="errorArchivo">El archivo no es válido.</p>';                        
+                    contactAlert.innerHTML = '<p class="errorArchivo">El archivo no es válido.</p>';     
                     $("#img").remove();
                     $(".delPhoto").addClass('notBlock');
                     $('#foto').val('');
@@ -22,19 +21,15 @@ $(document).ready(function(){
                         var objeto_url = nav.createObjectURL(this.files[0]);
                         $(".prevPhoto").append("<img id='img' src="+objeto_url+">");
                         $(".upimg label").remove();
-                        
                     }
               }else{
               	alert("No selecciono foto");
                 $("#img").remove();
               }              
     });
-
     $('.delPhoto').click(function(){
     	$('#foto').val('');
     	$(".delPhoto").addClass('notBlock');
     	$("#img").remove();
-
     });
-
 });
