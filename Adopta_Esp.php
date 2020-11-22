@@ -134,7 +134,7 @@
             </form>
     </div>
    <?php include_once 'Modulos/Templates/footer.php';?>
-   <?php }else if(isset($_GET['adopcion']) && isset($_GET['acep'])){
+   <?php }else if(s($_GET['adopcion']) && isset($_GET['acep'])){
         include "Configuraciones/Funciones.php";
         $alert='';
         $ID_Mascota_adoptar = $_GET['adopcion'];
@@ -221,4 +221,4 @@
            echo "Error";
        } ?> 
     <?php }  
-    ?>
+    ?>     

@@ -1,4 +1,5 @@
-<?php include "Configuraciones/Funciones.php";
+<?php
+	include "Configuraciones/Funciones.php";
 	if(!empty($_POST)){
 		$Register_alert='';
 		if(empty($_POST['cedula']) || empty($_POST['primernombre']) || empty($_POST['segundonombre']) || empty($_POST['primerapellido']) || empty($_POST['segundoapellido']) ||
@@ -35,7 +36,7 @@
 		}
 	}
 ?>
-<?php include_once 'Modulos/Templates/header.php';?>
+<?php include_once 'Modulos/Templates/header.php';  ?>
 <section id="containerregistro">
 		<div class="form_register">
 			<h1><i class="fas fa-user-plus"></i>Registro usuario</h1>
