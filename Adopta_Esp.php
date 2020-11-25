@@ -119,7 +119,7 @@
         <p class="texto_sub">Para llevar a cabo con este proceso, recuerda:</p>
         <ul class="Lista_Requerimientos">
             <li>Debes estar registrado en el sitio web, si no no lo estas ingresa 
-                <a href="Registro_Usuario.php" class="hipervinculo hover-underline-animation" target="_blank">aquí</a>
+                <a href="Login.php" class="hipervinculo hover-underline-animation" target="_blank">aquí</a>
             </li>
             <li>Tomate unos minutos para leer la seccion de <a href="Cosas_a_considerar.php" class="hipervinculo hover-underline-animation" target="_blank">cosas a considerar antes de adoptar</a></li>
             <li>Considera que la mascota elegida tienes las caracteristicas que en verdad deseas</li>
@@ -134,7 +134,7 @@
             </form>
     </div>
    <?php include_once 'Modulos/Templates/footer.php';?>
-   <?php }else if(s($_GET['adopcion']) && isset($_GET['acep'])){
+   <?php }else if(isset($_GET['adopcion']) && isset($_GET['acep'])){
         include "Configuraciones/Funciones.php";
         $alert='';
         $ID_Mascota_adoptar = $_GET['adopcion'];
@@ -221,4 +221,4 @@
            echo "Error";
        } ?> 
     <?php }  
-    ?>     
+    ?>
